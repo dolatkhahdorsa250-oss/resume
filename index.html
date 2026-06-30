@@ -1,89 +1,115 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="th">
 <head>
-	<title>My Resume</title>
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume — Ms. Ploy Prakhongjai</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<div class="wraper">
-		<div class="container">
-		<div class="left-content p-30">
-			<div class="logo">
-				<a href="index.html">
-					<span>My</span>
-					<span>Resume</span>
-				</a>
-			</div>
-			<div class="nav">
-				<ul>
-					<li><a href="#Home">Home</a></li>
-					<li><a href="#About">About</a></li>
-					<li><a href="">Education</a></li>
-					<li><a href="">Researchs and Projects</a></li>
-					<li><a href="">Experience</a></li>
-					<li><a href="">Contact</a></li>
-				</ul>
-			</div>
-			<div class="left-footer">
-				<div class="social-icons">
-					<ul>
-						<li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-phone aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
-						
-				</div>
-				<div class="foot-contact">
-					<ul>
-                        <li>link linkdin</li>
-						<li>dolatkhahdorsa250@gmail.com</li>
-						<li>+989017020755</li>
-					</ul>
-				</div>
-				
-<div class="copy-rights">age khasti chizi eafe koni</div>
-			</div>
 
-		</div>
-		<div class="main-content">
-			<div class="section1 p-30" id="Home">
-			<div class="sec-title">
-	<div class="pg-sub-title">Home</div>
-	<div class="pg-title">My Profile</div>
-			</div>
-				<div class="d-flex-align-center">
-				<div class="user-img flex-1"><img src="https://colorlib.com/preview/theme/meetme/img/personal.jpg"></div>
-				<div class="user-profile flex-1">
-					<div class="pro-details">
-						<div class="sm-text">HELLO EVERYBODY, I AM</div>
-						<div class="name">Dorsa Dolatkhah Ouchbolagh</div>
-						<div class="role">Polymer Engineer</div>
+  <!-- 🔸 Navbar -->
+  <nav class="navbar">
+    <div class="logo">My Resume — Ms. Ploy</div>
+    <button class="toggle" onclick="toggleMenu()">☰</button>
+    <ul id="nav-menu" class="nav-links">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-					</div>
-					<div class="text">You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures)</div>
-					<div class="pr-list">
-						<ul>
-							<li><i class="fa fa-calendar" aria-hidden="true"></i> 14th May, 1992</li>
-							<li><i class="fa fa-phone" aria-hidden="true"></i> 90000XXXXX / 90XXXXXXXX</li>
-							<li><i class="fa fa-envelope" aria-hidden="true"></i> xxxxxxxxxxxxxx@gmail.com</li>
-							<li><i class="fa fa-map-marker" aria-hidden="true"></i> Hyderabad, Telangana</li>
-						</ul>
-					</div>
-			<div class="social-icons-head">
-					<ul>
-						<li><a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
-				</div>
+  <!-- 🔹 Resume Container -->
+  <div class="container">
 
-				</div>
-			</div>
-			</div>
+    <!-- 🧍‍♀️ About Me -->
+    <section id="about" class="section">
+      <div class="header">
+        <img src="moo-deng-หมูเด้ง.png" alt="รูปโปรไฟล์" class="avatar-img">
+        <div class="name">
+          <h1>Ms. Ploy Prakhongjai</h1>
+          <em><p>ชื่อจริง:พลอย ประคองใจ<br>
+            ชื่อเล่น:พลอย<br> 
+            ศึกษาอยู่ที่:คณะวิศวกรรมศาสตร์ สาขาDIT<br>
+            สถาบันการจัดการปัญญาภิวัฒน์
+            (<a href="https://pim.ac.th" target="_blank">PIM</a>)
+            </p></em>
+          
+          <div class="contact">
+            <span class="pill">📍 Nonthaburi, Thailand</span>
+            <span class="pill">✉️ ploy@gmail.com</span>
+            <span class="pill">🔗 portfolio.example.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div id="About Me" class="section">
+          <h2>About Me</h2>
+          <div class="About Me">สวัสดีค่ะ ชื่อพลอยนะคะ กำลังศึกษาอยู่ที่สถาบันการจัดการปัญญาภิวัฒน์ค่ะ ถนัดงานด้านการออกแบบ และสนใจเกี่ยวกับงาน3D และUX/UIค่ะ
+          </div>
+        </div>
 
-		</div>
-	</div>
-</div>
+    <!-- 🎓 Education -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="edu-item">
+        <strong>สถาบันการจัดการปัญญาภิวัฒน์ (PIM)</strong>
+        <p>คณะวิศวกรรมศาสตร์ — สาขาเทคโนโลยีดิจิทัลและสารสนเทศ</p>
+        <p><em>2024 — ปัจจุบัน</em></p>
+      </div>
+      <div class="edu-item">
+        <strong>มัธยมศึกษา</strong>
+        <p>โรงเรียนโพธิสัมพันธ์พิทยาคาร<br>แผนการเรียน วิทย์-คอมพิวเตอร์</p>
+        <p><em>2019 — 2024</em></p>
+      </div>
+    </section>
+    
+   <!-- 💼 Employment -->
+<section id="employment" class="section">
+  <h2>Employment</h2>
+
+  <div class="job">
+    <strong>7-Eleven – Internship (2025)</strong>
+    <ul>
+      <li>ให้ความช่วยเหลือลูกค้าในการเลือกซื้อสินค้าและให้ข้อมูลเกี่ยวกับผลิตภัณฑ์</li>
+      <li>ดูแลการทำรายการชำระเงินสดและตรวจสอบความถูกต้องของรายงานยอดขายประจำวัน</li>
+      <li>สนับสนุนการดำเนินงานภายในร้าน เช่น การจัดเรียงและเติมสินค้า</li>
+      <li>พัฒนาทักษะการทำงานเป็นทีม การบริการลูกค้า และการบริหารเวลา</li>
+    </ul>
+  </div>
+</section>
+
+
+    <!-- 💻 Skills -->
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <ul class="skill-list">
+        <li><strong>HTML:</strong> Good</li>
+        <li><strong>CSS:</strong> Good</li>
+        <li><strong>Drawing:</strong> Intermediate</li>
+        <li><strong>Design:</strong> Intermediate</li>
+      </ul>
+    </section>
+
+    <!-- 💌 Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>📧 Email: <a href="mailto:ploy@gmail.com">ploy@gmail.com</a></p>
+      <p>📱 Phone: 08x-xxx-xxxx</p>
+      <p>💼 Portfolio: <a href="https://portfolio.example.com" target="_blank">portfolio.example.com</a></p>
+      <p>📍 ที่อยู่: นนทบุรี, ประเทศไทย</p>
+    </section>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
 </body>
 </html>
+resume.markdown
