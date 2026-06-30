@@ -1,115 +1,152 @@
-<!doctype html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Resume — Ms. Ploy Prakhongjai</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My resume</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- main container -->
+    <div class="wrap">
+        <!-- side bar -->
+        <aside class="sideBar">
+            <!-- phofo -->
+            <img src="./img/photo.png" alt="My photo" class="foto">
 
-  <!-- 🔸 Navbar -->
-  <nav class="navbar">
-    <div class="logo">My Resume — Ms. Ploy</div>
-    <button class="toggle" onclick="toggleMenu()">☰</button>
-    <ul id="nav-menu" class="nav-links">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- 🔹 Resume Container -->
-  <div class="container">
-
-    <!-- 🧍‍♀️ About Me -->
-    <section id="about" class="section">
-      <div class="header">
-        <img src="moo-deng-หมูเด้ง.png" alt="รูปโปรไฟล์" class="avatar-img">
-        <div class="name">
-          <h1>Ms. Ploy Prakhongjai</h1>
-          <em><p>ชื่อจริง:พลอย ประคองใจ<br>
-            ชื่อเล่น:พลอย<br> 
-            ศึกษาอยู่ที่:คณะวิศวกรรมศาสตร์ สาขาDIT<br>
-            สถาบันการจัดการปัญญาภิวัฒน์
-            (<a href="https://pim.ac.th" target="_blank">PIM</a>)
-            </p></em>
+            <!--contacts container -->
+            <div class="contacts">
+                <div class="contacts__title bold">
+                    <h3>Contacts</h3>
+                </div>
+                <div class="contacts-tel">
+                    <span>C:</span> <a href="tel:380988667766">+38 098 866 77 66</a>
+                </div>
+                <div class="contacts-email">
+                    <span class="bold">E:</span> <a href="mailto:tychinavova@gmail.com">tychinavova@gmail.com</a>
+                </div>
           
-          <div class="contact">
-            <span class="pill">📍 Nonthaburi, Thailand</span>
-            <span class="pill">✉️ ploy@gmail.com</span>
-            <span class="pill">🔗 portfolio.example.com</span>
-          </div>
+
+
+            <!-- tech skills-->
+            <div class="techSkills">
+                <div class="techSkills__title bold">
+                    <h3>Tech Skills</h3>
+                </div>
+                <ul class="techSkills__list">
+                    <li>PHP</li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>GIT</li>
+                    <li>GITLAB</li>
+                    <li>Packagist</li>
+                </ul>
+            </div>
+
+            <!-- soft skills -->
+            <div class="softSkills">
+                <div class="softSkills__title bold">
+                    <h3>Soft Skills</h3>
+                </div>
+                <ul class="softSkills__list">
+                    <li>Scrum</li>
+                    <li>Kanban</li>
+                    <li>Agile</li>
+                    <li>GTD</li>
+                    <li>Teamwork</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- about me -->
+        <div class="about">
+            <!-- about me container-->
+            <div class="info__container">
+                <h2 class="profession bold">Junior PHP Developer</h2>
+                <h1 class="name bold">Volodymyr Tychyna</h1>
+                <p class="discription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+                    lacus vel facilisis.</p>
+            </div>
+
+            <!-- project container -->
+            <div class="project">
+                <h3 class="project__title bold">Projects</h3>
+                <ol class="project__list">
+                    <li>
+                        <a href="https://github.com/TychinaV">https://github.com/TychinaV</a>
+                        <span class="dots">.........................</span>
+                        <span><b>[</b> PHP, HTML5, CSS <b>]</b></span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/TimsVarakA">https://github.com/TimsVarakA</a>
+                        <span class="dots">....................</span>
+                        <span><b>[</b> HTML5, CSS, JavaScript <b>]</b></span>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- work container -->
+            <div class="work">
+                <h3 class="work__title bold">Work Experience</h3>
+
+                <!-- conpany container -->
+                <div class="company__title">
+                    <h4 class="title__job bold">Junior PHP Developer <span class="bold">«Platezhy Online» Ltd</span></h4>
+                    <span class="period">September 2019 - up to now <span class="divider">|</span> Ukraine</span>
+                    <div class="company__list">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua.
+                            </li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            <li>Risus commodo viverra maecenas.</li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- conpany container -->
+                <div class="company__title">
+                    <h4 class="title__job bold">Manager <span class="bold">Roga & Kopyta New</span></h4>
+                    <span class="period">March 2015 - October 2018 <span class="divider">|</span> Ukraine</span>
+                    <div class="company__list">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore et dolore magna
+                                aliqua.
+                            </li>
+                            <li>Quis ipsum suspendisse ultrices gravida.</li>
+                            <li>Risus commodo viverra maecenas.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- conpany container -->
+                <div class="company__title">
+                    <h4 class="title__job bold">Manager <span class="bold">Roga & Kopyta LLC </span></h4>
+                    <span class="period">June 2014 - February 2015 <span class="divider">|</span> Ukraine</span>
+                    <div class="company__list">
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                            <li>Quis ipsum suspendisse ultrices gravida.</li>
+                            <li>Risus commodo viverra maecenas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- education container -->
+            <div class="education">
+                <h2 class="education__title bold">Education</h2>
+            </div>
+            <div class="institution">
+                <h3 class="institution__title bold">Kharkiv National University of Radioelectronics</h3>
+                <h4 class="faculty bold">Management</h4>
+                <span class="period">Septermber 2009 - June 2014 <span class="divider">|</span> Ukraine</span>
+            </div>
         </div>
-      </div>
-    </section>
-    
-    <div id="About Me" class="section">
-          <h2>About Me</h2>
-          <div class="About Me">สวัสดีค่ะ ชื่อพลอยนะคะ กำลังศึกษาอยู่ที่สถาบันการจัดการปัญญาภิวัฒน์ค่ะ ถนัดงานด้านการออกแบบ และสนใจเกี่ยวกับงาน3D และUX/UIค่ะ
-          </div>
-        </div>
-
-    <!-- 🎓 Education -->
-    <section id="education" class="section">
-      <h2>Education</h2>
-      <div class="edu-item">
-        <strong>สถาบันการจัดการปัญญาภิวัฒน์ (PIM)</strong>
-        <p>คณะวิศวกรรมศาสตร์ — สาขาเทคโนโลยีดิจิทัลและสารสนเทศ</p>
-        <p><em>2024 — ปัจจุบัน</em></p>
-      </div>
-      <div class="edu-item">
-        <strong>มัธยมศึกษา</strong>
-        <p>โรงเรียนโพธิสัมพันธ์พิทยาคาร<br>แผนการเรียน วิทย์-คอมพิวเตอร์</p>
-        <p><em>2019 — 2024</em></p>
-      </div>
-    </section>
-    
-   <!-- 💼 Employment -->
-<section id="employment" class="section">
-  <h2>Employment</h2>
-
-  <div class="job">
-    <strong>7-Eleven – Internship (2025)</strong>
-    <ul>
-      <li>ให้ความช่วยเหลือลูกค้าในการเลือกซื้อสินค้าและให้ข้อมูลเกี่ยวกับผลิตภัณฑ์</li>
-      <li>ดูแลการทำรายการชำระเงินสดและตรวจสอบความถูกต้องของรายงานยอดขายประจำวัน</li>
-      <li>สนับสนุนการดำเนินงานภายในร้าน เช่น การจัดเรียงและเติมสินค้า</li>
-      <li>พัฒนาทักษะการทำงานเป็นทีม การบริการลูกค้า และการบริหารเวลา</li>
-    </ul>
-  </div>
-</section>
-
-
-    <!-- 💻 Skills -->
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <ul class="skill-list">
-        <li><strong>HTML:</strong> Good</li>
-        <li><strong>CSS:</strong> Good</li>
-        <li><strong>Drawing:</strong> Intermediate</li>
-        <li><strong>Design:</strong> Intermediate</li>
-      </ul>
-    </section>
-
-    <!-- 💌 Contact -->
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p>📧 Email: <a href="mailto:ploy@gmail.com">ploy@gmail.com</a></p>
-      <p>📱 Phone: 08x-xxx-xxxx</p>
-      <p>💼 Portfolio: <a href="https://portfolio.example.com" target="_blank">portfolio.example.com</a></p>
-      <p>📍 ที่อยู่: นนทบุรี, ประเทศไทย</p>
-    </section>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("nav-menu");
-      menu.classList.toggle("show");
-    }
-  </script>
-
+    </div>
 </body>
 </html>
-resume.markdown
