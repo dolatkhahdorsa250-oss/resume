@@ -1,126 +1,811 @@
-<link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nicolás Castañeda González (@n1c0saurio)" />
+    <meta
+      name="keywords"
+      content="Web Development, Javascript, Python, PHP, Node.js, Express.js, Django, Laravel, HTML, CSS, SQL"
+    />
+    <title>Dorsa Dolatkhah Ouchbolagh &ndash; Resume</title>
+    <!-- Resources -->
+    <link
+      rel="shortcut icon"
+      href="https://avatars.githubusercontent.com/u/16579247"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,700;0,900;1,400&family=Fira+Mono:wght@400&display=swap&subset=latin"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Styling -->
+    <style>
+      /*
+       * Variables
+       */
 
-<!-- MAIN CONTAINER -->
-		<div id="main_container">
-      <!-- HEADER -->
-      <div id="header">
-        <!-- LOGOTYPE/NAME -->
-        <div class="header_logotype_container">
-          <h1 class="logotype_name">Dorsa  <span class="">Dolatkhah Ouchbolagh</span></h1>
-          <h2 class="logotype_occupation">Frontend Web Developer</h2>
+      :root {
+        /* spaces */
+        --spacing--xxs: 0.16rem;
+        --spacing--xs: 0.32rem;
+        --spacing--s: 0.64rem;
+        --spacing: 1rem;
+        --spacing--m: 1.62rem;
+        --spacing--l: 2.24rem;
+        --spacing--xl: 3.24rem;
+
+        /* colors */
+        --primary: hsl(52, 14%, 16%);
+        --primary--dimmed: hsl(52, 14%, 40%);
+        --primary--light: hsl(52, 14%, 64%);
+        --primary--lighter: hsl(52, 14%, 90%);
+        --secondary: hsl(52, 100%, 72%);
+        --secondary--dimmed: hsla(52, 100%, 72%, 0.5);
+        --secondary--lighter: hsla(52, 100%, 72%, 0.2);
+        --background: white;
+
+        /* gradients */
+        --gradient-underline: linear-gradient(
+          transparent 80%,
+          var(--secondary) 80%
+        );
+        --gradient-highlight: linear-gradient(
+          transparent 30%,
+          var(--secondary) 30%
+        );
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          /* colors */
+          --primary: white;
+          --primary--dimmed: hsl(224, 14%, 72%);
+          --primary--light: hsl(224, 14%, 56%);
+          --primary--lighter: hsl(224, 14%, 32%);
+          --secondary: hsl(208, 100%, 40%);
+          --secondary--dimmed: hsla(208, 100%, 40%, 0.5);
+          --secondary--lighter: hsla(208, 100%, 40%, 0.2);
+          --background: hsl(208, 14%, 16%);
+
+          /* gradients */
+          --gradient-highlight--dimmed: linear-gradient(
+            transparent 30%,
+            var(--secondary--dimmed) 30%
+          );
+        }
+
+        #main-footer a:hover,
+        #main-footer a:active {
+          background: var(--gradient-highlight--dimmed);
+        }
+      }
+
+      /*
+       * Common elements styles
+       */
+
+      * {
+        box-sizing: border-box !important;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--primary);
+        font-family: Fira sans, Helvetica, arial, san-serif;
+        line-height: 1.4;
+      }
+
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin-top: 0;
+      }
+
+      h2,
+      h3 {
+        letter-spacing: 0.5px;
+        margin-bottom: var(--spacing--s);
+      }
+
+      h2 {
+        font-size: 1.62rem;
+        font-weight: 700;
+      }
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      strong {
+        font-weight: 500;
+      }
+
+      a {
+        background: var(--gradient-underline);
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:active {
+        background: var(--gradient-highlight);
+      }
+
+      /* Links on elements with primary background */
+      a.alt {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      a.alt:hover,
+      a.alt:active {
+        text-decoration-thickness: 12%;
+      }
+
+      code {
+        font-family: Fira mono, Courier, monospace;
+        font-size: 0.9rem;
+        background-color: var(--primary--lighter);
+        padding: 0 var(--spacing--xxs);
+      }
+
+      /*
+       * Custom elements styles
+       */
+
+      .balloon {
+        background-color: var(--secondary--lighter);
+        border-radius: 0 var(--spacing) var(--spacing);
+        /* negative margin for optical alignment */
+        margin-left: var(--spacing) calc(var(--spacing--xs) * -1);
+        margin-right: var(--spacing) calc(var(--spacing--xs) * -1);
+        margin-top: var(--spacing);
+        padding: var(--spacing);
+      }
+
+      .balloon h3 {
+        margin-bottom: var(--spacing--s);
+      }
+
+      .balloon__badge {
+        background-color: var(--secondary--dimmed);
+        border-radius: var(--spacing--xs);
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: var(--spacing--s);
+        margin-left: calc(
+          var(--spacing--xxs) * -1
+        ); /* negative margin for optical alignment */
+        margin-right: var(--spacing--xs);
+        margin-top: 0;
+        padding: var(--spacing--xs) var(--spacing--s);
+      }
+
+      .divider {
+        grid-area: divider;
+        border-top: 1px solid var(--primary);
+      }
+
+      /* 
+       * Section styles
+       */
+
+      /* Header styles */
+
+      #main-head {
+        grid-area: mainHead;
+      }
+
+      #main-head__name {
+        font-size: 3.6rem;
+        font-weight: 900;
+        letter-spacing: 2px;
+        line-height: 0.96;
+        margin-bottom: var(--spacing--m);
+        /* negative margin for optical alignment */
+        margin-left: calc(var(--spacing--xxs) * -1);
+        /* extrusion effect using multiple shadows */
+        text-shadow: -1px -1px var(--secondary), -1.5px -1.5px var(--secondary),
+          -2px -2px var(--secondary), -2.5px -2.5px var(--secondary),
+          -3px -3px var(--secondary), -3.5px -3.5px var(--secondary),
+          -4px -4px var(--secondary);
+      }
+
+      #main-head__profession {
+        font-size: 1.62rem;
+        font-style: italic;
+        line-height: 1;
+      }
+
+      /* Contact styles */
+
+      #contact {
+        grid-area: contact;
+      }
+
+      .contact__list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .contact__list li {
+        font-size: 0.9rem;
+        font-style: normal;
+        margin-bottom: var(--spacing--s);
+      }
+
+      .contact__list,
+      .contact__list li:last-child {
+        margin-bottom: 0;
+      }
+
+      .contact__list span {
+        width: 1rem;
+        text-align: center;
+        margin-right: var(--spacing--s);
+      }
+
+      .contact__list a {
+        background: transparent;
+      }
+
+      .contact__list a:hover .contact__link-text,
+      .contact__list a:active .contact__link-text {
+        background: var(--gradient-highlight);
+      }
+
+      /* About styles */
+
+      #about {
+        grid-area: about;
+      }
+
+      #about ul {
+        list-style: none;
+        margin-bottom: 0;
+        margin-top: var(--spacing);
+        padding-left: var(--spacing);
+      }
+
+      #about ul > li:not(:last-child) {
+        margin-bottom: var(--spacing--s);
+      }
+
+      #about li:before {
+        content: "\f0da"; /* unicode for caret-right */
+        font-family: "Font Awesome 6 Free";
+        font-size: 1rem;
+        font-weight: 900;
+        margin-right: -0.5rem; /* negative margin equals to character width */
+        position: relative;
+        right: var(--spacing); /* same spacing used in the parent ul element */
+      }
+
+      /* Experience styles */
+
+      #experience {
+        grid-area: experience;
+      }
+
+      /* Studies styles */
+
+      #studies {
+        grid-area: studies;
+      }
+
+      /* knowledge styles */
+
+      #knowledge {
+        grid-area: knowledge;
+      }
+
+      #knowledge ul {
+        padding-left: 0;
+        list-style: none;
+      }
+
+      .knowledge__group {
+        margin-bottom: var(--spacing);
+      }
+
+      .knowledge__group small {
+        margin-right: var(--spacing--xxs);
+        text-align: center;
+        width: 1.2rem;
+      }
+
+      .knowledge__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing--xs);
+        margin-top: var(--spacing--s);
+      }
+
+      .knowledge__items li {
+        background: var(--secondary--dimmed);
+        border-radius: var(--spacing--xs);
+        padding: var(--spacing--xxs) var(--spacing--xs);
+      }
+
+      /* Footer styles */
+
+      #main-footer {
+        grid-area: mainFooter;
+      }
+
+      #main-footer h5 {
+        color: var(--primary--light);
+        font-weight: 400;
+        font-size: 0.8rem;
+        margin: 0;
+        text-align: center;
+      }
+
+      #main-footer a {
+        background: transparent;
+        color: var(--primary--dimmed);
+      }
+
+      #main-footer a:hover,
+      #main-footer a:active {
+        background: var(--gradient-highlight);
+      }
+
+      /* 
+       *  Extra small layout (default)
+       */
+
+      body {
+        margin: 0;
+        padding: var(--spacing--l) var(--spacing) var(--spacing);
+      }
+
+      #container {
+        display: grid;
+        grid-template-areas:
+          "mainHead"
+          "contact"
+          "divider"
+          "about"
+          "experience"
+          "studies"
+          "knowledge"
+          "mainFooter";
+        row-gap: var(--spacing--xl);
+      }
+
+      #contact {
+        align-items: end;
+        display: flex;
+      }
+
+      /*
+       * Small layout
+       */
+
+      @media screen and (min-width: 576px) {
+        body {
+          padding: var(--spacing--xl) var(--spacing--l) var(--spacing);
+        }
+      }
+
+      /*
+       * Medium layout
+       */
+
+      @media screen and (min-width: 768px) {
+        #container {
+          column-gap: var(--spacing--m);
+          grid-template-columns: 36% auto;
+          grid-template-areas:
+            "mainHead contact"
+            "divider divider"
+            "about about"
+            "knowledge experience"
+            "knowledge studies"
+            "mainFooter mainFooter";
+        }
+
+        #contact {
+          justify-content: end;
+        }
+      }
+
+      /*
+       * Large layout
+       */
+
+      @media screen and (min-width: 992px) {
+        #container {
+          grid-template-areas:
+            "mainHead contact"
+            "divider divider"
+            "knowledge about"
+            "knowledge experience"
+            "knowledge studies"
+            "mainFooter mainFooter";
+        }
+      }
+
+      /*
+       * Extra large layout
+       */
+
+      @media screen and (min-width: 1280px) {
+        #container {
+          column-gap: var(--spacing--l);
+          grid-template-areas:
+            "mainHead contact contact"
+            "divider divider divider"
+            "knowledge about about"
+            "knowledge experience studies"
+            "mainFooter mainFooter mainFooter";
+          grid-template-columns: 32% auto auto;
+          margin: 0 auto;
+          max-width: 1200px;
+        }
+      }
+
+      /*
+       * Printing layout
+       */
+
+      @media print {
+        :root {
+          font-size: 11px;
+        }
+
+        /* Layout */
+
+        @page {
+          margin: 1rem 3rem;
+          size: A4;
+        }
+
+        body,
+        a {
+          color: black;
+        }
+
+        #container {
+          gap: var(--spacing--l);
+          grid-template-areas:
+            "mainHead contact"
+            "divider divider"
+            "knowledge about"
+            "knowledge experience"
+            "knowledge studies"
+            "mainFooter mainFooter";
+          grid-template-columns: 32% auto;
+          /* give footer the remainder space */
+          grid-template-rows: auto auto auto auto auto 1fr;
+          height: 100vh;
+        }
+
+        /* push footer content to the bottom */
+        #main-footer {
+          align-items: end;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <header id="main-head">
+        <h1 id="main-head__name">Nicolás Castañeda González</h1>
+        <p id="main-head__profession">Web developer</p>
+      </header>
+      <address id="contact">
+        <ul class="contact__list">
+          <li>
+            <a href="mailto:xxxx@xxxx.cl">
+              <span class="fa-solid fa-envelope"></span
+              ><span class="contact__link-text">xxxx@xxxx.cl</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+56999999999">
+              <span class="fa-solid fa-phone"></span
+              ><span class="contact__link-text">(+56) 9 9999 9999</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/nicocg"
+              rel="author"
+              target="_blank"
+            >
+              <span class="fa-brands fa-linkedin"></span
+              ><span class="contact__link-text">in/nicocg</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://github.com/n1c0saurio"
+              rel="author"
+              target="_blank"
+            >
+              <span class="fa-brands fa-github"></span
+              ><span class="contact__link-text">/n1c0saurio</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://hub.docker.com/u/n1c0saurio"
+              rel="author"
+              target="_blank"
+            >
+              <span class="fa-brands fa-docker"></span
+              ><span class="contact__link-text">u/n1c0saurio</span>
+            </a>
+          </li>
+          <li>
+            <span class="fa-solid fa-location-dot"></span>Santiago Metropolitan
+            Region, Chile
+          </li>
+        </ul>
+      </address>
+      <article id="about">
+        <h2>About me</h2>
+        <p>
+          <strong
+            >Self-taught, organized, creative and detail-oriented
+            person.</strong
+          >
+          I have skills in various languages and web development frameworks,
+          both backend and frontend. I also have a good command of Docker, Git,
+          Linux and concepts like OOP, DRY, SOLID and REST. Some projects I have
+          done recently are:
+        </p>
+        <ul>
+          <li
+            ><a
+              href="https://github.com/n1c0saurio/buda-spread-test"
+              target="_blank"
+              rel="external"
+              >An API in Django</a
+            >
+            to get the spread of cryptocurrency markets, documented according to
+            the OpenAPI specification.</li
+          >
+          <li
+            ><a
+              href="https://github.com/n1c0saurio/mundo-frontend"
+              target="_blank"
+              rel="external"
+              >A React.js frontend</a
+            >
+            that displays a filterable list of items, retrieved from
+            <a
+              href="https://github.com/n1c0saurio/mundo-backend"
+              target="_blank"
+              rel="external"
+              >an API developed in Laravel</a
+            >.</li
+          >
+          <li
+            ><a
+              href="https://github.com/n1c0saurio/boleta"
+              target="_blank"
+              rel="external"
+              >A web application in Express.js</a
+            >
+            to create shopping lists, with authentication and
+            internationalization, using <code>dinero.js</code> to manage the
+            currencies.</li
+          >
+          <li
+            ><a
+              href="https://gist.github.com/n1c0saurio"
+              target="_blank"
+              rel="external"
+              >Bash scripts</a
+            >
+            to automate file deletion and sharing.</li
+          >
+        </ul>
+      </article>
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="balloon">
+          <h3>Desarrollador Django</h3>
+          <h4 class="balloon__badge"
+            ><span class="fa-solid fa-location-dot"></span>&ensp;SyzLab</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;04/2024
+            <small class="fa-solid fa-arrow-right"></small> Now
+          </h4>
+          <p>
+            <em>
+              Backend development in Django (Python), frontend development using
+              htmx and Docker for development environment.
+            </em>
+          </p>
         </div>
-        <!-- MAIN MENU -->
-        <div class="header_menu_container">
-          <ul class="download_print_buttons horizontal_list">
-            <li><a href="#"><span class="icon entypo-download"></span>Download CV</a></li>
-            <li><a href="#"><span class="icon entypo-print"></span>Print CV</a></li>
-          </ul>
-          <div class="clear"></div>
-          <ul class="header_menu horizontal_list">
-            <li><a class="no_border purple" href="#">Profile</a></li>
-            <li><a href="#">Education</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Work Experience</a></li>
-            <li><a href="#">Featured Projects</a></li>
-            <li><a href="#">Awards</a></li>
-          </ul>
+        <div class="balloon">
+          <h3>Web Developer Junior</h3>
+          <h4 class="balloon__badge"
+            ><span class="fa-solid fa-location-dot"></span>&ensp;EvaDev</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;11/2021
+            <small class="fa-solid fa-arrow-right"></small> 06/2023
+          </h4>
+          <p>
+            <em>
+              Development, QA, maintenance and end-user training of e-commerce
+              sites based on Wordpress.
+            </em>
+          </p>
         </div>
-      </div>
-      <!-- LEFT COL -->
-      <div id="left_col">
-        <div class="profile_frame">
-          <div class="profile_picture"></div>
-          <!-- <img src="images/javier_latorre.jpg" alt="profile picture"> -->
+        <div class="balloon">
+          <h3>Graphic designer Freelance</h3>
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;2013
+            <small class="fa-solid fa-arrow-right"></small> 2017
+          </h4>
+          <p
+            ><em
+              >Branding, posters, flyers, digital illustration, social media
+              content, packaging and static website design.</em
+            ></p
+          >
         </div>
-        <div class="hello_content">
-          <h2>Hello!</h2>
-          <p>I'm passionate about technology and human behavior, hardworker and a fast-learner with experience in around 10 different countries studying, working and volunteering.</p>
+      </section>
+      <section id="studies">
+        <h2>Studies</h2>
+        <div class="balloon">
+          <h3>
+            <span class="balloon__header-title">Programming</span>
+          </h3>
+          <h4 class="balloon__badge"
+            ><span class="fa-solid fa-location-dot"></span>&ensp;Duoc UC</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;2018
+            <small class="fa-solid fa-arrow-right"></small> 2021
+          </h4>
+          <p>
+            <em
+              >Basic fundamentals (OOP, MVC); documentation (SRS, UML); database
+              modelling, querying and PL-SQL; QA.</em
+            >
+          </p>
         </div>
-        <div class="contact_details_content">
-          <h2>Contact details</h2>
-          <p class="purple">Phone:</p>
-          <p>+34 123 456 789</p>
-          <p class="purple">Email:</p>
-          <p>jlalovi@gmail.com</p>
-          <p class="purple">Adress:</p>
-          <p>Someplace, 5</p>
-          <p>Jaén, Spain</p>
-          <p>23001</p>
+        <div class="balloon">
+          <h3>
+            <span class="balloon__header-title"
+              >Graphic Design (uncompleted)</span
+            >
+          </h3>
+          <h4 class="balloon__badge"
+            ><spam class="fa-solid fa-location-dot"></spam>&ensp;Inacap</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;2008
+            <small class="fa-solid fa-arrow-right"></small> 2013
+          </h4>
+          <p>
+            <em
+              >Editorial and poster design; packaging; illustration; photography
+              and audiovisual communication.</em
+            >
+          </p>
         </div>
-        <a href="mailto:jlalovi@gmail.com" class="send_message_button">
-          <span class="cut1"></span>
-          <span class="cut2"></span>
-          <span class="content">Send me a message <span class="fontawesome-double-angle-right"></span></span>
-        </a>
-        <div class="get_social_content">
-          <h2>Get social</h2>
-          <ul class="social_icons horizontal_list">
-            <li><a class="facebook" href="https://www.facebook.com/jlalovi"><span class="entypo-facebook-circled"></span><span class="invisible">Facebook</span></a></li>
-            <li><a class="twitter" href="https://twitter.com/jlalovi"><span class="entypo-twitter-circled"></span><span class="invisible">Twitter</span></a></li>
-            <li><a class="linkedin" href="https://www.linkedin.com/in/jlalovi/en"><span class="entypo-linkedin-circled"></span><span class="invisible">LinkedIn</span></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- PROFILE CONTENT -->
-      <div id="content_container">				
-        <div class="block">
-          <h1>Profile</h1>
-          <blockquote class="profile_quote">
-            <p>"There is no end to education. It is not that you read a book, pass an examination, and finish with education. The whole of life, from the moment you are born to the moment you die, is a process of learning."</p>
-            <p>Jiddu Krishnamurti.</p>
-            <span class="entypo-quote"></span>
-          </blockquote>
-        </div>
-        <div class="block">
-          <h2>A few words about me</h2>
-          <p>Until now, in my life, I change from active moments with a lot of variety, challenges and improvisations, to moments of tranquility and stability, being difficult to stay in a place during a long time. I consider myself a tolerant and respectful person with open mind and quite honest. I really like to listen people stories and backgrounds and their different experiences around the world.</p>				
-        </div>
-        <div class="horizontal_line">
-          <div class="line_left"></div>
-          <div class="left_circle"></div>
-          <div class="central_circle"></div>
-          <div class="right_circle"></div>
-          <div class="line_right"></div>
-        </div>
-        <div class="block">
-          <h2>Philosophy</h2>
-          <p>I belive in ethic and moral not in imposed rules that you "have to" do or follow.</p>
-          <div class="philosophy_content">
-            <p>I believe life is made from different shades of grey, not from black and white. Furthermore, as a human being with rationality, I think it is our duty to take care of the world and treat others as one would like others to treat oneself. This way of perceiving reality affects my beliefs and my way of behaving. Summarizing on several points:</p>
-            <ul>
-              <li>Pragmatic</li>
-              <li>Honest</li>
-              <li>Respectful</li>
-              <li>Open-minded</li>
-              <li>Coherent</li>
+      </section>
+      <section id="knowledge">
+        <h2>Knowledge</h2>
+        <ul class="knowledge__groups">
+          <li class="knowledge__group"
+            ><small class="fa-solid fa-code"></small>Programming languages:
+            <ul class="knowledge__items">
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>PHP</li>
+              <li>Java</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Bash</li>
             </ul>
-            <div class="clear"></div>
-          </div>
-        </div>
-        <div class="horizontal_line">
-          <div class="line_left"></div>
-          <div class="left_circle"></div>
-          <div class="central_circle"></div>
-          <div class="right_circle"></div>
-          <div class="line_right"></div>
-        </div>
-        <div class="last block">
-          <h2>Interests & Hobbies</h2>
-          <p>I'm passionate about technology and human behavior, both determine almost all my interests and hobbies:</p>
-          <ul>
-            <li>Visiting new places</li>
-            <li>Meeting people</li>
-            <li>Having new experiences</li>
-            <li>Hiking and Biking</li>
-            <li>Web Developing</li>
-            <li>Computer Gamming</li>
-            <li>Manga and Anime</li>
-          </ul>
-        </div>
-      </div>
-      <div class="clear"></div>
-      <!-- FOOTER -->
-      <div id="footer">
-        <p class="footer_name">Javier Latorre CV 2015</p>
-      </div>
-		</div>
+          </li>
+          <li class="knowledge__group"
+            ><small class="fa-solid fa-puzzle-piece"></small>Frameworks:
+            <ul class="knowledge__items">
+              <li>Django</li>
+              <li>Express.js</li>
+              <li>Laravel</li>
+              <li>React.js</li>
+            </ul>
+          </li>
+          <li class="knowledge__group"
+            ><small class="fa-solid fa-database"></small>Databases:
+            <ul class="knowledge__items">
+              <li>MySQL</li>
+              <li>PostgreSQL</li>
+              <li>Oracle</li>
+            </ul>
+          </li>
+          <li class="knowledge__group"
+            ><small class="fa-solid fa-scroll"></small>Libraries:
+            <ul class="knowledge__items">
+              <li>htmx</li>
+              <li>Bootstrap</li>
+              <li>Tailwind</li>
+              <li>jQuery</li>
+            </ul>
+          </li>
+          <li class="knowledge__group"
+            ><small class="fa-solid fa-wrench"></small>Tools:
+            <ul class="knowledge__items">
+              <li>Git</li>
+              <li>Docker</li>
+              <li>Linux</li>
+              <li>SASS</li>
+              <li>Postman</li>
+              <li>Bruno</li>
+              <li>Trello</li>
+              <li>Jira</li>
+            </ul>
+          </li>
+          <li class="knowledge__group"
+            ><small class="fa-solid fa-book"></small>Methodologies and
+            workflows:
+            <ul class="knowledge__items">
+              <li>SCRUM</li>
+              <li>Git-flow</li>
+              <li>TDD</li>
+            </ul>
+          </li>
+          <li class="knowledge__group"
+            ><small class="fa-solid fa-language"></small>Languages:
+            <ul class="knowledge__items">
+              <li
+                ><a class="alt" href="https://www.efset.org/cert/5H5Mu3"
+                  >English (C2)</a
+                ></li
+              >
+              <li>Spanish (first language)</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <footer id="main-footer">
+        <h5>
+          Fonts used:
+          <a href="https://bboxtype.com/fira/" rel="nofollow" target="_blank"
+            >Fira Sans, Fira Mono</a
+          >
+          and
+          <a href="https://fontawesome.com/" rel="nofollow" target="_blank"
+            >FontAwesome</a
+          >. Source code of this document available
+          <a
+            href="https://gist.github.com/n1c0saurio/d777284f7ab3fcd34ffae88a47cb161c"
+            rel="alternate"
+            target="_blank"
+            >here</a
+          >.
+        </h5>
+      </footer>
+      <div class="divider"></div>
+    </div>
+  </body>
+</html>
