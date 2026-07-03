@@ -1,152 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My resume</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-</head>
+<link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
 
-<body>
-    <!-- main container -->
-    <div class="wrap">
-        <!-- side bar -->
-        <aside class="sideBar">
-            <!-- phofo -->
-            <img src="./img/photo.png" alt="My photo" class="foto">
-
-            <!--contacts container -->
-            <div class="contacts">
-                <div class="contacts__title bold">
-                    <h3>Contacts</h3>
-                </div>
-                <div class="contacts-tel">
-                    <span>C:</span> <a href="tel:380988667766">+38 098 866 77 66</a>
-                </div>
-                <div class="contacts-email">
-                    <span class="bold">E:</span> <a href="mailto:tychinavova@gmail.com">tychinavova@gmail.com</a>
-                </div>
-          
-
-
-            <!-- tech skills-->
-            <div class="techSkills">
-                <div class="techSkills__title bold">
-                    <h3>Tech Skills</h3>
-                </div>
-                <ul class="techSkills__list">
-                    <li>PHP</li>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>GIT</li>
-                    <li>GITLAB</li>
-                    <li>Packagist</li>
-                </ul>
-            </div>
-
-            <!-- soft skills -->
-            <div class="softSkills">
-                <div class="softSkills__title bold">
-                    <h3>Soft Skills</h3>
-                </div>
-                <ul class="softSkills__list">
-                    <li>Scrum</li>
-                    <li>Kanban</li>
-                    <li>Agile</li>
-                    <li>GTD</li>
-                    <li>Teamwork</li>
-                </ul>
-            </div>
-        </aside>
-
-        <!-- about me -->
-        <div class="about">
-            <!-- about me container-->
-            <div class="info__container">
-                <h2 class="profession bold">Junior PHP Developer</h2>
-                <h1 class="name bold">Volodymyr Tychyna</h1>
-                <p class="discription">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-                    lacus vel facilisis.</p>
-            </div>
-
-            <!-- project container -->
-            <div class="project">
-                <h3 class="project__title bold">Projects</h3>
-                <ol class="project__list">
-                    <li>
-                        <a href="https://github.com/TychinaV">https://github.com/TychinaV</a>
-                        <span class="dots">.........................</span>
-                        <span><b>[</b> PHP, HTML5, CSS <b>]</b></span>
-                    </li>
-                    <li>
-                        <a href="https://github.com/TimsVarakA">https://github.com/TimsVarakA</a>
-                        <span class="dots">....................</span>
-                        <span><b>[</b> HTML5, CSS, JavaScript <b>]</b></span>
-                    </li>
-                </ol>
-            </div>
-
-            <!-- work container -->
-            <div class="work">
-                <h3 class="work__title bold">Work Experience</h3>
-
-                <!-- conpany container -->
-                <div class="company__title">
-                    <h4 class="title__job bold">Junior PHP Developer <span class="bold">«Platezhy Online» Ltd</span></h4>
-                    <span class="period">September 2019 - up to now <span class="divider">|</span> Ukraine</span>
-                    <div class="company__list">
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.
-                            </li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Risus commodo viverra maecenas.</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- conpany container -->
-                <div class="company__title">
-                    <h4 class="title__job bold">Manager <span class="bold">Roga & Kopyta New</span></h4>
-                    <span class="period">March 2015 - October 2018 <span class="divider">|</span> Ukraine</span>
-                    <div class="company__list">
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod labore et dolore magna
-                                aliqua.
-                            </li>
-                            <li>Quis ipsum suspendisse ultrices gravida.</li>
-                            <li>Risus commodo viverra maecenas.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- conpany container -->
-                <div class="company__title">
-                    <h4 class="title__job bold">Manager <span class="bold">Roga & Kopyta LLC </span></h4>
-                    <span class="period">June 2014 - February 2015 <span class="divider">|</span> Ukraine</span>
-                    <div class="company__list">
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                            <li>Quis ipsum suspendisse ultrices gravida.</li>
-                            <li>Risus commodo viverra maecenas.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- education container -->
-            <div class="education">
-                <h2 class="education__title bold">Education</h2>
-            </div>
-            <div class="institution">
-                <h3 class="institution__title bold">Kharkiv National University of Radioelectronics</h3>
-                <h4 class="faculty bold">Management</h4>
-                <span class="period">Septermber 2009 - June 2014 <span class="divider">|</span> Ukraine</span>
-            </div>
+<!-- MAIN CONTAINER -->
+		<div id="main_container">
+      <!-- HEADER -->
+      <div id="header">
+        <!-- LOGOTYPE/NAME -->
+        <div class="header_logotype_container">
+          <h1 class="logotype_name">Dorsa  <span class="">Dolatkhah Ouchbolagh</span></h1>
+          <h2 class="logotype_occupation">Frontend Web Developer</h2>
         </div>
-    </div>
-</body>
-</html>
+        <!-- MAIN MENU -->
+        <div class="header_menu_container">
+          <ul class="download_print_buttons horizontal_list">
+            <li><a href="#"><span class="icon entypo-download"></span>Download CV</a></li>
+            <li><a href="#"><span class="icon entypo-print"></span>Print CV</a></li>
+          </ul>
+          <div class="clear"></div>
+          <ul class="header_menu horizontal_list">
+            <li><a class="no_border purple" href="#">Profile</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Work Experience</a></li>
+            <li><a href="#">Featured Projects</a></li>
+            <li><a href="#">Awards</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- LEFT COL -->
+      <div id="left_col">
+        <div class="profile_frame">
+          <div class="profile_picture"></div>
+          <!-- <img src="images/javier_latorre.jpg" alt="profile picture"> -->
+        </div>
+        <div class="hello_content">
+          <h2>Hello!</h2>
+          <p>I'm passionate about technology and human behavior, hardworker and a fast-learner with experience in around 10 different countries studying, working and volunteering.</p>
+        </div>
+        <div class="contact_details_content">
+          <h2>Contact details</h2>
+          <p class="purple">Phone:</p>
+          <p>+34 123 456 789</p>
+          <p class="purple">Email:</p>
+          <p>jlalovi@gmail.com</p>
+          <p class="purple">Adress:</p>
+          <p>Someplace, 5</p>
+          <p>Jaén, Spain</p>
+          <p>23001</p>
+        </div>
+        <a href="mailto:jlalovi@gmail.com" class="send_message_button">
+          <span class="cut1"></span>
+          <span class="cut2"></span>
+          <span class="content">Send me a message <span class="fontawesome-double-angle-right"></span></span>
+        </a>
+        <div class="get_social_content">
+          <h2>Get social</h2>
+          <ul class="social_icons horizontal_list">
+            <li><a class="facebook" href="https://www.facebook.com/jlalovi"><span class="entypo-facebook-circled"></span><span class="invisible">Facebook</span></a></li>
+            <li><a class="twitter" href="https://twitter.com/jlalovi"><span class="entypo-twitter-circled"></span><span class="invisible">Twitter</span></a></li>
+            <li><a class="linkedin" href="https://www.linkedin.com/in/jlalovi/en"><span class="entypo-linkedin-circled"></span><span class="invisible">LinkedIn</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- PROFILE CONTENT -->
+      <div id="content_container">				
+        <div class="block">
+          <h1>Profile</h1>
+          <blockquote class="profile_quote">
+            <p>"There is no end to education. It is not that you read a book, pass an examination, and finish with education. The whole of life, from the moment you are born to the moment you die, is a process of learning."</p>
+            <p>Jiddu Krishnamurti.</p>
+            <span class="entypo-quote"></span>
+          </blockquote>
+        </div>
+        <div class="block">
+          <h2>A few words about me</h2>
+          <p>Until now, in my life, I change from active moments with a lot of variety, challenges and improvisations, to moments of tranquility and stability, being difficult to stay in a place during a long time. I consider myself a tolerant and respectful person with open mind and quite honest. I really like to listen people stories and backgrounds and their different experiences around the world.</p>				
+        </div>
+        <div class="horizontal_line">
+          <div class="line_left"></div>
+          <div class="left_circle"></div>
+          <div class="central_circle"></div>
+          <div class="right_circle"></div>
+          <div class="line_right"></div>
+        </div>
+        <div class="block">
+          <h2>Philosophy</h2>
+          <p>I belive in ethic and moral not in imposed rules that you "have to" do or follow.</p>
+          <div class="philosophy_content">
+            <p>I believe life is made from different shades of grey, not from black and white. Furthermore, as a human being with rationality, I think it is our duty to take care of the world and treat others as one would like others to treat oneself. This way of perceiving reality affects my beliefs and my way of behaving. Summarizing on several points:</p>
+            <ul>
+              <li>Pragmatic</li>
+              <li>Honest</li>
+              <li>Respectful</li>
+              <li>Open-minded</li>
+              <li>Coherent</li>
+            </ul>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="horizontal_line">
+          <div class="line_left"></div>
+          <div class="left_circle"></div>
+          <div class="central_circle"></div>
+          <div class="right_circle"></div>
+          <div class="line_right"></div>
+        </div>
+        <div class="last block">
+          <h2>Interests & Hobbies</h2>
+          <p>I'm passionate about technology and human behavior, both determine almost all my interests and hobbies:</p>
+          <ul>
+            <li>Visiting new places</li>
+            <li>Meeting people</li>
+            <li>Having new experiences</li>
+            <li>Hiking and Biking</li>
+            <li>Web Developing</li>
+            <li>Computer Gamming</li>
+            <li>Manga and Anime</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <!-- FOOTER -->
+      <div id="footer">
+        <p class="footer_name">Javier Latorre CV 2015</p>
+      </div>
+		</div>
