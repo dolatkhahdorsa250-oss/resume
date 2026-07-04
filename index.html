@@ -180,8 +180,8 @@
         background-color: var(--secondary--dimmed);
         border-radius: 0 var(--spacing) var(--spacing);
         /* negative margin for optical alignment */
-        margin-left: var(--spacing) calc(var(--spacing--xs) * -1);
-        margin-right: var(--spacing) calc(var(--spacing--xs) * -1);
+        margin-left: var() calc(var(--spacing--xs) * -1);
+        margin-right: var() calc(var(--spacing--xs) * -1);
         margin-top: var(--spacing);
         padding: var(--spacing);
       }
@@ -196,13 +196,13 @@
         display: inline-block;
         font-size: 0.9rem;
         font-weight: 500;
-        margin-bottom: var(--spacing--s);
+        margin-bottom: var(--spacing--xxs);
         margin-left: calc(
           var(--spacing--xxs) * -1
         ); /* negative margin for optical alignment */
         margin-right: var(--spacing--xs);
         margin-top: 0;
-        padding: var(--spacing--xs) var(--spacing--s);
+        padding: var(--spacing--10) var(--spacing--s);
       }
 
       .divider {
@@ -302,19 +302,19 @@
         font-weight: 900;
         margin-right: -0.5rem; /* negative margin equals to character width */
         position: relative;
-        right: var(--spacing); /* same spacing used in the parent ul element */
+        right: var(--spacing--); /* same spacing used in the parent ul element */
       }
 
       /* Experience styles */
 
-      #experience {
-        grid-area: experience;
+      #ResearchesandProjects {
+        grid-area: Researches and projects;
       }
 
       /* Studies styles */
 
-      #studies {
-        grid-area: studies;
+      #Education {
+        grid-area:Education;
       }
 
       /* knowledge styles */
@@ -395,7 +395,7 @@
           "studies"
           "knowledge"
           "mainFooter";
-        row-gap: var(--spacing--xl);
+        row-gap: var(--spacing--x1);
       }
 
       #contact {
@@ -409,7 +409,7 @@
 
       @media screen and (min-width: 576px) {
         body {
-          padding: var(--spacing--xl) var(--spacing--l) var(--spacing);
+          padding: var(--spacing--xl) var(--spacing--2) var(--spacing);
         }
       }
 
