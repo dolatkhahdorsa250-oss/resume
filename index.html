@@ -43,13 +43,13 @@
 
         /* colors */
         --primary: hsl(49, 85%, 3%);
-        --primary--dimmed: hsl(225, 71%, 43%);
-        --primary--light: hsl(126, 68%, 28%);
-        --primary--lighter: hsl(146, 69%, 33%);
-        --secondary: hsl(187, 57%, 43%);
-        --secondary--dimmed: hsla(202, 80%, 43%, 0.5);
-        --secondary--lighter: hsla(186, 46%, 43%, 0.2);
-        --background: rgb(236, 236, 236);
+        --primary--dimmed: hsl(225, 29%, 27%);
+        --primary--light: hsl(205, 86%, 48%);
+        --primary--lighter: hsl(316, 30%, 56%);
+        --secondary: hsl(191, 85%, 56%);
+        --secondary--dimmed: hsla(175, 27%, 39%, 0.562);
+        --secondary--lighter: hsla(188, 91%, 49%, 0.25);
+        --background: rgb(231, 244, 245);
 
         /* gradients */
         --gradient-underline: linear-gradient(
@@ -69,8 +69,8 @@
           --primary--dimmed: hsl(225, 70%, 39%);
           --primary--light: hsl(224, 14%, 56%);
           --primary--lighter: hsl(224, 14%, 32%);
-          --secondary: hsl(208, 100%, 40%);
-          --secondary--dimmed: hsla(208, 100%, 40%, 0.5);
+          --secondary: hsl(122, 100%, 40%);
+          --secondary--dimmed: hsla(60, 49%, 25%, 0.5);
           --secondary--lighter: hsla(208, 100%, 40%, 0.2);
           --background: hsl(208, 14%, 16%);
 
@@ -123,7 +123,7 @@
 
       h3 {
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 600;
       }
 
       p {
@@ -159,7 +159,7 @@
       code {
         font-family: Fira mono, Courier, monospace;
         font-size: 0.9rem;
-        background-color: var(--primary--lighter);
+        background-color: var();
         padding: 0 var(--spacing--xxs);
       }
 
@@ -176,13 +176,22 @@
         margin-top: var(--spacing);
         padding: var(--spacing);
       }
-
+      .balloon1 {
+        background-color: var(--secondary--dimmed);
+        border-radius: 0 var(--spacing) var(--spacing);
+        /* negative margin for optical alignment */
+        margin-left: var(--spacing) calc(var(--spacing--xs) * -1);
+        margin-right: var(--spacing) calc(var(--spacing--xs) * -1);
+        margin-top: var(--spacing);
+        padding: var(--spacing);
+      }
       .balloon h3 {
         margin-bottom: var(--spacing--s);
+        
       }
 
       .balloon__badge {
-        background-color: var(--secondary--dimmed);
+        background-color: var(--primary--lighter);
         border-radius: var(--spacing--xs);
         display: inline-block;
         font-size: 0.9rem;
@@ -213,9 +222,9 @@
 
       #main-head__name {
         font-size: 3.6rem;
-        font-weight: 900;
+        font-weight: 700;
         letter-spacing: 2px;
-        line-height: 0.96;
+        line-height: 1;
         margin-bottom: var(--spacing--m);
         /* negative margin for optical alignment */
         margin-left: calc(var(--spacing--xxs) * -1);
@@ -479,7 +488,7 @@
 
         body,
         a {
-          color: rgb(32, 153, 101);
+          color: rgb(60, 153, 32);
         }
 
         #container {
@@ -510,7 +519,7 @@
     <div id="container">
       <header id="main-head">
         <h1 id="main-head__name">Dorsa Dolatkhah Ouchbolagh</h1>
-        <p id="main-head__profession">Polymer Engineer</p>
+        <p id="main-head__profession">Polymer Engineering student,University of Tehran, Department of chemical Engneering, School of Polymer Engineering</p>
       </header>
       <address id="contact">
         <ul class="contact__list">
@@ -546,21 +555,16 @@
               ><span class="contact__link-text">/n1c0saurio</span>
             </a>
           </li>
-          <li>
-            <a
-              href="https://hub.docker.com/u/n1c0saurio"
-              rel="author"
-              target="_blank"
-            >
-              <span class="fa-brands fa-docker"></span
-              ><span class="contact__link-text">u/n1c0saurio</span>
-            </a>
-          </li>
+          
           <li>
             <span class="fa-solid fa-location-dot"></span>Tehran, Iran
           </li>
         </ul>
       </address>
+      <section></section>
+      </section>
+      <section>
+      
       <article id="about">
         <h2>About me</h2>
         <p>
@@ -620,56 +624,9 @@
           >
         </ul>
       </article>
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="balloon">
-          <h3>Desarrollador Django</h3>
-          <h4 class="balloon__badge"
-            ><span class="fa-solid fa-location-dot"></span>&ensp;SyzLab</h4
-          >
-          <h4 class="balloon__badge">
-            <span class="fa-regular fa-calendar-days"></span>&ensp;04/2024
-            <small class="fa-solid fa-arrow-right"></small> Now
-          </h4>
-          <p>
-            <em>
-              Backend development in Django (Python), frontend development using
-              htmx and Docker for development environment.
-            </em>
-          </p>
-        </div>
-        <div class="balloon">
-          <h3>Web Developer Junior</h3>
-          <h4 class="balloon__badge"
-            ><span class="fa-solid fa-location-dot"></span>&ensp;EvaDev</h4
-          >
-          <h4 class="balloon__badge">
-            <span class="fa-regular fa-calendar-days"></span>&ensp;11/2021
-            <small class="fa-solid fa-arrow-right"></small> 06/2023
-          </h4>
-          <p>
-            <em>
-              Development, QA, maintenance and end-user training of e-commerce
-              sites based on Wordpress.
-            </em>
-          </p>
-        </div>
-        <div class="balloon">
-          <h3>Graphic designer Freelance</h3>
-          <h4 class="balloon__badge">
-            <span class="fa-regular fa-calendar-days"></span>&ensp;2013
-            <small class="fa-solid fa-arrow-right"></small> 2017
-          </h4>
-          <p
-            ><em
-              >Branding, posters, flyers, digital illustration, social media
-              content, packaging and static website design.</em
-            ></p
-          >
-        </div>
-      </section>
-      <section id="studies">
-        <h2>Studies</h2>
+    </section>
+  </article> <setion id="Education">
+        <h2>Education</h2>
         <div class="balloon">
           <h3>
             <span class="balloon__header-title">Master's in Polymer Engineer, Processing</span>
@@ -703,8 +660,94 @@
           </h4>
           <p>
             <em
-              >Editorial and poster design; packaging; illustration; photography
-              and audiovisual communication.</em
+              > Bachelor's thesis: bio-based phase change materials </em
+            >
+          </p>
+        </div>
+       
+      <section id="experience">
+        <h2>Researches and Projects</h2>
+        <div class="balloon1">
+          <h3>Desarrollador Django</h3>
+          <h4 class="balloon__badge"
+            ><span class="fa-solid fa-location-dot"></span>&ensp;SyzLab</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;04/2024
+            <small class="fa-solid fa-arrow-right"></small> Now
+          </h4>
+          <p>
+            <em>
+              Backend development in Django (Python), frontend development using
+              htmx and Docker for development environment.
+            </em>
+          </p>
+        </div>
+        <div class="balloon1">
+          <h3>Web Developer Junior</h3>
+          <h4 class="balloon__badge"
+            ><span class="fa-solid fa-location-dot"></span>&ensp;EvaDev</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;11/2021
+            <small class="fa-solid fa-arrow-right"></small> 06/2023
+          </h4>
+          <p>
+            <em>
+              Development, QA, maintenance and end-user training of e-commerce
+              sites based on Wordpress.
+            </em>
+          </p>
+        </div>
+        <div class="balloon1">
+          <h3>Graphic designer Freelance</h3>
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;2013
+            <small class="fa-solid fa-arrow-right"></small> 2017
+          </h4>
+          <p
+            ><em
+              >Branding, posters, flyers, digital illustration, social media
+              content, packaging and static website design.</em
+            ></p
+          >
+        </div>
+      </article> <setion id="Awards and Honors">
+        <h2>Awards and Honors</h2>
+        <div class="balloon">
+          <h3>
+            <span class="balloon__header-title">Master's in Polymer Engineer, Processing</span>
+          </h3>
+          <h4 class="balloon__badge"
+            ><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;2026
+            <small class="fa-solid fa-arrow-right"></small> ongoing
+          </h4>
+          <p>
+            <em
+              >Basic fundamentals (OOP, MVC); documentation (SRS, UML); database
+              modelling, querying and PL-SQL; QA.</em
+            >
+          </p>
+        </div>
+        <div class="balloon">
+          <h3>
+            <span class="balloon__header-title"
+              >B.sc in Polymer Engineering</span
+            >
+          </h3>
+          <h4 class="balloon__badge"
+            ><spam class="fa-solid fa-location-dot"></spam>&ensp;University of Tehran</h4
+          >
+          <h4 class="balloon__badge">
+            <span class="fa-regular fa-calendar-days"></span>&ensp;2022
+            <small class="fa-solid fa-arrow-right"></small> 2026
+          </h4>
+          <p>
+            <em
+              > Bachelor's thesis: bio-based phase change materials </em
             >
           </p>
         </div>
@@ -713,15 +756,12 @@
         <h2>Knowledge</h2>
         <ul class="knowledge__groups">
           <li class="knowledge__group"
-            ><small class="fa-solid fa-code"></small>Programming languages:
+            ><small class="fa-solid fa-code"></small>Software skills:
             <ul class="knowledge__items">
               <li>Python</li>
-              <li>JavaScript</li>
-              <li>PHP</li>
-              <li>Java</li>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>Bash</li>
+              <li>Matlab</li>
+              <li>Aspen</li>
+              
             </ul>
           </li>
           <li class="knowledge__group"
@@ -780,7 +820,7 @@
                   >English (C2)</a
                 ></li
               >
-              <li>Spanish (first language)</li>
+              <li>Farsi(Native)</li>
             </ul>
           </li>
         </ul>
