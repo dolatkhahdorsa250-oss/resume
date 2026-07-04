@@ -18,7 +18,7 @@
     <!-- Styling -->
     <style>
         /*
-         * Variables
+         * Lively Color Variables
          */
         :root {
             /* spaces */
@@ -30,30 +30,29 @@
             --spacing--l: 2.24rem;
             --spacing--xl: 3.24rem;
 
-            /* colors */
+            /* core palette */
             --primary: hsl(49, 85%, 3%);
             --primary--dimmed: hsl(225, 29%, 27%);
             --primary--light: hsl(205, 86%, 48%);
             --primary--lighter: hsl(316, 30%, 56%);
-            --secondary: hsl(212, 75%, 58%);
+            --secondary: hsl(212, 75%, 58%);      /* blue accent (name shadow, links) */
             --secondary--dimmed: hsla(175, 27%, 39%, 0.562);
             --secondary--lighter: hsla(188, 91%, 49%, 0.25);
             --background: rgb(231, 244, 245);
 
-            /* section accent colors */
-            --color-awards-bg: hsl(280, 30%, 85%);
-            --color-experience-bg: hsl(90, 30%, 85%);
+            /* bright section-specific backgrounds */
+            --card-education-bg: hsl(50, 90%, 85%);    /* sunny yellow */
+            --card-research-bg: hsl(195, 80%, 85%);    /* sky blue */
+            --card-awards-bg: hsl(340, 80%, 88%);      /* rosy pink */
+            --card-experience-bg: hsl(150, 70%, 85%);  /* fresh mint */
 
             /* gradients */
-            --gradient-underline: linear-gradient(transparent 80%,
-                    var(--secondary) 80%);
-            --gradient-highlight: linear-gradient(transparent 30%,
-                    var(--secondary) 30%);
+            --gradient-underline: linear-gradient(transparent 80%, var(--secondary) 80%);
+            --gradient-highlight: linear-gradient(transparent 30%, var(--secondary) 30%);
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                /* colors */
                 --primary: rgb(27, 79, 139);
                 --primary--dimmed: hsl(225, 70%, 39%);
                 --primary--light: hsl(224, 14%, 56%);
@@ -64,12 +63,12 @@
                 --background: hsl(208, 14%, 16%);
 
                 /* dark mode accent backgrounds */
-                --color-awards-bg: hsl(280, 15%, 25%);
-                --color-experience-bg: hsl(90, 15%, 25%);
+                --card-education-bg: hsl(50, 25%, 28%);
+                --card-research-bg: hsl(195, 22%, 28%);
+                --card-awards-bg: hsl(340, 22%, 28%);
+                --card-experience-bg: hsl(150, 20%, 28%);
 
-                /* gradients */
-                --gradient-highlight--dimmed: linear-gradient(transparent 30%,
-                        var(--secondary--dimmed) 30%);
+                --gradient-highlight--dimmed: linear-gradient(transparent 30%, var(--secondary--dimmed) 30%);
             }
 
             #main-footer a:hover,
@@ -135,7 +134,6 @@
             background: var(--gradient-highlight);
         }
 
-        /* Links on elements with primary background */
         a.alt {
             background: transparent;
             text-decoration: underline;
@@ -154,18 +152,9 @@
         }
 
         /*
-         * Custom elements styles
+         * Card components
          */
-        .balloon {
-            background-color: var(--secondary--lighter);
-            border-radius: 0 var(--spacing) var(--spacing);
-            margin-left: calc(var(--spacing--xs) * -1);
-            margin-right: calc(var(--spacing--xs) * -1);
-            margin-top: var(--spacing);
-            padding: var(--spacing);
-        }
-        .balloon1 {
-            background-color: var(--secondary--dimmed);
+        .card {
             border-radius: 0 var(--spacing) var(--spacing);
             margin-left: calc(var(--spacing--xs) * -1);
             margin-right: calc(var(--spacing--xs) * -1);
@@ -173,11 +162,27 @@
             padding: var(--spacing);
         }
 
-        .balloon h3 {
+        .card h3 {
             margin-bottom: var(--spacing--s);
         }
 
-        .balloon__badge {
+        .card--education {
+            background-color: var(--card-education-bg);
+        }
+
+        .card--research {
+            background-color: var(--card-research-bg);
+        }
+
+        .card--awards {
+            background-color: var(--card-awards-bg);
+        }
+
+        .card--experience {
+            background-color: var(--card-experience-bg);
+        }
+
+        .badge {
             background-color: var(--primary--lighter);
             border-radius: var(--spacing--xs);
             display: inline-block;
@@ -190,40 +195,14 @@
             padding: var(--spacing--xxs) var(--spacing--s);
         }
 
-        /* Alternative balloon styles for distinct sections */
-        .balloon--awards {
-            background-color: var(--color-awards-bg);
-            border-radius: 0 var(--spacing) var(--spacing);
-            margin-left: calc(var(--spacing--xs) * -1);
-            margin-right: calc(var(--spacing--xs) * -1);
-            margin-top: var(--spacing);
-            padding: var(--spacing);
-        }
-
-        .balloon--experience {
-            background-color: var(--color-experience-bg);
-            border-radius: 0 var(--spacing) var(--spacing);
-            margin-left: calc(var(--spacing--xs) * -1);
-            margin-right: calc(var(--spacing--xs) * -1);
-            margin-top: var(--spacing);
-            padding: var(--spacing);
-        }
-
-        .balloon--awards h3,
-        .balloon--experience h3 {
-            margin-bottom: var(--spacing--s);
-        }
-
         .divider {
             grid-area: divider;
             border-top: 1px solid var(--primary);
         }
 
         /*
-         * Section styles
+         * Header styles (blue-themed name, no photo)
          */
-
-        /* Header styles */
         #main-head {
             grid-area: mainHead;
         }
@@ -308,29 +287,14 @@
             right: var(--spacing);
         }
 
-        /* Research, Awards, Experience grid areas */
-        #research {
-            grid-area: research;
-        }
+        /* Grid areas */
+        #research { grid-area: research; }
+        #awards { grid-area: awards; }
+        #experience { grid-area: experience; }
+        #studies { grid-area: studies; }
+        #knowledge { grid-area: knowledge; }
 
-        #awards {
-            grid-area: awards;
-        }
-
-        #experience {
-            grid-area: experience;
-        }
-
-        /* Education styles */
-        #studies {
-            grid-area: studies;
-        }
-
-        /* Knowledge styles */
-        #knowledge {
-            grid-area: knowledge;
-        }
-
+        /* Knowledge section */
         #knowledge ul {
             padding-left: 0;
             list-style: none;
@@ -359,7 +323,7 @@
             padding: var(--spacing--xxs) var(--spacing--xs);
         }
 
-        /* Footer styles */
+        /* Footer */
         #main-footer {
             grid-area: mainFooter;
         }
@@ -383,7 +347,7 @@
         }
 
         /*
-         *  Extra small layout (default)
+         * Responsive grid
          */
         body {
             margin: 0;
@@ -411,18 +375,12 @@
             display: flex;
         }
 
-        /*
-         * Small layout
-         */
         @media screen and (min-width: 576px) {
             body {
                 padding: var(--spacing--xl) var(--spacing--l) var(--spacing);
             }
         }
 
-        /*
-         * Medium layout
-         */
         @media screen and (min-width: 768px) {
             #container {
                 column-gap: var(--spacing--m);
@@ -443,9 +401,6 @@
             }
         }
 
-        /*
-         * Large layout
-         */
         @media screen and (min-width: 992px) {
             #container {
                 grid-template-areas:
@@ -460,9 +415,6 @@
             }
         }
 
-        /*
-         * Extra large layout
-         */
         @media screen and (min-width: 1280px) {
             #container {
                 column-gap: var(--spacing--l);
@@ -481,24 +433,10 @@
             }
         }
 
-        /*
-         * Printing layout
-         */
         @media print {
-            :root {
-                font-size: 11px;
-            }
-
-            @page {
-                margin: 1rem 3rem;
-                size: A4;
-            }
-
-            body,
-            a {
-                color: rgb(60, 153, 32);
-            }
-
+            :root { font-size: 11px; }
+            @page { margin: 1rem 3rem; size: A4; }
+            body, a { color: rgb(60, 153, 32); }
             #container {
                 gap: var(--spacing--l);
                 grid-template-areas:
@@ -514,7 +452,6 @@
                 grid-template-rows: auto auto auto auto auto auto 1fr;
                 height: 100vh;
             }
-
             #main-footer {
                 align-items: end;
                 display: flex;
@@ -525,7 +462,7 @@
 </head>
 <body>
     <div id="container">
-        <!-- Header -->
+        <!-- Header (blue name, no photo) -->
         <header id="main-head">
             <h1 id="main-head__name">Dorsa Dolatkhah Ouchbolagh</h1>
             <p id="main-head__profession">
@@ -567,10 +504,9 @@
             </ul>
         </address>
 
-        <!-- Divider -->
         <div class="divider"></div>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="about">
             <h2>About me</h2>
             <p>
@@ -582,187 +518,82 @@
                 University of Tehran. Key research interests include:
             </p>
             <ul>
-                <li>
-                    <strong>Bio-based phase change materials</strong> for thermal energy storage applications.
-                </li>
-                <li>
-                    <strong>Polymer processing and rheology</strong>, including extrusion and injection molding.
-                </li>
-                <li>
-                    <strong>Computational modeling</strong> of polymer systems using MATLAB and Python.
-                </li>
-                <li>
-                    <strong>Sustainable polymers</strong> and biodegradable material development.
-                </li>
+                <li><strong>Bio-based phase change materials</strong> for thermal energy storage applications.</li>
+                <li><strong>Polymer processing and rheology</strong>, including extrusion and injection molding.</li>
+                <li><strong>Computational modeling</strong> of polymer systems using MATLAB and Python.</li>
+                <li><strong>Sustainable polymers</strong> and biodegradable material development.</li>
             </ul>
         </section>
 
-        <!-- Education Section (first) -->
+        <!-- Education (yellow card) -->
         <section id="studies">
             <h2>Education</h2>
-            <div class="balloon">
-                <h3>
-                    <span class="balloon__header-title">M.Sc. in Polymer Engineering – Processing</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;2026
-                    <small class="fa-solid fa-arrow-right"></small> Ongoing
-                </h4>
-                <p>
-                    <em>
-                        Advanced polymer processing, rheology of complex fluids, polymer blend and composite
-                        technology, advanced characterization methods, and computational fluid dynamics (CFD)
-                        applied to polymer processing.
-                    </em>
-                </p>
+            <div class="card card--education">
+                <h3>M.Sc. in Polymer Engineering – Processing</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2026 <small class="fa-solid fa-arrow-right"></small> Ongoing</h4>
+                <p><em>Advanced polymer processing, rheology of complex fluids, polymer blend and composite technology, advanced characterization methods, and CFD applied to polymer processing.</em></p>
             </div>
-            <div class="balloon">
-                <h3>
-                    <span class="balloon__header-title">B.Sc. in Polymer Engineering</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;2022
-                    <small class="fa-solid fa-arrow-right"></small> 2026
-                </h4>
-                <p>
-                    <em>
-                        <strong>Bachelor's Thesis:</strong> Bio-based phase change materials – synthesis,
-                        characterization, and thermal performance evaluation for energy storage applications.
-                    </em>
-                </p>
+            <div class="card card--education">
+                <h3>B.Sc. in Polymer Engineering</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2022 <small class="fa-solid fa-arrow-right"></small> 2026</h4>
+                <p><em><strong>Bachelor's Thesis:</strong> Bio-based phase change materials – synthesis, characterization, and thermal performance evaluation for energy storage applications.</em></p>
             </div>
         </section>
 
-        <!-- Research & Projects Section (second) -->
+        <!-- Research & Projects (sky blue card) -->
         <section id="research">
             <h2>Research &amp; Projects</h2>
-            <div class="balloon1">
-                <h3>
-                    <span class="balloon__header-title">Bio-based Phase Change Materials</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;B.Sc. Thesis – University of Tehran
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;2025
-                    <small class="fa-solid fa-arrow-right"></small> 2026
-                </h4>
-                <p>
-                    <em>
-                        Investigated bio-based phase change materials (PCMs) for thermal energy storage.
-                        Conducted thermal and structural characterization using DSC, TGA, and FTIR analysis.
-                        Evaluated encapsulation methods and thermal cycling stability of the developed PCMs.
-                    </em>
-                </p>
+            <div class="card card--research">
+                <h3>Bio-based Phase Change Materials</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;B.Sc. Thesis – University of Tehran</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2025 <small class="fa-solid fa-arrow-right"></small> 2026</h4>
+                <p><em>Investigated bio-based phase change materials (PCMs) for thermal energy storage. Conducted thermal and structural characterization using DSC, TGA, and FTIR analysis. Evaluated encapsulation methods and thermal cycling stability of the developed PCMs.</em></p>
             </div>
-            <div class="balloon1">
-                <h3>
-                    <span class="balloon__header-title">Polymer Processing Laboratory Research</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;School of Polymer Engineering, University of Tehran
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;2024
-                    <small class="fa-solid fa-arrow-right"></small> 2025
-                </h4>
-                <p>
-                    <em>
-                        Hands-on experience with twin-screw extrusion and injection molding of thermoplastic
-                        polymers. Performed rheological characterization (capillary and rotational rheometry)
-                        and analyzed polymer melt behavior under various processing conditions.
-                    </em>
-                </p>
+            <div class="card card--research">
+                <h3>Polymer Processing Laboratory Research</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;School of Polymer Engineering, University of Tehran</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2024 <small class="fa-solid fa-arrow-right"></small> 2025</h4>
+                <p><em>Hands-on experience with twin-screw extrusion and injection molding of thermoplastic polymers. Performed rheological characterization (capillary and rotational rheometry) and analyzed polymer melt behavior under various processing conditions.</em></p>
             </div>
-            <div class="balloon1">
-                <h3>
-                    <span class="balloon__header-title">Computational Polymer Modeling</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;2024
-                    <small class="fa-solid fa-arrow-right"></small> 2025
-                </h4>
-                <p>
-                    <em>
-                        Developed MATLAB scripts for modeling crystallization kinetics of semi-crystalline
-                        polymers. Utilized Python for data analysis and visualization of thermal characterization
-                        results. Simulated heat transfer in PCM-based thermal storage systems.
-                    </em>
-                </p>
+            <div class="card card--research">
+                <h3>Computational Polymer Modeling</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2024 <small class="fa-solid fa-arrow-right"></small> 2025</h4>
+                <p><em>Developed MATLAB scripts for modeling crystallization kinetics of semi-crystalline polymers. Utilized Python for data analysis and visualization of thermal characterization results. Simulated heat transfer in PCM-based thermal storage systems.</em></p>
             </div>
         </section>
 
-        <!-- Awards & Honors Section (third, different color) -->
+        <!-- Awards & Honors (pink card) -->
         <section id="awards">
             <h2>Awards &amp; Honors</h2>
-            <div class="balloon--awards">
-                <h3>
-                    <span class="balloon__header-title">First in Class</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;2022 – 2026
-                </h4>
-                <p>
-                    <em>
-                        Graduated first in the class of 2026 in Polymer Engineering (B.Sc.), achieving the highest
-                        GPA among all graduating students in the program.
-                    </em>
-                </p>
+            <div class="card card--awards">
+                <h3>First in Class</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2022 – 2026</h4>
+                <p><em>Graduated first in the class of 2026 in Polymer Engineering (B.Sc.), achieving the highest GPA among all graduating students in the program.</em></p>
             </div>
         </section>
 
-        <!-- Experiences Section (fourth, different color) -->
+        <!-- Experiences (mint green card) -->
         <section id="experience">
             <h2>Experiences</h2>
-            <div class="balloon--experience">
-                <h3>
-                    <span class="balloon__header-title">Internship – Rubber Processing</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;XYZ Rubber Company
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;Summer 2025
-                </h4>
-                <p>
-                    <em>
-                        Assisted in rubber compounding, curing characterization, and quality control testing.
-                        Gained hands-on experience with internal mixers, two-roll mills, and rheometers.
-                    </em>
-                </p>
+            <div class="card card--experience">
+                <h3>Internship – Rubber Processing</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;XYZ Rubber Company</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;Summer 2025</h4>
+                <p><em>Assisted in rubber compounding, curing characterization, and quality control testing. Gained hands-on experience with internal mixers, two-roll mills, and rheometers.</em></p>
             </div>
-            <div class="balloon--experience">
-                <h3>
-                    <span class="balloon__header-title">Teacher Assistantship</span>
-                </h3>
-                <h4 class="balloon__badge">
-                    <span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran – Polymer Engineering Department
-                </h4>
-                <h4 class="balloon__badge">
-                    <span class="fa-regular fa-calendar-days"></span>&ensp;2025 – 2026
-                </h4>
-                <p>
-                    <em>
-                        Served as a teaching assistant for "Polymer Physics" and "Rheology" courses. Led tutorial
-                        sessions, graded assignments, and assisted students in laboratory experiments.
-                    </em>
-                </p>
+            <div class="card card--experience">
+                <h3>Teacher Assistantship</h3>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran – Polymer Engineering Department</h4>
+                <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2025 – 2026</h4>
+                <p><em>Served as a teaching assistant for "Polymer Physics" and "Rheology" courses. Led tutorial sessions, graded assignments, and assisted students in laboratory experiments.</em></p>
             </div>
         </section>
 
-        <!-- Knowledge Section -->
+        <!-- Knowledge -->
         <section id="knowledge">
             <h2>Knowledge</h2>
             <ul class="knowledge__groups">
@@ -808,9 +639,7 @@
                 <li class="knowledge__group">
                     <small class="fa-solid fa-language"></small>Languages:
                     <ul class="knowledge__items">
-                        <li>
-                            <a class="alt" href="https://www.efset.org/cert/5H5Mu3">English (C2)</a>
-                        </li>
+                        <li><a class="alt" href="https://www.efset.org/cert/5H5Mu3">English (C2)</a></li>
                         <li>Farsi (Native)</li>
                     </ul>
                 </li>
@@ -825,8 +654,7 @@
                 and
                 <a href="https://fontawesome.com/" rel="nofollow" target="_blank">FontAwesome</a>.
                 Source code of this document available
-                <a href="https://gist.github.com/n1c0saurio/d777284f7ab3fcd34ffae88a47cb161c" rel="alternate"
-                target="_blank">here</a>.
+                <a href="https://gist.github.com/n1c0saurio/d777284f7ab3fcd34ffae88a47cb161c" rel="alternate" target="_blank">here</a>.
             </h5>
         </footer>
     </div>
