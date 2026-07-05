@@ -7,7 +7,6 @@
     <meta name="keywords"
     content="Polymer Engineering, Biomaterials, Phase Change Materials, Polymer Processing, DSC, TGA, FTIR, MATLAB, Python, Aspen Plus" />
     <title>Dorsa Dolatkhah Ouchbolagh – Resume</title>
-    <!-- Resources -->
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/16579247" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +15,7 @@
     rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
     <style>
-        /* ===== Lively Color Variables ===== */
+        /* ===== BRIGHT & LIVELY COLOR VARIABLES ===== */
         :root {
             --spacing--xxs: 0.16rem;
             --spacing--xs: 0.32rem;
@@ -26,19 +25,22 @@
             --spacing--l: 2.24rem;
             --spacing--xl: 3.24rem;
 
-            --primary: hsl(49, 85%, 3%);
-            --primary--dimmed: hsl(225, 29%, 27%);
-            --primary--light: hsl(205, 86%, 48%);
-            --primary--lighter: hsl(316, 30%, 56%);
-            --secondary: hsl(212, 75%, 58%);
-            --secondary--dimmed: hsla(175, 27%, 39%, 0.562);
-            --secondary--lighter: hsla(188, 91%, 49%, 0.25);
-            --background: rgb(231, 244, 245);
+            /* Primary text & accents */
+            --primary: #1a1a2e;
+            --primary--dimmed: #2d3a5c;
+            --primary--light: #4a6fa5;
+            --primary--lighter: #f0a6ca;       /* badge base */
+            --secondary: #ff6b6b;              /* coral accent for links & highlights */
+            --background: #fefeff;
 
-            --card-education-bg: hsl(50, 90%, 85%);
-            --card-research-bg: hsl(195, 80%, 85%);
-            --card-awards-bg: hsl(340, 80%, 88%);
-            --card-experience-bg: hsl(150, 70%, 85%);
+            /* Blue theme for name */
+            --name-shadow-color: #00a6fb;
+
+            /* Section card colors (lively) */
+            --card-education-bg: hsl(50, 90%, 85%);     /* sunny yellow */
+            --card-research-bg: hsl(195, 80%, 85%);     /* sky blue */
+            --card-awards-bg: hsl(340, 80%, 88%);       /* rosy pink */
+            --card-experience-bg: hsl(150, 70%, 85%);   /* fresh mint */
 
             --gradient-underline: linear-gradient(transparent 80%, var(--secondary) 80%);
             --gradient-highlight: linear-gradient(transparent 30%, var(--secondary) 30%);
@@ -46,21 +48,19 @@
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --primary: rgb(27, 79, 139);
-                --primary--dimmed: hsl(225, 70%, 39%);
-                --primary--light: hsl(224, 14%, 56%);
-                --primary--lighter: hsl(224, 14%, 32%);
-                --secondary: hsl(202, 40%, 62%);
-                --secondary--dimmed: hsla(110, 64%, 67%, 0.5);
-                --secondary--lighter: hsla(208, 100%, 40%, 0.2);
-                --background: hsl(208, 14%, 16%);
+                --primary: #e0e0e0;
+                --primary--dimmed: #b0b0b0;
+                --primary--light: #8ab4f8;
+                --primary--lighter: #c08497;
+                --secondary: #ff8a80;
+                --background: #1e1e2f;
 
                 --card-education-bg: hsl(50, 25%, 28%);
                 --card-research-bg: hsl(195, 22%, 28%);
                 --card-awards-bg: hsl(340, 22%, 28%);
                 --card-experience-bg: hsl(150, 20%, 28%);
 
-                --gradient-highlight--dimmed: linear-gradient(transparent 30%, var(--secondary--dimmed) 30%);
+                --gradient-highlight--dimmed: linear-gradient(transparent 30%, var(--secondary) 30%);
             }
             #main-footer a:hover,
             #main-footer a:active {
@@ -68,10 +68,7 @@
             }
         }
 
-        * {
-            box-sizing: border-box !important;
-        }
-
+        * { box-sizing: border-box !important; }
         body {
             background-color: var(--background);
             color: var(--primary);
@@ -80,61 +77,19 @@
             margin: 0;
             padding: var(--spacing--l) var(--spacing) var(--spacing);
         }
+        h1, h2, h3, p, ul { margin-top: 0; }
+        h2, h3 { letter-spacing: 0.5px; margin-bottom: var(--spacing--s); }
+        h2 { font-size: 1.62rem; font-weight: 700; color: var(--primary--dimmed); }
+        h3 { font-size: 1rem; font-weight: 600; }
+        p { margin-bottom: 0; }
+        strong { font-weight: 600; }
+        a { background: var(--gradient-underline); color: var(--primary); text-decoration: none; }
+        a:hover, a:active { background: var(--gradient-highlight); }
+        a.alt { background: transparent; text-decoration: underline; }
+        a.alt:hover, a.alt:active { text-decoration-thickness: 12%; }
+        code { font-family: Fira mono, Courier, monospace; font-size: 0.9rem; background-color: var(--secondary--lighter); padding: 0 var(--spacing--xxs); }
 
-        h1, h2, h3, p, ul {
-            margin-top: 0;
-        }
-
-        h2, h3 {
-            letter-spacing: 0.5px;
-            margin-bottom: var(--spacing--s);
-        }
-
-        h2 {
-            font-size: 1.62rem;
-            font-weight: 700;
-        }
-
-        h3 {
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        p {
-            margin-bottom: 0;
-        }
-
-        strong {
-            font-weight: 500;
-        }
-
-        a {
-            background: var(--gradient-underline);
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        a:hover, a:active {
-            background: var(--gradient-highlight);
-        }
-
-        a.alt {
-            background: transparent;
-            text-decoration: underline;
-        }
-
-        a.alt:hover, a.alt:active {
-            text-decoration-thickness: 12%;
-        }
-
-        code {
-            font-family: Fira mono, Courier, monospace;
-            font-size: 0.9rem;
-            background-color: var(--secondary--lighter);
-            padding: 0 var(--spacing--xxs);
-        }
-
-        /* Card components */
+        /* Base card styles */
         .card {
             border-radius: 0 var(--spacing) var(--spacing);
             margin-left: calc(var(--spacing--xs) * -1);
@@ -142,16 +97,9 @@
             margin-top: var(--spacing);
             padding: var(--spacing);
         }
+        .card h3 { margin-bottom: var(--spacing--s); }
 
-        .card h3 {
-            margin-bottom: var(--spacing--s);
-        }
-
-        .card--education { background-color: var(--card-education-bg); }
-        .card--research { background-color: var(--card-research-bg); }
-        .card--awards { background-color: var(--card-awards-bg); }
-        .card--experience { background-color: var(--card-experience-bg); }
-
+        /* Badge style */
         .badge {
             background-color: var(--primary--lighter);
             border-radius: var(--spacing--xs);
@@ -163,88 +111,54 @@
             margin-right: var(--spacing--xs);
             margin-top: 0;
             padding: var(--spacing--xxs) var(--spacing--s);
+            color: #1a1a2e;
         }
 
-        .divider {
-            grid-area: divider;
-            border-top: 1px solid var(--primary);
-        }
+        /* Section-specific card colors */
+        .card--education { background-color: var(--card-education-bg); }
+        .card--research { background-color: var(--card-research-bg); }
+        .card--awards { background-color: var(--card-awards-bg); }
+        .card--experience { background-color: var(--card-experience-bg); }
 
-        /* Header */
-        #main-head {
-            grid-area: mainHead;
-        }
+        .divider { grid-area: divider; border-top: 1px solid var(--primary--light); }
 
+        /* ===== HEADER (blue theme, no photo) ===== */
         #main-head__name {
-            font-size: 3.6rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            letter-spacing: 2px;
-            line-height: 1;
-            margin-bottom: var(--spacing--m);
-            margin-left: calc(var(--spacing--xxs) * -1);
-            text-shadow: -1px -1px var(--secondary), -1.5px -1.5px var(--secondary),
-                -2px -2px var(--secondary), -2.5px -2.5px var(--secondary),
-                -3px -3px var(--secondary), -3.5px -3.5px var(--secondary),
-                -4px -4px var(--secondary);
+            letter-spacing: 1px;
+            line-height: 1.1;
+            margin: 0 0 var(--spacing--xs) 0;
+            color: var(--primary);
+            text-shadow: -1px -1px var(--name-shadow-color),
+                         -2px -2px var(--name-shadow-color);
         }
-
         #main-head__profession {
-            font-size: 1.62rem;
+            font-size: 1.1rem;
             font-style: italic;
-            line-height: 1;
+            line-height: 1.3;
+            margin: 0;
         }
+        #main-head { grid-area: mainHead; }
 
-        /* Contact */
-        #contact {
-            grid-area: contact;
-        }
+        #contact { grid-area: contact; }
+        #about { grid-area: about; }
+        #research { grid-area: research; }
+        #awards { grid-area: awards; }
+        #experience { grid-area: experience; }
+        #studies { grid-area: studies; }
+        #knowledge { grid-area: knowledge; }
+        #main-footer { grid-area: mainFooter; }
 
-        .contact__list {
-            list-style: none;
-            padding-left: 0;
-        }
+        .contact__list { list-style: none; padding-left: 0; }
+        .contact__list li { font-size: 0.9rem; font-style: normal; margin-bottom: var(--spacing--s); }
+        .contact__list li:last-child { margin-bottom: 0; }
+        .contact__list span { width: 1rem; text-align: center; margin-right: var(--spacing--s); }
+        .contact__list a { background: transparent; }
+        .contact__list a:hover .contact__link-text, .contact__list a:active .contact__link-text { background: var(--gradient-highlight); }
 
-        .contact__list li {
-            font-size: 0.9rem;
-            font-style: normal;
-            margin-bottom: var(--spacing--s);
-        }
-
-        .contact__list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .contact__list span {
-            width: 1rem;
-            text-align: center;
-            margin-right: var(--spacing--s);
-        }
-
-        .contact__list a {
-            background: transparent;
-        }
-
-        .contact__list a:hover .contact__link-text,
-        .contact__list a:active .contact__link-text {
-            background: var(--gradient-highlight);
-        }
-
-        /* About */
-        #about {
-            grid-area: about;
-        }
-
-        #about ul {
-            list-style: none;
-            margin-bottom: 0;
-            margin-top: var(--spacing);
-            padding-left: var(--spacing);
-        }
-
-        #about ul > li:not(:last-child) {
-            margin-bottom: var(--spacing--s);
-        }
-
+        #about ul { list-style: none; margin-bottom: 0; margin-top: var(--spacing); padding-left: var(--spacing); }
+        #about ul>li:not(:last-child) { margin-bottom: var(--spacing--s); }
         #about li::before {
             content: "\f0da";
             font-family: "Font Awesome 6 Free";
@@ -253,68 +167,25 @@
             margin-right: -0.5rem;
             position: relative;
             right: var(--spacing);
+            color: var(--secondary);
         }
 
-        /* Grid areas */
-        #research { grid-area: research; }
-        #awards { grid-area: awards; }
-        #experience { grid-area: experience; }
-        #studies { grid-area: studies; }
-        #knowledge { grid-area: knowledge; }
-
-        /* Knowledge */
-        #knowledge ul {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .knowledge__group {
-            margin-bottom: var(--spacing);
-        }
-
-        .knowledge__group small {
-            margin-right: var(--spacing--xxs);
-            text-align: center;
-            width: 1.2rem;
-        }
-
-        .knowledge__items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing--xs);
-            margin-top: var(--spacing--s);
-        }
-
+        #knowledge ul { padding-left: 0; list-style: none; }
+        .knowledge__group { margin-bottom: var(--spacing); }
+        .knowledge__group small { margin-right: var(--spacing--xxs); text-align: center; width: 1.2rem; color: var(--secondary); }
+        .knowledge__items { display: flex; flex-wrap: wrap; gap: var(--spacing--xs); margin-top: var(--spacing--s); }
         .knowledge__items li {
             background: var(--secondary--dimmed);
             border-radius: var(--spacing--xs);
             padding: var(--spacing--xxs) var(--spacing--xs);
+            color: var(--primary);
         }
 
-        /* Footer */
-        #main-footer {
-            grid-area: mainFooter;
-        }
+        #main-footer h5 { color: var(--primary--light); font-weight: 400; font-size: 0.8rem; margin: 0; text-align: center; }
+        #main-footer a { background: transparent; color: var(--primary--dimmed); }
+        #main-footer a:hover, #main-footer a:active { background: var(--gradient-highlight); }
 
-        #main-footer h5 {
-            color: var(--primary--light);
-            font-weight: 400;
-            font-size: 0.8rem;
-            margin: 0;
-            text-align: center;
-        }
-
-        #main-footer a {
-            background: transparent;
-            color: var(--primary--dimmed);
-        }
-
-        #main-footer a:hover,
-        #main-footer a:active {
-            background: var(--gradient-highlight);
-        }
-
-        /* Responsive grid */
+        /* ===== RESPONSIVE GRID ===== */
         #container {
             display: grid;
             grid-template-areas:
@@ -330,18 +201,11 @@
                 "mainFooter";
             row-gap: var(--spacing--xl);
         }
-
-        #contact {
-            align-items: end;
-            display: flex;
-        }
+        #contact { align-items: end; display: flex; }
 
         @media screen and (min-width: 576px) {
-            body {
-                padding: var(--spacing--xl) var(--spacing--l) var(--spacing);
-            }
+            body { padding: var(--spacing--xl) var(--spacing--l) var(--spacing); }
         }
-
         @media screen and (min-width: 768px) {
             #container {
                 column-gap: var(--spacing--m);
@@ -356,11 +220,8 @@
                     "knowledge experience"
                     "mainFooter mainFooter";
             }
-            #contact {
-                justify-content: end;
-            }
+            #contact { justify-content: end; }
         }
-
         @media screen and (min-width: 992px) {
             #container {
                 grid-template-areas:
@@ -374,7 +235,6 @@
                     "mainFooter mainFooter";
             }
         }
-
         @media screen and (min-width: 1280px) {
             #container {
                 column-gap: var(--spacing--l);
@@ -392,11 +252,10 @@
                 max-width: 1200px;
             }
         }
-
         @media print {
             :root { font-size: 11px; }
             @page { margin: 1rem 3rem; size: A4; }
-            body, a { color: rgb(60, 153, 32); }
+            body, a { color: #1a1a2e; }
             #container {
                 gap: var(--spacing--l);
                 grid-template-areas:
@@ -412,17 +271,13 @@
                 grid-template-rows: auto auto auto auto auto auto 1fr;
                 height: 100vh;
             }
-            #main-footer {
-                align-items: end;
-                display: flex;
-                justify-content: center;
-            }
+            #main-footer { align-items: end; display: flex; justify-content: center; }
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <!-- Header -->
+        <!-- Header: blue-themed name, no photo -->
         <header id="main-head">
             <h1 id="main-head__name">Dorsa Dolatkhah Ouchbolagh</h1>
             <p id="main-head__profession">
@@ -431,7 +286,6 @@
             </p>
         </header>
 
-        <!-- Contact -->
         <address id="contact">
             <ul class="contact__list">
                 <li>
@@ -466,7 +320,6 @@
 
         <div class="divider"></div>
 
-        <!-- About -->
         <section id="about">
             <h2>About me</h2>
             <p>
@@ -478,54 +331,54 @@
                 University of Tehran. Key research interests include:
             </p>
             <ul>
-                <li><strong>Bio-based phase change materials</strong> for thermal energy storage applications.</li>
+                <li><strong>Bio-based phase change materials</strong> for thermal energy storage.</li>
                 <li><strong>Polymer processing and rheology</strong>, including extrusion and injection molding.</li>
                 <li><strong>Computational modeling</strong> of polymer systems using MATLAB and Python.</li>
                 <li><strong>Sustainable polymers</strong> and biodegradable material development.</li>
             </ul>
         </section>
 
-        <!-- Education -->
+        <!-- Education (yellow card) -->
         <section id="studies">
             <h2>Education</h2>
             <div class="card card--education">
                 <h3>M.Sc. in Polymer Engineering – Processing</h3>
                 <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4>
                 <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2026 <small class="fa-solid fa-arrow-right"></small> Ongoing</h4>
-                <p><em>Advanced polymer processing, rheology of complex fluids, polymer blend and composite technology, advanced characterization methods, and CFD applied to polymer processing.</em></p>
+                <p><em>Advanced polymer processing, rheology, polymer blends, CFD, and characterization methods.</em></p>
             </div>
             <div class="card card--education">
                 <h3>B.Sc. in Polymer Engineering</h3>
                 <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4>
                 <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2022 <small class="fa-solid fa-arrow-right"></small> 2026</h4>
-                <p><em><strong>Bachelor's Thesis:</strong> Bio-based phase change materials – synthesis, characterization, and thermal performance evaluation for energy storage applications.</em></p>
+                <p><em><strong>Bachelor's Thesis:</strong> Bio-based phase change materials – synthesis, characterization, and thermal performance evaluation.</em></p>
             </div>
         </section>
 
-        <!-- Research & Projects -->
+        <!-- Research & Projects (sky blue card) -->
         <section id="research">
             <h2>Research &amp; Projects</h2>
             <div class="card card--research">
                 <h3>Bio-based Phase Change Materials</h3>
                 <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;B.Sc. Thesis – University of Tehran</h4>
                 <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2025 <small class="fa-solid fa-arrow-right"></small> 2026</h4>
-                <p><em>Investigated bio-based phase change materials (PCMs) for thermal energy storage. Conducted thermal and structural characterization using DSC, TGA, and FTIR analysis. Evaluated encapsulation methods and thermal cycling stability of the developed PCMs.</em></p>
+                <p><em>Investigated bio-based PCMs, thermal characterization (DSC, TGA, FTIR), encapsulation, and cycling stability.</em></p>
             </div>
             <div class="card card--research">
                 <h3>Polymer Processing Laboratory Research</h3>
                 <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;School of Polymer Engineering, University of Tehran</h4>
                 <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2024 <small class="fa-solid fa-arrow-right"></small> 2025</h4>
-                <p><em>Hands-on experience with twin-screw extrusion and injection molding of thermoplastic polymers. Performed rheological characterization (capillary and rotational rheometry) and analyzed polymer melt behavior under various processing conditions.</em></p>
+                <p><em>Twin-screw extrusion, injection molding, rheological characterization, and melt behavior analysis.</em></p>
             </div>
             <div class="card card--research">
                 <h3>Computational Polymer Modeling</h3>
                 <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran</h4>
                 <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2024 <small class="fa-solid fa-arrow-right"></small> 2025</h4>
-                <p><em>Developed MATLAB scripts for modeling crystallization kinetics of semi-crystalline polymers. Utilized Python for data analysis and visualization of thermal characterization results. Simulated heat transfer in PCM-based thermal storage systems.</em></p>
+                <p><em>MATLAB crystallization kinetics, Python data analysis, heat transfer simulation for PCM storage.</em></p>
             </div>
         </section>
 
-        <!-- Awards & Honors -->
+        <!-- Awards & Honors (rosy pink card) -->
         <section id="awards">
             <h2>Awards &amp; Honors</h2>
             <div class="card card--awards">
@@ -536,60 +389,48 @@
             </div>
         </section>
 
-        <!-- Experiences -->
+        <!-- Experiences (mint green card) -->
         <section id="experience">
             <h2>Experiences</h2>
             <div class="card card--experience">
                 <h3>Internship – Rubber Processing</h3>
-                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp; Rubber Research and Engineering Company, VardAvard, Tehran</h4>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;XYZ Rubber Company</h4>
                 <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;Summer 2025</h4>
-                <p><em>Senior Assistant in rubber compounding, curing characterization, and quality control testing. Gained hands-on experience with internal mixers, two-roll mills, and rheometers.</em></p>
+                <p><em>Assisted in rubber compounding, curing characterization, and quality control testing. Gained hands-on experience with internal mixers, two-roll mills, and rheometers.</em></p>
             </div>
             <div class="card card--experience">
                 <h3>Teacher Assistantship</h3>
-                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran – Engineering Science Department</h4>
+                <h4 class="badge"><span class="fa-solid fa-location-dot"></span>&ensp;University of Tehran – Polymer Engineering Department</h4>
                 <h4 class="badge"><span class="fa-regular fa-calendar-days"></span>&ensp;2025 – 2026</h4>
-                <p><em>Served as a teaching assistant for Mathematical courses such as Differential Equations, Calculus 1 & 2.</em></p>
+                <p><em>Served as a teaching assistant for "Polymer Physics" and "Rheology" courses. Led tutorial sessions, graded assignments, and assisted students in laboratory experiments.</em></p>
             </div>
         </section>
 
-        <!-- Knowledge -->
         <section id="knowledge">
             <h2>Knowledge</h2>
             <ul class="knowledge__groups">
                 <li class="knowledge__group">
                     <small class="fa-solid fa-code"></small>Software &amp; Programming:
                     <ul class="knowledge__items">
-                        <li>Python</li>
-                        <li>MATLAB</li>
-                        <li>Aspen Plus</li>
+                        <li>Python</li><li>MATLAB</li><li>Aspen Plus</li><li>COMSOL Multiphysics</li><li>LaTeX</li>
                     </ul>
                 </li>
                 <li class="knowledge__group">
-                    <small class="fa-solid fa-flask"></small>Characterization Techniques:
+                    <small class="fa-solid fa-flask"></small>Characterization:
                     <ul class="knowledge__items">
-                        <li>DSC</li>
-                        <li>TGA</li>
-                        <li>FTIR</li>
-                        <li>SEM</li>
-                        <li>DMTA</li>
-                        <li>Tensile Strength</li>
-                        <li>Rheometry</li>
+                        <li>DSC</li><li>TGA</li><li>FTIR</li><li>SEM</li><li>XRD</li><li>Rheometry</li>
                     </ul>
                 </li>
                 <li class="knowledge__group">
-                    <small class="fa-solid fa-industry"></small>Polymer Processing:
+                    <small class="fa-solid fa-industry"></small>Processing:
                     <ul class="knowledge__items">
-                        <li>Extrusion</li>
-                        <li>Rubber processing</li>
-                        <li>Compression Molding</li>
+                        <li>Extrusion</li><li>Injection Molding</li><li>Compression Molding</li><li>3D Printing</li>
                     </ul>
                 </li>
                 <li class="knowledge__group">
                     <small class="fa-solid fa-chart-line"></small>Data Analysis:
                     <ul class="knowledge__items">
-                        <li>OriginPro</li>
-                        <li>Excel</li>
+                        <li>OriginPro</li><li>Excel</li><li>NumPy/SciPy</li><li>MATLAB Toolboxes</li>
                     </ul>
                 </li>
                 <li class="knowledge__group">
@@ -602,9 +443,12 @@
             </ul>
         </section>
 
-        <!-- Footer -->
         <footer id="main-footer">
-            <h5>For more information, please contact me directly.</h5>
+            <h5>
+                Fonts: <a href="https://bboxtype.com/fira/" target="_blank">Fira</a> &amp;
+                <a href="https://fontawesome.com/" target="_blank">FontAwesome</a>.
+                Source on <a href="https://gist.github.com/n1c0saurio/d777284f7ab3fcd34ffae88a47cb161c" target="_blank">GitHub</a>.
+            </h5>
         </footer>
     </div>
 </body>
