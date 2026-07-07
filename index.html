@@ -206,6 +206,17 @@
   .entry p{color:var(--ink-soft); font-size:.95rem; margin:0;}
   .entry ul{margin:.3rem 0 0; padding-left:1.1rem; color:var(--ink-soft); font-size:.95rem;}
   .entry li{margin-bottom:.2rem;}
+  .entry-link{
+    display:inline-flex;
+    align-items:center;
+    gap:.35rem;
+    font-family:var(--mono);
+    font-size:.78rem;
+    color:var(--accent);
+    margin-top:.35rem;
+    border-bottom:1px solid transparent;
+  }
+  .entry-link:hover{border-bottom-color:var(--accent);}
 
   /* knowledge / skills grid */
   .skills-grid{
@@ -267,6 +278,7 @@
       <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/dorsa-dolatkhah" target="_blank" rel="author">in/dorsa-dolatkhah</a></li>
       <li><i class="fa-brands fa-github"></i><a href="https://github.com/dorsa-dolatkhah" target="_blank" rel="author">/dorsa-dolatkhah</a></li>
       <li><i class="fa-solid fa-location-dot"></i>Tehran, Iran</li>
+      <li><i class="fa-solid fa-file-lines"></i><a href="documents/cv.html" target="_blank">Curriculum Vitae (PDF)</a></li>
     </ul>
   </header>
 
@@ -369,6 +381,7 @@
         <h3><span class="entry-title">Teaching Assistant — Differential Equations (ODE)</span></h3><span class="entry-date">Spring 2023</span>
       </div>
       <p class="entry-meta">Department of Chemical Engineering, University of Tehran · Instructor: Prof. H. Rahami</p>
+      <a class="entry-link" href="ta-differential-equations.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
     </div>
 
     <div class="entry">
