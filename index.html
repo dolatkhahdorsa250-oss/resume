@@ -33,7 +33,7 @@
     --sans:'Inter', Helvetica, Arial, sans-serif;
     --mono:'IBM Plex Mono', 'Fira Mono', monospace;
   }
-
+ 
   *{box-sizing:border-box;}
   html{-webkit-font-smoothing:antialiased;}
   body{
@@ -47,13 +47,13 @@
   a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;}
   a:hover, a:focus{border-bottom-color:var(--accent);}
   a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px;}
-
+ 
   .wrap{
     max-width:760px;
     margin:0 auto;
     padding:var(--space-xl) var(--space) var(--space-l);
   }
-
+ 
   /* ---------- Header ---------- */
   header.hero{
     display:flex;
@@ -62,6 +62,11 @@
     align-items:flex-start;
     gap:var(--space);
     margin-bottom:var(--space-m);
+  }
+  .hero-text{
+    display:flex;
+    align-items:flex-start;
+    gap:.85rem;
   }
   .hero-text h1{
     font-family:var(--serif);
@@ -83,7 +88,31 @@
     font-size:.95rem;
     margin:0;
   }
-
+ 
+  /* CV icon button — click through to the full CV page */
+  .cv-badge{
+    flex-shrink:0;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:2.5rem;
+    height:2.5rem;
+    margin-top:.35rem;
+    border:1px solid var(--rule);
+    border-radius:50%;
+    background:var(--accent-soft);
+    color:var(--accent);
+    font-size:1.05rem;
+    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .cv-badge:hover, .cv-badge:focus-visible{
+    background:var(--accent);
+    color:var(--paper);
+    border-color:var(--accent);
+    transform:translateY(-1px);
+  }
+  .cv-badge:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+ 
   .contact{
     list-style:none;
     margin:0;
@@ -100,15 +129,15 @@
   .contact a{color:var(--ink-soft);}
   .contact a:hover{color:var(--accent); border-bottom-color:var(--accent);}
   .contact i{width:1rem; text-align:center; color:var(--accent);}
-
-  /* polymer-chain divider */
+ 
+  /* polymer-chain motif divider */
   .chain{
     width:100%;
     height:14px;
     margin:var(--space-m) 0;
     display:block;
   }
-
+ 
   /* ---------- Section scaffolding ---------- */
   section{margin-bottom:var(--space-l);}
   .eyebrow{
@@ -129,10 +158,10 @@
     height:1px;
     background:var(--rule);
   }
-
+ 
   p{margin:0 0 .8rem;}
   .lede{color:var(--ink-soft); max-width:62ch;}
-
+ 
   .tags{
     list-style:none;
     display:flex;
@@ -153,7 +182,7 @@
     gap:.4rem;
   }
   .tags li svg{flex-shrink:0;}
-
+ 
   /* entries */
   .entry{
     padding-bottom:var(--space);
@@ -161,15 +190,7 @@
     border-bottom:1px solid var(--rule);
   }
   .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-
-  /* Date now sits inline at the tail of the title text itself, so when a
-     long title wraps to two lines, the date stays attached to the end of
-     the sentence rather than floating separately — consistent across all
-     entries regardless of title length. */
-  /* Title and date are separate flex items in the same row. align-items:flex-end
-     keeps the date level with the LAST line of the title — so if a long title
-     wraps to two lines, the date still sits at the right margin, in line with
-     where the title's last line ends, matching single-line entries. */
+ 
   .entry-head{
     display:flex;
     align-items:flex-end;
@@ -217,7 +238,7 @@
     border-bottom:1px solid transparent;
   }
   .entry-link:hover{border-bottom-color:var(--accent);}
-
+ 
   /* knowledge / skills grid */
   .skills-grid{
     display:grid;
@@ -237,7 +258,7 @@
     font-weight:500;
   }
   .skill-group .tags li{background:var(--paper);}
-
+ 
   footer{
     text-align:center;
     padding-top:var(--space-m);
@@ -246,16 +267,16 @@
     font-size:.85rem;
   }
   footer a{color:var(--ink-soft);}
-
+ 
   @media (prefers-reduced-motion:no-preference){
     .entry, .tags li{transition:border-color .15s ease;}
   }
-
+ 
   @media print{
     body{background:#fff;}
     .wrap{padding:1rem 0;}
   }
-
+ 
   @media (max-width:480px){
     .hero-text h1{font-size:2.1rem;}
     header.hero{flex-direction:column;}
@@ -264,13 +285,18 @@
 </head>
 <body>
 <div class="wrap">
-
+ 
   <!-- Header -->
   <header class="hero">
     <div class="hero-text">
-      <h1>Dorsa Dolatkhah Ouchbolagh</h1>
-      <p class="role">Polymer Engineering</p>
-      <p class="affil">M.Sc. Candidate, University of Tehran<br/>Department of Chemical Engineering, School of Polymer Engineering</p>
+      <div>
+        <h1>Dorsa Dolatkhah Ouchbolagh</h1>
+        <p class="role">Polymer Engineering</p>
+        <p class="affil">M.Sc. Candidate, University of Tehran<br/>Department of Chemical Engineering, School of Polymer Engineering</p>
+      </div>
+      <a class="cv-badge" href="documents/cv.html" target="_blank" title="View full CV" aria-label="View full CV">
+        <i class="fa-solid fa-file-lines"></i>
+      </a>
     </div>
     <ul class="contact">
       <li><i class="fa-solid fa-envelope"></i><a href="mailto:dolatkhahdorsa250@gmail.com">dolatkhahdorsa250@gmail.com</a></li>
@@ -279,12 +305,9 @@
       <li><i class="fa-brands fa-github"></i><a href="https://github.com/dorsa-dolatkhah" target="_blank" rel="author">/dorsa-dolatkhah</a></li>
       <li><i class="fa-solid fa-location-dot"></i>Tehran, Iran</li>
       <li><i class="fa-solid fa-file-lines"></i><a href="documents/cv.html" target="_blank">Curriculum Vitae (PDF)</a></li>
-      <li><button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save PDF</button></li>
-    </ul>
-
     </ul>
   </header>
-
+ 
   <!-- polymer-chain motif divider -->
   <svg class="chain" viewBox="0 0 760 14" preserveAspectRatio="none" aria-hidden="true">
     <polyline points="0,7 20,7" stroke="#2B5D62" stroke-width="1.2" fill="none" opacity="0.5"/>
@@ -300,7 +323,7 @@
       <circle cx="706" cy="1" r="1.4"/><circle cx="734" cy="13" r="1.4"/>
     </g>
   </svg>
-
+ 
   <!-- About -->
   <section id="about">
     <p class="lede">
@@ -315,22 +338,22 @@
       <li>Polymer recycling</li>
       <li>Smart, stimuli-responsive polymers</li>
       <li>Biomedical polymers</li>
-      <li>Bio-inspired Polymers</li>
-      <li>Renewable materials and Polymers</li>
+      <li>Bio-inspired materials and Polymer Composites</li>
+      <li>Bio-based Polymers</li>
     </ul>
   </section>
-
+ 
   <!-- Education -->
   <section id="education">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Education</p>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">M.Sc. in Polymer Engineering — Processing</span></h3><span class="entry-date">2026 – Present</span>
       </div>
       <p class="entry-meta">University of Tehran</p>
     </div>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">B.Sc. in Polymer Engineering</span></h3><span class="entry-date">2022 – 2026</span>
@@ -339,11 +362,11 @@
       <p><em>Bachelor's thesis: bio-based phase change materials — synthesis, characterization, and thermal performance evaluation for energy-storage applications.</em></p>
     </div>
   </section>
-
+ 
   <!-- Research & Projects -->
   <section id="research">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Research &amp; Projects</p>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">Bio-based Phase Change Materials</span></h3><span class="entry-date">2025 – 2026</span>
@@ -351,7 +374,7 @@
       <p class="entry-meta">B.Sc. Thesis, University of Tehran</p>
       <p>Investigated bio-based phase change materials (PCMs) for thermal energy storage. Conducted thermal and structural characterization using DSC, TGA, and FTIR, and evaluated encapsulation methods and thermal-cycling stability.</p>
     </div>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">Bagasse-based Food Containers with Embedded PCMs</span></h3><span class="entry-date">2026</span>
@@ -359,7 +382,7 @@
       <p class="entry-meta">School of Polymer Engineering, University of Tehran</p>
       <p>Manufactured bagasse-based food containers embedded with phase change materials to control heat dissipation and cold storage.</p>
     </div>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">4D-Printed Smart, Stimuli-Responsive Biodegradable Polymers with Shape-Memory Properties</span></h3><span class="entry-date">2025</span>
@@ -368,11 +391,11 @@
       <p>Class project on smart, sustainable, biodegradable polymer composites (e.g., PLA) fabricated via 4D filament printing.</p>
     </div>
   </section>
-
+ 
   <!-- Experience -->
   <section id="experience">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Experience</p>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">Laboratory Intern — Rubber Processing</span></h3><span class="entry-date">Summer 2025</span>
@@ -380,7 +403,7 @@
       <p class="entry-meta">Rubber Research and Engineering Company (VardAvard), Tehran, Iran</p>
       <p>Senior laboratory assistant in rubber compounding, curing characterization, and quality-control testing. Hands-on experience with internal mixers, two-roll mills, and rheometers, following ASTM standards.</p>
     </div>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">Teaching Assistant — Differential Equations (ODE)</span></h3><span class="entry-date">Spring 2023</span>
@@ -388,7 +411,7 @@
       <p class="entry-meta">Department of Chemical Engineering, University of Tehran · Instructor: Prof. H. Rahami</p>
       <a class="entry-link" href="ta-differential-equations.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
     </div>
-
+ 
     <div class="entry">
       <div class="entry-head">
         <h3><span class="entry-title">Teaching Assistant — Calculus I &amp; II</span></h3><span class="entry-date">Fall 2022</span>
@@ -396,7 +419,7 @@
       <p class="entry-meta">Department of Chemical Engineering, University of Tehran</p>
     </div>
   </section>
-
+ 
   <!-- Awards -->
   <section id="awards">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Awards &amp; Honors</p>
@@ -408,7 +431,7 @@
       <p>Graduated first among 23 undergraduates in the B.Sc. Polymer Engineering program, achieving the highest GPA in the graduating class. Admitted to M.Sc. programs at the University of Tehran, Amirkabir University of Technology, and Sharif University of Technology without entrance examination, on the basis of academic excellence.</p>
     </div>
   </section>
-
+ 
   <!-- Skills -->
   <section id="skills">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Skills &amp; Knowledge</p>
@@ -426,24 +449,25 @@
         <ul class="tags"><li>Extrusion</li><li>Rubber processing</li><li>Compression molding</li></ul>
       </div>
       <div class="skill-group">
-        <h4>Data Analysis</h4>a
+        <h4>Data Analysis</h4>
         <ul class="tags"><li>OriginPro</li><li>Excel</li></ul>
       </div>
       <div class="skill-group">
         <h4>Languages</h4>
         <ul class="tags">
-          
-          <li>English —Bloomsbury International</li><a class="entry-link" href="English1.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate
+          <li>English — Bloomsbury International</li>
           <li>Persian — Native</li>
         </ul>
+        <a class="entry-link" href="English1.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
       </div>
     </div>
   </section>
-
+ 
   <footer>
     For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>.
   </footer>
-
+ 
 </div>
 </body>
 </html>
+ 
