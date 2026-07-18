@@ -4,8 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="author" content="Dorsa Dolatkhah Ouchbolagh" />
-<meta name="description" content="Curriculum Vitae — Dorsa Dolatkhah Ouchbolagh, Polymer Engineering, University of Tehran." />
-<title>CV — Dorsa Dolatkhah Ouchbolagh</title>
+<meta name="description" content="Teaching Assistantship Certificate — Differential Equations, University of Tehran." />
+<title>Englsih Proficiency Certificate — Safir Language Academy — Dorsa Dolatkhah Ouchbolagh</title>
 <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/16579247" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,17 +22,10 @@
     --accent:#2B5D62;
     --accent-soft:#2B5D6212;
     --accent2:#8C6A2F;
-    --space-xs:.4rem;
-    --space-s:.75rem;
-    --space:1.25rem;
-    --space-m:2rem;
-    --space-l:3.25rem;
-    --space-xl:4rem;
     --serif:'Source Serif 4', Georgia, serif;
     --sans:'Inter', Helvetica, Arial, sans-serif;
     --mono:'IBM Plex Mono', 'Fira Mono', monospace;
   }
-
   *{box-sizing:border-box;}
   html{-webkit-font-smoothing:antialiased;}
   body{
@@ -41,463 +34,136 @@
     color:var(--ink);
     font-family:var(--sans);
     line-height:1.55;
-    font-size:15.5px;
   }
   a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;}
   a:hover, a:focus{border-bottom-color:var(--accent);}
   a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px;}
 
   .wrap{
-    max-width:760px;
+    max-width:900px;
     margin:0 auto;
-    padding:var(--space-xl) var(--space) var(--space-l);
+    padding:2.5rem 1.25rem 3rem;
   }
 
-  .back-link{
-    display:inline-flex;
-    align-items:center;
-    gap:.4rem;
+  .back{
     font-family:var(--mono);
     font-size:.78rem;
     color:var(--ink-soft);
-    margin-bottom:var(--space-m);
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    margin-bottom:1.75rem;
   }
-  .back-link:hover{color:var(--accent);}
+  .back:hover{color:var(--accent);}
 
-  header.hero{
+  header{
     display:flex;
     flex-wrap:wrap;
     justify-content:space-between;
-    align-items:flex-start;
-    gap:var(--space);
-    margin-bottom:var(--space-m);
-  }
-  .hero-text h1{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:2.3rem;
-    letter-spacing:-0.01em;
-    margin:0 0 .3rem;
-    color:var(--ink);
-  }
-  .hero-text .role{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:1.05rem;
-    color:var(--accent);
-    margin:0 0 .25rem;
-  }
-  .hero-text .affil{
-    color:var(--ink-soft);
-    font-size:.92rem;
-    margin:0;
-  }
-
-  .contact{
-    list-style:none;
-    margin:0;
-    padding:0;
-    font-family:var(--mono);
-    font-size:.78rem;
-    color:var(--ink-soft);
-    display:flex;
-    flex-direction:column;
-    gap:.4rem;
-    min-width:190px;
-  }
-  .contact li{display:flex; align-items:center; gap:.5rem;}
-  .contact a{color:var(--ink-soft);}
-  .contact a:hover{color:var(--accent); border-bottom-color:var(--accent);}
-  .contact i{width:1rem; text-align:center; color:var(--accent);}
-
-  .print-btn{
-    font-family:var(--mono);
-    font-size:.72rem;
-    letter-spacing:.05em;
-    text-transform:uppercase;
-    color:var(--accent);
-    background:var(--accent-soft);
-    border:1px solid var(--rule);
-    border-radius:3px;
-    padding:.4rem .7rem;
-    cursor:pointer;
-    display:inline-flex;
-    align-items:center;
-    gap:.4rem;
-  }
-  .print-btn:hover{background:var(--accent); color:var(--paper);}
-
-  .chain{width:100%; height:14px; margin:var(--space-m) 0; display:block;}
-
-  section{margin-bottom:var(--space-l);}
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:.72rem;
-    letter-spacing:.14em;
-    color:var(--accent);
-    text-transform:uppercase;
-    display:flex;
-    align-items:center;
-    gap:.5rem;
-    margin-bottom:var(--space-s);
-  }
-  .eyebrow .hex{flex-shrink:0; margin-right:.15rem;}
-  .eyebrow::after{content:""; flex:1; height:1px; background:var(--rule);}
-
-  p{margin:0 0 .8rem;}
-
-  .entry{
-    padding-bottom:var(--space);
-    margin-bottom:var(--space);
-    border-bottom:1px solid var(--rule);
-  }
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
-
-  .entry-head{
-    display:flex;
     align-items:flex-end;
-    justify-content:space-between;
-    gap:.8rem;
-    margin-bottom:.15rem;
+    gap:1rem;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:1.25rem;
+    margin-bottom:1.5rem;
   }
-  .entry-head h3{
+  header h1{
     font-family:var(--serif);
     font-weight:600;
-    font-size:1.08rem;
+    font-size:1.7rem;
+    margin:0 0 .2rem;
+    letter-spacing:-0.01em;
+  }
+  header p{
     margin:0;
-    color:var(--ink);
-    line-height:1.35;
-    flex:1 1 auto;
-    min-width:0;
-  }
-  .entry-date{
-    font-family:var(--mono);
-    font-size:.75rem;
-    font-weight:400;
-    color:var(--ink-faint);
-    white-space:nowrap;
-    flex:0 0 auto;
-    padding-bottom:.1rem;
-  }
-  .entry-meta{
-    font-size:.87rem;
-    color:var(--accent2);
-    margin:0 0 .4rem;
-    font-weight:500;
-  }
-  .entry p{color:var(--ink-soft); font-size:.93rem; margin:0;}
-  .entry ul{margin:.3rem 0 0; padding-left:1.1rem; color:var(--ink-soft); font-size:.93rem;}
-  .entry li{margin-bottom:.25rem;}
-
-  /* coursework grid */
-  .coursework{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:.55rem .5rem;
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-  @media (min-width:560px){
-    .coursework{grid-template-columns:1fr 1fr;}
-  }
-  .coursework li{
-    display:flex;
-    justify-content:space-between;
-    gap:.6rem;
-    font-size:.92rem;
     color:var(--ink-soft);
-    border-bottom:1px dotted var(--rule);
-    padding-bottom:.3rem;
-  }
-  .coursework li span.grade{
-    font-family:var(--mono);
-    font-size:.82rem;
-    color:var(--accent2);
-    flex:0 0 auto;
+    font-size:.92rem;
   }
 
-  .skills-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:var(--space);
+  .actions{
+    display:flex;
+    gap:.6rem;
+    flex-wrap:wrap;
   }
-  @media (min-width:640px){
-    .skills-grid{grid-template-columns:1fr 1fr;}
-  }
-  .skill-group h4{
+  .btn{
     font-family:var(--mono);
     font-size:.76rem;
-    letter-spacing:.05em;
-    color:var(--ink-soft);
+    letter-spacing:.03em;
     text-transform:uppercase;
-    margin:0 0 .55rem;
-    font-weight:500;
-  }
-  .tags{list-style:none; display:flex; flex-wrap:wrap; gap:.5rem; margin:0; padding:0;}
-  .tags li{
-    font-size:.82rem;
     color:var(--ink);
     background:var(--paper);
     border:1px solid var(--rule);
     border-radius:3px;
-    padding:.28rem .6rem;
+    padding:.5rem .85rem;
+    display:inline-flex;
+    align-items:center;
+    gap:.45rem;
+    transition:border-color .15s ease, background .15s ease;
   }
+  .btn:hover{border-color:var(--accent); background:var(--accent-soft);}
+  .btn.primary{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .btn.primary:hover{background:#234a4e;}
 
-  .refs-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:var(--space);
-  }
-  @media (min-width:640px){
-    .refs-grid{grid-template-columns:1fr 1fr;}
-  }
-  .ref-card{
+  .viewer{
     background:var(--paper);
     border:1px solid var(--rule);
-    border-radius:4px;
-    padding:var(--space);
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 1px 2px rgba(0,0,0,.03);
+    padding:1.25rem;
+    text-align:center;
   }
-  .ref-card h4{
-    font-family:var(--serif);
-    font-size:1rem;
-    font-weight:600;
-    margin:0 0 .2rem;
+  .viewer img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+    border-radius:2px;
   }
-  .ref-card p{
-    font-size:.86rem;
+
+  .meta{
+    margin-top:1.25rem;
+    font-size:.85rem;
     color:var(--ink-soft);
-    margin:0 0 .3rem;
   }
-  .ref-card a{font-family:var(--mono); font-size:.8rem;}
+  .meta strong{color:var(--ink); font-weight:600;}
 
   footer{
     text-align:center;
-    padding-top:var(--space-m);
-    border-top:1px solid var(--rule);
+    padding-top:2.5rem;
     color:var(--ink-faint);
     font-size:.85rem;
   }
   footer a{color:var(--ink-soft);}
 
-  @media print{
-    body{background:#fff;}
-    .wrap{padding:1rem 0; max-width:100%;}
-    .back-link, .print-btn{display:none;}
-    .entry{break-inside:avoid;}
-  }
-
-  @media (max-width:480px){
-    .hero-text h1{font-size:1.9rem;}
-    header.hero{flex-direction:column;}
+  @media (max-width:600px){
+    header{flex-direction:column; align-items:flex-start;}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <a class="back-link" href="../index.html"><i class="fa-solid fa-arrow-left"></i> Back to site</a>
+  <a class="back" href="../index.html"><i class="fa-solid fa-arrow-left"></i> Back to profile</a>
 
-  <header class="hero">
-    <div class="hero-text">
-      <h1>Dorsa Dolatkhah Ouchbolagh</h1>
-      <p class="role">Polymer Engineer — M.Sc. Candidate, University of Tehran</p>
-      <p class="affil">School of Polymer Engineering, Department of Chemical Engineering, College of Engineering</p>
+  <header>
+    <div>
+      <h1>Curriculum Vitae</h1>
+      <p>Achievement of Advanced Level English Certification</p>
     </div>
-    <ul class="contact">
-      <li><i class="fa-solid fa-envelope"></i><a href="mailto:dolatkhahdorsa250@gmail.com">dolatkhahdorsa250@gmail.com</a></li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:+989017020755">(+98) 901 702 0755</a></li>
-      <li><i class="fa-solid fa-location-dot"></i>Tehran, Iran</li>
-      <li><i class="fa-solid fa-globe"></i><a href="https://dolatkhahdorsa250-oss.github.io/resume/" target="_blank">dolatkhahdorsa250-oss.github.io/resume</a></li>
-      <li><button class="print-btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save PDF</button></li>
-    </ul>
+    <div class="actions">
+      <a class="btn" href="English1.jpg" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Open in new tab</a>
+      <a class="btn primary" href="English1.jpg" download><i class="fa-solid fa-download"></i> Download image</a>
+    </div>
   </header>
 
-  <svg class="chain" viewBox="0 0 760 14" preserveAspectRatio="none" aria-hidden="true">
-    <polyline points="0,7 20,7" stroke="#2B5D62" stroke-width="1.2" fill="none" opacity="0.5"/>
-    <polyline points="20,7 34,1 48,7 62,13 76,7 90,1 104,7 118,13 132,7 146,1 160,7 174,13 188,7 202,1 216,7 230,13 244,7 258,1 272,7 286,13 300,7 314,1 328,7 342,13 356,7 370,1 384,7 398,13 412,7 426,1 440,7 454,13 468,7 482,1 496,7 510,13 524,7 538,1 552,7 566,13 580,7 594,1 608,7 622,13 636,7 650,1 664,7 678,13 692,7 706,1 720,7 734,13 748,7 760,7"
-      stroke="#2B5D62" stroke-width="1.1" fill="none" opacity="0.45"/>
-    <g fill="#2B5D62" opacity="0.6">
-      <circle cx="34" cy="1" r="1.4"/><circle cx="62" cy="13" r="1.4"/><circle cx="90" cy="1" r="1.4"/><circle cx="118" cy="13" r="1.4"/>
-      <circle cx="146" cy="1" r="1.4"/><circle cx="174" cy="13" r="1.4"/><circle cx="202" cy="1" r="1.4"/><circle cx="230" cy="13" r="1.4"/>
-      <circle cx="258" cy="1" r="1.4"/><circle cx="286" cy="13" r="1.4"/><circle cx="314" cy="1" r="1.4"/><circle cx="342" cy="13" r="1.4"/>
-      <circle cx="370" cy="1" r="1.4"/><circle cx="398" cy="13" r="1.4"/><circle cx="426" cy="1" r="1.4"/><circle cx="454" cy="13" r="1.4"/>
-      <circle cx="482" cy="1" r="1.4"/><circle cx="510" cy="13" r="1.4"/><circle cx="538" cy="1" r="1.4"/><circle cx="566" cy="13" r="1.4"/>
-      <circle cx="594" cy="1" r="1.4"/><circle cx="622" cy="13" r="1.4"/><circle cx="650" cy="1" r="1.4"/><circle cx="678" cy="13" r="1.4"/>
-      <circle cx="706" cy="1" r="1.4"/><circle cx="734" cy="13" r="1.4"/>
-    </g>
-  </svg>
+  <div class="viewer">
+    <img src="CV-DorsaDolatkhahOuchbolagh.pdf" alt="CV-DorsaDolatkhahOuchbolagh.pdf" />
+  </div>
 
-  <!-- Education -->
-  <section id="education">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Education</p>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>M.Sc. in Polymer Engineering</h3><span class="entry-date">2026 – Present</span>
-      </div>
-      <p class="entry-meta">School of Polymer Engineering, Department of Chemical Engineering, College of Engineering, University of Tehran</p>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>B.Sc. in Polymer Engineering</h3><span class="entry-date">2022 – 2026</span>
-      </div>
-      <p class="entry-meta">School of Polymer Engineering, Department of Chemical Engineering, College of Engineering, University of Tehran · GPA 3.60 / 4.00 (18.01 / 20)</p>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>High School Diploma — Mathematics and Physics</h3><span class="entry-date">2018 – 2021</span>
-      </div>
-      <p class="entry-meta">Nikan Public High School, Tehran, Iran · GPA 4.00 / 4.00 (19.45 / 20)</p>
-    </div>
-  </section>
-
-  <!-- Research Interests -->
-  <section id="interests">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Research Interests</p>
-    <ul class="tags">
-      <li>Sustainable &amp; biodegradable polymers</li>
-      <li>AI &amp; machine learning in polymer science</li>
-      <li>Polymer recycling</li>
-      <li>Smart &amp; stimuli-responsive biosensors</li>
-      <li>Biomedical polymers</li>
-    </ul>
-  </section>
-
-  <!-- Selected Coursework -->
-  <section id="coursework">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Selected Coursework</p>
-    <ul class="coursework">
-      <li>Rubber and Elastomer Engineering <span class="grade">18.0/20</span></li>
-      <li>Polymer Rheology <span class="grade">18.6/20</span></li>
-      <li>Physical and Mechanical Properties of Polymers <span class="grade">19.9/20</span></li>
-      <li>Physical Chemistry of Polymers <span class="grade">20.0/20</span></li>
-      <li>Synthesis of Polymers <span class="grade">18.5/20</span></li>
-      <li>Resins Engineering <span class="grade">19.6/20</span></li>
-      <li>Polymers and the Environment <span class="grade">20.0/20</span></li>
-      <li>Natural Polymers <span class="grade">20.0/20</span></li>
-      <li>Polymer Molecular Analysis <span class="grade">19.5/20</span></li>
-      <li>Principles of Polymerization <span class="grade">in progress</span></li>
-    </ul>
-  </section>
-
-  <!-- Research & Projects -->
-  <section id="research">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Research &amp; Projects</p>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Bachelor's Thesis — Bio-based Phase Change Materials</h3>
-      </div>
-      <p>A review of bio-based phase change materials for thermal and energy management, with applications in building structures, batteries, and personal thermal-management patches.</p>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Bagasse-based Food Containers with Embedded PCMs</h3>
-      </div>
-      <p>Designed and fabricated bagasse-based food containers embedded with phase change materials to control heat dissipation and cold storage.</p>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>4D-Printed Smart, Stimuli-Responsive Biodegradable Polymers</h3>
-      </div>
-      <p>Class project on smart, sustainable and biodegradable polymers (e.g., PLA) using 4D filament printing with heat sensitivity for shape-memory and reversibility properties.</p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Experience</p>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Laboratory Intern</h3><span class="entry-date">Summer 2025</span>
-      </div>
-      <p class="entry-meta">Rubber Research and Engineering Company (VardAvard), Tehran, Iran · 2-month internship</p>
-      <ul>
-        <li>Contributed to interdisciplinary research projects supporting rubber and automotive industry applications.</li>
-        <li>Senior assistance in the polymer processing laboratory and rheological, physical, and mechanical test procedures to ensure accurate experimental procedures and properties based on ASTM standards.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Teaching Assistant — Differential Equations (ODE)</h3><span class="entry-date">Spring 2023</span>
-      </div>
-      <p class="entry-meta">Department of Chemical Engineering, University of Tehran · Course instructor: Prof. H. Rahami</p>
-      <ul>
-        <li>Guided undergraduate students during tutorials and problem-solving sessions.</li>
-        <li>Communicated complex engineering concepts in a clear and accessible manner.</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Teaching Assistant — Calculus I &amp; II</h3><span class="entry-date">Fall 2022</span>
-      </div>
-      <p class="entry-meta">Department of Chemical Engineering, University of Tehran</p>
-      <ul>
-        <li>Assisted the course instructor in grading assignments and supporting classroom activities.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Skills</p>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4>Software</h4>
-        <ul class="tags"><li>MATLAB</li><li>Python</li><li>Aspen Plus</li></ul>
-      </div>
-      <div class="skill-group">
-        <h4>Technical Analysis</h4>
-        <ul class="tags"><li>Rheometry</li><li>DSC</li><li>XRD</li><li>TGA</li><li>DMTA</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Awards -->
-  <section id="awards">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Awards &amp; Honors</p>
-    <div class="entry">
-      <p>Ranked 1st among 23 undergraduates in the B.Sc. Polymer Engineering program, School of Polymer Engineering, University of Tehran.</p>
-      <p>Admitted to M.Sc. programs at the University of Tehran, Amirkabir University of Technology, and Sharif University of Technology without entrance examination, on the basis of academic excellence.</p>
-    </div>
-  </section>
-
-  <!-- Language Skills -->
-  <section id="languages">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Language Skills</p>
-    <div class="entry">
-      <p><strong>Persian</strong> — Native</p>
-      <p><strong>English</strong> — Advanced. TOEFL iBT, Spring 2026 (score pending); Certificate of Proficiency in English, Bloomsbury International (UK), 2018 — 89/100.</p>
-    </div>
-  </section>
-
-  <!-- References -->
-  <section id="references">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>References</p>
-    <div class="refs-grid">
-      <div class="ref-card">
-        <h4>Dr. SeyedMostafa Hosseini</h4>
-        <p>Assistant Professor, Department of Chemical Engineering, School of Polymer Engineering, University of Tehran</p>
-        <a href="mailto:smostaffahosseini@ut.ac.ir">smostaffahosseini@ut.ac.ir</a>
-      </div>
-      <div class="ref-card">
-        <h4>Dr. SeyedHassan Jafari</h4>
-        <p>Professor, Department of Chemical Engineering, School of Polymer Engineering, University of Tehran</p>
-        <a href="mailto:shjafari@ut.ac.ir">shjafari@ut.ac.ir</a>
-      </div>
-    </div>
-  </section>
+  <p class="meta">Issued by the <strong>Safir Language Academy</strong> <strong></strong>.</p>
 
   <footer>
-    &larr; <a href="../index.html">Back to Dorsa Dolatkhah Ouchbolagh's site</a> · For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>.
+    For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>.
   </footer>
 
 </div>
