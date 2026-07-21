@@ -89,7 +89,6 @@
     margin:0;
   }
  
-  /* CV icon button — click through to the full CV page */
   .cv-badge{
     flex-shrink:0;
     display:inline-flex;
@@ -130,7 +129,6 @@
   .contact a:hover{color:var(--accent); border-bottom-color:var(--accent);}
   .contact i{width:1rem; text-align:center; color:var(--accent);}
  
-  /* polymer-chain motif divider */
   .chain{
     width:100%;
     height:14px;
@@ -183,7 +181,7 @@
   }
   .tags li svg{flex-shrink:0;}
  
-  /* entries */
+  /* entries — unified structure for all sections */
   .entry{
     padding-bottom:var(--space);
     margin-bottom:var(--space);
@@ -208,7 +206,6 @@
     flex:1 1 auto;
     min-width:0;
   }
-  .entry-title{ }
   .entry-date{
     font-family:var(--mono);
     font-size:.76rem;
@@ -238,40 +235,6 @@
     border-bottom:1px solid transparent;
   }
   .entry-link:hover{border-bottom-color:var(--accent);}
- 
-  /* ---------- Skills section – now aligned with other sections ---------- */
-  .skills-grid{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:0; /* gap handled by margin-bottom on each group */
-  }
-  .skill-group{
-    padding-bottom:var(--space);
-    margin-bottom:var(--space);
-    border-bottom:1px solid var(--rule);
-  }
-  .skill-group:last-child{
-    border-bottom:none;
-    margin-bottom:0;
-    padding-bottom:0;
-  }
-  .skill-group h4{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.12rem;
-    margin:0 0 .4rem;
-    color:var(--ink);
-    line-height:1.35;
-  }
-  .skill-group .tags{
-    margin:0;
-  }
-  .skill-group .tags li{
-    background:var(--accent-soft);
-  }
-  .skill-group .entry-link{
-    margin-top:.5rem;
-  }
  
   footer{
     text-align:center;
@@ -374,14 +337,11 @@
       </div>
       <p class="entry-meta">University of Tehran · GPA 3.60 / 4.00 (18.01 / 20)</p>
       <p><em>Bachelor's thesis: Invesitigated bio-based phase change materials — synthesis, characterization, and thermal performance evaluation for energy-storage applications.</em></p>
-    
-    </section>
-
+    </div>
+  </section>
  
-
-
-  <!-- publication -->
-  <section id="publication">
+  <!-- Research & Projects -->
+  <section id="research">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Research &amp; Projects</p>
  
     <div class="entry">
@@ -397,9 +357,7 @@
         <h3><span class="entry-title">Bagasse-based Food Containers with Embedded PCMs</span></h3><span class="entry-date">2026</span>
       </div>
       <p class="entry-meta">School of Polymer Engineering, University of Tehran</p>
-      
       <p>Designed and fabricated bagasse-based food containers embedded with phase change materials  to prevent heat/cold dissipation and enhance cold/heat storage. Bio-degradable CPCMs with the ability to sustain heat/cold for long periods of time  and enhanced bio-degradibility were Invesitigated.</p>
-      
     </div>
  
     <div class="entry">
@@ -408,26 +366,20 @@
       </div>
       <p class="entry-meta">University of Tehran</p>
       <p>Class project on smart, sustainable, biodegradable polymer composites (e.g., PLA) fabricated via 4D filament printing.</p>
-    </section>
-    
-
-
-    <!-- publication -->
-  <section id="education">
+    </div>
+  </section>
+ 
+  <!-- Publication -->
+  <section id="publication">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Publication</p>
  
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title"> A Review on Biomass Selection for Phase Change Material-Embedded Composites: Criteria, Material Properties, and Design Considerations</span></h3><span class="entry-date">2026 – Present</span>
+        <h3><span class="entry-title">A Review on Biomass Selection for Phase Change Material-Embedded Composites: Criteria, Material Properties, and Design Considerations</span></h3><span class="entry-date">2026 – Present</span>
       </div>
-      
-      
       <p class="entry-meta">Manuscript in preparation</p>
     </div>
- 
-    
   </section>
-  
  
   <!-- Experience -->
   <section id="experience">
@@ -467,40 +419,68 @@
       <p class="entry-meta">University of Tehran</p>
       <p>Graduated first among 23 undergraduates in the B.Sc. Polymer Engineering program, achieving the highest GPA in the graduating class. Admitted to a M.Sc. program at the University of Tehran, Polytechnic University of Tehran, and Sharif University of Technology without entrance examination, on the basis of academic excellency.</p>
     </div>
-        
-  
-      
-    </div>
   </section>
  
-  <!-- Skills -->
+  <!-- Skills — now using the exact same .entry structure as all other sections -->
   <section id="skills">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Skills &amp; Knowledge</p>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h4>Software &amp; Programming</h4>
-        <ul class="tags"><li>Python</li><li>MATLAB</li><li>Aspen Plus</li></ul>
+ 
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Software &amp; Programming</h3>
       </div>
-      <div class="skill-group">
-        <h4>Characterization</h4>
-        <ul class="tags"><li>DSC</li><li>TGA</li><li>FTIR</li><li>SEM</li><li>DMTA</li><li>Rheometry</li><li>Tensile testing</li></ul>
+      <ul class="tags">
+        <li>Python</li>
+        <li>MATLAB</li>
+        <li>Aspen Plus</li>
+      </ul>
+    </div>
+ 
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Characterization</h3>
       </div>
-      <div class="skill-group">
-        <h4>Polymer Processing</h4>
-        <ul class="tags"><li>Extrusion</li><li>Rubber processing</li><li>Compression molding</li></ul>
+      <ul class="tags">
+        <li>DSC</li>
+        <li>TGA</li>
+        <li>FTIR</li>
+        <li>SEM</li>
+        <li>DMTA</li>
+        <li>Rheometry</li>
+        <li>Tensile testing</li>
+      </ul>
+    </div>
+ 
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Polymer Processing</h3>
       </div>
-      <div class="skill-group">
-        <h4>Data Analysis</h4>
-        <ul class="tags"><li>OriginPro</li><li>Excel</li></ul>
+      <ul class="tags">
+        <li>Extrusion</li>
+        <li>Rubber processing</li>
+        <li>Compression molding</li>
+      </ul>
+    </div>
+ 
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Data Analysis</h3>
       </div>
-      <div class="skill-group">
-        <h4>Languages</h4>
-        <ul class="tags">
-          <li>English — Bloomsbury International</li>
-          <li>Persian — Native</li>
-        </ul>
-        <a class="entry-link" href="English1.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
+      <ul class="tags">
+        <li>OriginPro</li>
+        <li>Excel</li>
+      </ul>
+    </div>
+ 
+    <div class="entry">
+      <div class="entry-head">
+        <h3>Languages</h3>
       </div>
+      <ul class="tags">
+        <li>English — Bloomsbury International</li>
+        <li>Persian — Native</li>
+      </ul>
+      <a class="entry-link" href="English1.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
     </div>
   </section>
  
