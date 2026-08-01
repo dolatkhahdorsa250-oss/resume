@@ -13,302 +13,707 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 <style>
-  :root{
-    --bg:#F7F5F0;
-    --paper:#FCFBF8;
-    --ink:#1E2023;
-    --ink-soft:#5B5E63;
-    --ink-faint:#8B8E93;
-    --rule:#DEDAD0;
-    --accent:#2B5D62;      /* deep teal — lab glass / polymer science */
-    --accent-soft:#2B5D6212;
-    --accent2:#8C6A2F;     /* muted bronze — rubber / industrial processing */
-    --space-xs:.4rem;
-    --space-s:.75rem;
-    --space:1.25rem;
-    --space-m:2rem;
-    --space-l:3.25rem;
-    --space-xl:5rem;
-    --serif:'Source Serif 4', Georgia, serif;
-    --sans:'Inter', Helvetica, Arial, sans-serif;
-    --mono:'IBM Plex Mono', 'Fira Mono', monospace;
+  /* ===== Variables ===== */
+  :root {
+    --bg: #f4f5f7;
+    --paper: #ffffff;
+    --ink: #1a1a2e;           /* deep navy – professional, authoritative */
+    --ink-soft: #3d4a5a;
+    --ink-faint: #7a8594;
+    --rule: #e4e7ec;
+    --accent: #c4953a;         /* gold – prestige, excellence, top-tier */
+    --accent-soft: #c4953a14;
+    --accent-light: #c4953a08;
+    --space-xs: .4rem;
+    --space-s: .75rem;
+    --space: 1.25rem;
+    --space-m: 2rem;
+    --space-l: 3.25rem;
+    --space-xl: 5rem;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', Helvetica, Arial, sans-serif;
+    --mono: 'IBM Plex Mono', 'Fira Mono', monospace;
   }
- 
-  *{box-sizing:border-box;}
-  html{-webkit-font-smoothing:antialiased;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
-    line-height:1.55;
-    font-size:16px;
+
+  /* ===== Base ===== */
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    font-size: 16px;
   }
-  a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;}
-  a:hover, a:focus{border-bottom-color:var(--accent);}
-  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px;}
- 
-  .wrap{
-    max-width:760px;
-    margin:0 auto;
-    padding:var(--space-xl) var(--space) var(--space-l);
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease, color .2s ease;
   }
- 
-  /* ---------- Header ---------- */
-  header.hero{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:var(--space);
-    margin-bottom:var(--space-m);
+  a:hover, a:focus {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
   }
-  .hero-text{
-    display:flex;
-    align-items:flex-start;
-    gap:.85rem;
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space) var(--space-l);
   }
-  .hero-text h1{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:2.6rem;
-    letter-spacing:-0.01em;
-    margin:0 0 .3rem;
-    color:var(--ink);
+
+  /* ===== Polymer Chain Header ===== */
+  .chain-header {
+    position: relative;
+    padding: var(--space-l) var(--space) var(--space-m);
+    margin: calc(-1 * var(--space-xl)) calc(-1 * var(--space)) var(--space-m);
+    margin-bottom: var(--space-m);
+    background: var(--ink);
+    color: #fff;
+    overflow: hidden;
+    border-bottom: 3px solid var(--accent);
   }
-  .hero-text .role{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:1.15rem;
-    color:var(--accent);
-    margin:0 0 .25rem;
+  .chain-header .wrap {
+    padding: 0;
+    max-width: 820px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
-  .hero-text .affil{
-    color:var(--ink-soft);
-    font-size:.95rem;
-    margin:0;
+
+  /* Hexagonal background pattern */
+  .chain-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(circle at 5% 10%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 15% 30%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 25% 50%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 35% 70%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 45% 90%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 55% 15%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 65% 35%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 75% 55%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 85% 75%, var(--accent-soft) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 95% 95%, var(--accent-soft) 1.5px, transparent 1.5px);
+    background-size: 40px 40px;
+    opacity: 0.3;
+    z-index: 0;
   }
- 
-  .cv-badge{
-    flex-shrink:0;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:2.5rem;
-    height:2.5rem;
-    margin-top:.35rem;
-    border:1px solid var(--rule);
-    border-radius:50%;
-    background:var(--accent-soft);
-    color:var(--accent);
-    font-size:1.05rem;
-    transition:background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
+
+  /* Polymer chain – subtle horizontal lines mimicking a polymer backbone */
+  .chain-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 28px,
+        rgba(255,255,255,.04) 28px,
+        rgba(255,255,255,.04) 30px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 28px,
+        rgba(255,255,255,.04) 28px,
+        rgba(255,255,255,.04) 30px
+      );
+    z-index: 0;
   }
-  .cv-badge:hover, .cv-badge:focus-visible{
-    background:var(--accent);
-    color:var(--paper);
-    border-color:var(--accent);
-    transform:translateY(-1px);
+
+  .chain-header .hero-text h1 {
+    color: #fff;
+    font-size: 3rem;
   }
-  .cv-badge:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
- 
-  .contact{
-    list-style:none;
-    margin:0;
-    padding:0;
-    font-family:var(--mono);
-    font-size:.8rem;
-    color:var(--ink-soft);
-    display:flex;
-    flex-direction:column;
-    gap:.45rem;
-    min-width:190px;
+  .chain-header .hero-text .role {
+    color: var(--accent);
+    opacity: 0.95;
   }
-  .contact li{display:flex; align-items:center; gap:.5rem;}
-  .contact a{color:var(--ink-soft);}
-  .contact a:hover{color:var(--accent); border-bottom-color:var(--accent);}
-  .contact i{width:1rem; text-align:center; color:var(--accent);}
- 
-  .chain{
-    width:100%;
-    height:14px;
-    margin:var(--space-m) 0;
-    display:block;
+  .chain-header .hero-text .affil {
+    color: rgba(255,255,255,.65);
   }
- 
-  /* ---------- Section scaffolding ---------- */
-  section{margin-bottom:var(--space-l);}
-  .eyebrow{
-    font-family:var(--mono);
-    font-size:.72rem;
-    letter-spacing:.14em;
-    color:var(--accent);
-    text-transform:uppercase;
-    display:flex;
-    align-items:center;
-    gap:.5rem;
-    margin-bottom:var(--space-s);
+  .chain-header .cv-badge {
+    border-color: var(--accent);
+    color: var(--accent);
   }
-  .eyebrow .hex{flex-shrink:0; margin-right:.15rem;}
-  .eyebrow::after{
-    content:"";
-    flex:1;
-    height:1px;
-    background:var(--rule);
+  .chain-header .cv-badge:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
   }
- 
-  p{margin:0 0 .8rem;}
-  .lede{color:var(--ink-soft); max-width:62ch;}
- 
-  .tags{
-    list-style:none;
-    display:flex;
-    flex-wrap:wrap;
-    gap:.5rem;
-    margin:var(--space-s) 0 0;
-    padding:0;
+  .chain-header .contact a {
+    color: rgba(255,255,255,.7);
   }
-  .tags li{
-    font-size:.82rem;
-    color:var(--ink);
-    background:var(--accent-soft);
-    border:1px solid var(--rule);
-    border-radius:3px;
-    padding:.28rem .6rem;
-    display:flex;
-    align-items:center;
-    gap:.4rem;
+  .chain-header .contact a:hover {
+    color: #fff;
+    border-bottom-color: var(--accent);
   }
-  .tags li svg{flex-shrink:0;}
- 
-  /* entries — unified structure for all sections */
-  .entry{
-    padding-bottom:var(--space);
-    margin-bottom:var(--space);
-    border-bottom:1px solid var(--rule);
+  .chain-header .contact i {
+    color: var(--accent);
   }
-  .entry:last-child{border-bottom:none; margin-bottom:0; padding-bottom:0;}
- 
-  .entry-head{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:.8rem;
-    margin-bottom:.15rem;
+  .chain-header header.hero {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
-  .entry-head h3{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.12rem;
-    margin:0;
-    color:var(--ink);
-    line-height:1.35;
-    flex:1 1 auto;
-    min-width:0;
+  .chain-header header.hero::after {
+    display: none;
   }
-  .entry-date{
-    font-family:var(--mono);
-    font-size:.76rem;
-    font-weight:400;
-    color:var(--ink-faint);
-    white-space:nowrap;
-    flex:0 0 auto;
-    padding-bottom:.1rem;
+
+  /* ===== Header (inside chain) ===== */
+  header.hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space);
+    margin-bottom: var(--space-m);
+    padding-bottom: var(--space-m);
+    border-bottom: 2px solid var(--accent);
+    position: relative;
   }
-  .entry-meta{
-    font-size:.88rem;
-    color:var(--accent2);
-    margin:0 0 .4rem;
-    font-weight:500;
+  header.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
   }
-  .entry p{color:var(--ink-soft); font-size:.95rem; margin:0;}
-  .entry ul{margin:.3rem 0 0; padding-left:1.1rem; color:var(--ink-soft); font-size:.95rem;}
-  .entry li{margin-bottom:.2rem;}
-  .entry-link{
-    display:inline-flex;
-    align-items:center;
-    gap:.35rem;
-    font-family:var(--mono);
-    font-size:.78rem;
-    color:var(--accent);
-    margin-top:.35rem;
-    border-bottom:1px solid transparent;
+
+  .hero-text {
+    display: flex;
+    align-items: flex-start;
+    gap: .85rem;
   }
-  .entry-link:hover{border-bottom-color:var(--accent);}
- 
-  /* FIX: Align spacing of tags inside entries with other content */
-  .entry .tags {
-    margin-top: .4rem;  /* matches .entry-meta bottom margin */
+  .hero-text h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 .2rem;
+    color: var(--ink);
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    flex-wrap: wrap;
   }
- 
-  footer{
-    text-align:center;
-    padding-top:var(--space-m);
-    border-top:1px solid var(--rule);
-    color:var(--ink-faint);
-    font-size:.85rem;
+  .hero-text h1 .chain-icon {
+    font-size: 1.6rem;
+    color: var(--accent);
+    opacity: 0.7;
+    font-weight: 300;
+    letter-spacing: -.05em;
+    display: inline-block;
   }
-  footer a{color:var(--ink-soft);}
- 
-  @media (prefers-reduced-motion:no-preference){
-    .entry, .tags li{transition:border-color .15s ease;}
+  .hero-text .role {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin: 0 0 .15rem;
   }
- 
-  @media print{
-    body{background:#fff;}
-    .wrap{padding:1rem 0;}
+  .hero-text .affil {
+    color: var(--ink-soft);
+    font-size: .95rem;
+    margin: 0;
   }
- 
-  @media (max-width:480px){
-    .hero-text h1{font-size:2.1rem;}
-    header.hero{flex-direction:column;}
+
+  .cv-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin-top: .2rem;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: all .25s ease;
+  }
+  .cv-badge:hover, .cv-badge:focus-visible {
+    background: var(--accent);
+    color: #fff;
+    transform: scale(1.05);
+    border-color: var(--accent);
+  }
+  .cv-badge:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: .8rem;
+    color: var(--ink-soft);
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    min-width: 190px;
+  }
+  .contact li {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+  }
+  .contact a { color: var(--ink-soft); border-bottom: none; }
+  .contact a:hover { color: var(--accent); border-bottom: none; }
+  .contact i {
+    width: 1.1rem;
+    text-align: center;
+    color: var(--accent);
+    font-size: .85rem;
+  }
+
+  /* ===== Section Titles ===== */
+  section {
+    margin-bottom: var(--space-l);
+    animation: fadeUp .5s ease both;
+  }
+  section:nth-child(2) { animation-delay: .05s; }
+  section:nth-child(3) { animation-delay: .1s; }
+  section:nth-child(4) { animation-delay: .15s; }
+  section:nth-child(5) { animation-delay: .2s; }
+  section:nth-child(6) { animation-delay: .25s; }
+  section:nth-child(7) { animation-delay: .3s; }
+  section:nth-child(8) { animation-delay: .35s; }
+  section:nth-child(9) { animation-delay: .4s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    margin-bottom: var(--space-s);
+  }
+  .eyebrow .hex {
+    flex-shrink: 0;
+    margin-right: .05rem;
+  }
+  .eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ===== Polymer Chain Divider ===== */
+  .polymer-chain-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    margin: var(--space-m) 0 var(--space-l);
+    opacity: .4;
+    width: 100%;
+  }
+  .polymer-chain-divider svg {
+    width: 100%;
+    max-width: 300px;
+    height: 18px;
+  }
+
+  /* ===== Entries ===== */
+  .entry {
+    padding: var(--space-s) var(--space-s) var(--space);
+    margin-bottom: var(--space-s);
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    transition: border-color .2s ease, box-shadow .25s ease, transform .2s ease;
+  }
+  .entry:last-child { margin-bottom: 0; }
+  .entry:hover {
+    border-color: var(--accent);
+    box-shadow: 0 4px 20px rgba(196, 149, 58, .08);
+    transform: translateY(-1px);
+  }
+
+  .entry-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: .8rem;
+    margin-bottom: .1rem;
+  }
+  .entry-head h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 1.12rem;
+    margin: 0;
+    color: var(--ink);
+    line-height: 1.35;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .entry-date {
+    font-family: var(--mono);
+    font-size: .7rem;
+    font-weight: 500;
+    color: #fff;
+    background: var(--accent);
+    padding: .15rem .7rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+    margin-top: .1rem;
+    letter-spacing: .02em;
+  }
+  .entry-meta {
+    font-size: .85rem;
+    color: var(--ink-soft);
+    margin: 0 0 .25rem;
+    font-weight: 500;
+    letter-spacing: .01em;
+  }
+  .entry p {
+    color: var(--ink-soft);
+    font-size: .95rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+  .entry-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-family: var(--mono);
+    font-size: .75rem;
+    color: var(--accent);
+    margin-top: .5rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease;
+    background: var(--accent-soft);
+    padding: .2rem .7rem .2rem .6rem;
+    border-radius: 20px;
+  }
+  .entry-link:hover {
+    border-bottom-color: var(--accent);
+    background: var(--accent-soft);
+  }
+  .entry-link i { font-size: .75rem; }
+
+  /* ===== Tags ===== */
+  .tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: .4rem 0 0;
+    padding: 0;
+  }
+  .tags li {
+    font-size: .8rem;
+    color: var(--ink-soft);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: .2rem .8rem;
+    transition: border-color .2s ease, background .2s ease;
+  }
+  .tags li:hover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  /* About section tags */
+  #about .tags {
+    gap: .4rem;
+    margin-top: .6rem;
+  }
+  #about .tags li {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--ink);
+    font-weight: 500;
+    font-size: .82rem;
+    padding: .25rem 1rem;
+    border-radius: 20px;
+    position: relative;
+  }
+  #about .tags li::after {
+    content: '⬡';
+    color: var(--accent);
+    font-size: .6rem;
+    margin-left: .4rem;
+    opacity: .6;
+  }
+  #about .tags li:last-child::after {
+    content: '';
+  }
+  #about .tags li:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+  #about .tags li:hover::after {
+    color: #fff;
+  }
+
+  /* ===== Recommendations ===== */
+  .rec-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: .6rem 1rem .6rem .8rem;
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    transition: all .2s ease;
+  }
+  .rec-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(196, 149, 58, .06);
+  }
+  .rec-card .rec-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .rec-card .rec-info {
+    flex: 1;
+  }
+  .rec-card .rec-info .rec-name {
+    font-weight: 600;
+    font-size: .95rem;
+    color: var(--ink);
+    margin: 0;
+  }
+  .rec-card .rec-info .rec-title {
+    font-size: .82rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .rec-card .rec-link {
+    font-family: var(--mono);
+    font-size: .72rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 20px;
+    padding: .2rem .8rem;
+    transition: all .2s ease;
+    flex-shrink: 0;
+  }
+  .rec-card .rec-link:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  /* ===== Skills ===== */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+  @media (min-width: 600px) {
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .skill-group {
+    background: var(--paper);
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    padding: .8rem 1rem;
+    transition: border-color .2s ease;
+  }
+  .skill-group:hover { border-color: var(--accent); }
+  .skill-group h4 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: .85rem;
+    color: var(--ink);
+    margin: 0 0 .4rem;
+    letter-spacing: .02em;
+  }
+  .skill-group .tags { margin: 0; }
+  .skill-group .tags li {
+    background: var(--paper);
+    border-color: var(--rule);
+    font-size: .76rem;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    text-align: center;
+    padding-top: var(--space-m);
+    border-top: 1px solid var(--rule);
+    color: var(--ink-faint);
+    font-size: .82rem;
+    margin-top: var(--space-m);
+  }
+  footer a { color: var(--ink-soft); border-bottom: none; }
+  footer a:hover { color: var(--accent); border-bottom: none; }
+  footer .chain-icon {
+    color: var(--accent);
+    opacity: .4;
+    font-size: .7rem;
+    margin: 0 .4rem;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .chain-header {
+      padding: var(--space-l) var(--space) var(--space-m);
+      margin: calc(-1 * var(--space-xl)) 0 var(--space-m);
+      border-radius: 0;
+    }
+    .chain-header .hero-text h1 { font-size: 2.2rem; }
+    header.hero { flex-direction: column; align-items: stretch; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-text h1 .chain-icon { font-size: 1.2rem; }
+    .contact { min-width: unset; }
+    .entry-head { flex-wrap: wrap; }
+    .entry-date { margin-top: .2rem; }
+    .rec-card { flex-wrap: wrap; }
+    .rec-card .rec-link { margin-left: auto; }
+    #about .tags li::after { display: none; }
+    .polymer-chain-divider svg { max-width: 200px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .chain-header {
+      background: #fff !important;
+      color: var(--ink) !important;
+      padding: 1rem 0 !important;
+      margin: 0 !important;
+      border-bottom: 2px solid var(--accent) !important;
+    }
+    .chain-header::before,
+    .chain-header::after { display: none !important; }
+    .chain-header .hero-text h1 { color: var(--ink) !important; }
+    .chain-header .hero-text .affil { color: var(--ink-soft) !important; }
+    .chain-header .contact a { color: var(--ink-soft) !important; }
+    .chain-header .cv-badge { display: none; }
+    .wrap { padding: 1rem 0; max-width: 100%; }
+    .entry { border: 1px solid #ccc; box-shadow: none !important; transform: none !important; }
+    .entry:hover { transform: none !important; box-shadow: none !important; }
+    .cv-badge { display: none; }
+    header.hero::after { display: none; }
+    #about .tags li::after { display: none; }
+    .polymer-chain-divider { display: none; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
- 
-  <!-- Header -->
-  <header class="hero">
-    <div class="hero-text">
-      <div>
-        <h1>Dorsa Dolatkhah Ouchbolagh</h1>
-        <p class="role">Polymer Engineering</p>
-        <p class="affil">M.Sc. Candidate, University of Tehran<br/>Department of Chemical Engineering, School of Polymer Engineering</p>
+
+<!-- ===== Polymer-themed Header ===== -->
+<div class="chain-header">
+  <div class="wrap">
+    <header class="hero">
+      <div class="hero-text">
+        <div>
+          <h1>
+            <span>Dorsa Dolatkhah Ouchbolagh</span>
+            <span class="chain-icon">⬡</span>
+          </h1>
+          <p class="role">Polymer Engineering</p>
+          <p class="affil">M.Sc. Candidate, University of Tehran<br/>Department of Chemical Engineering, School of Polymer Engineering</p>
+        </div>
+        <a class="cv-badge" href="CV-DorsaDolatkhahOuchbolagh.pdf" target="_blank" title="View full CV" aria-label="View full CV">
+          <i class="fa-solid fa-file-lines"></i>
+        </a>
       </div>
-      <a class="cv-badge" href="CV-DorsaDolatkhahOuchbolagh.pdf" target="_blank" title="View full CV" aria-label="View full CV">
-        <i class="fa-solid fa-file-lines"></i>
-      </a>
-    </div>
-    <ul class="contact">
-      <li><i class="fa-solid fa-envelope"></i><a href="mailto:dolatkhahdorsa250@gmail.com">dolatkhahdorsa250@gmail.com</a></li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:+989017020755">(+98) 901 702 0755</a></li>
-      <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/dorsa-dolatkhah" target="_blank" rel="author">in/dorsa-dolatkhah</a></li>
-      <li><i class="fa-brands fa-github"></i><a href="https://github.com/dorsa-dolatkhah" target="_blank" rel="author">/dorsa-dolatkhah</a></li>
-      <li><i class="fa-solid fa-location-dot"></i>Tehran, Iran</li>
-      <li><i class="fa-solid fa-file-lines"></i><a href="cv(2).html" target="_blank">Curriculum Vitae</a></li>
-    </ul>
-  </header>
- 
-  <!-- polymer-chain motif divider -->
-  <svg class="chain" viewBox="0 0 760 14" preserveAspectRatio="none" aria-hidden="true">
-    <polyline points="0,7 20,7" stroke="#2B5D62" stroke-width="1.2" fill="none" opacity="0.5"/>
-    <polyline points="20,7 34,1 48,7 62,13 76,7 90,1 104,7 118,13 132,7 146,1 160,7 174,13 188,7 202,1 216,7 230,13 244,7 258,1 272,7 286,13 300,7 314,1 328,7 342,13 356,7 370,1 384,7 398,13 412,7 426,1 440,7 454,13 468,7 482,1 496,7 510,13 524,7 538,1 552,7 566,13 580,7 594,1 608,7 622,13 636,7 650,1 664,7 678,13 692,7 706,1 720,7 734,13 748,7 760,7"
-      stroke="#2B5D62" stroke-width="1.1" fill="none" opacity="0.45"/>
-    <g fill="#2B5D62" opacity="0.6">
-      <circle cx="34" cy="1" r="1.4"/><circle cx="62" cy="13" r="1.4"/><circle cx="90" cy="1" r="1.4"/><circle cx="118" cy="13" r="1.4"/>
-      <circle cx="146" cy="1" r="1.4"/><circle cx="174" cy="13" r="1.4"/><circle cx="202" cy="1" r="1.4"/><circle cx="230" cy="13" r="1.4"/>
-      <circle cx="258" cy="1" r="1.4"/><circle cx="286" cy="13" r="1.4"/><circle cx="314" cy="1" r="1.4"/><circle cx="342" cy="13" r="1.4"/>
-      <circle cx="370" cy="1" r="1.4"/><circle cx="398" cy="13" r="1.4"/><circle cx="426" cy="1" r="1.4"/><circle cx="454" cy="13" r="1.4"/>
-      <circle cx="482" cy="1" r="1.4"/><circle cx="510" cy="13" r="1.4"/><circle cx="538" cy="1" r="1.4"/><circle cx="566" cy="13" r="1.4"/>
-      <circle cx="594" cy="1" r="1.4"/><circle cx="622" cy="13" r="1.4"/><circle cx="650" cy="1" r="1.4"/><circle cx="678" cy="13" r="1.4"/>
-      <circle cx="706" cy="1" r="1.4"/><circle cx="734" cy="13" r="1.4"/>
-    </g>
-  </svg>
- 
-  <!-- About -->
+      <ul class="contact">
+        <li><i class="fa-solid fa-envelope"></i><a href="mailto:dolatkhahdorsa250@gmail.com">dolatkhahdorsa250@gmail.com</a></li>
+        <li><i class="fa-solid fa-phone"></i><a href="tel:+989017020755">(+98) 901 702 0755</a></li>
+        <li><i class="fa-brands fa-linkedin"></i><a href="https://www.linkedin.com/in/dorsa-dolatkhah" target="_blank" rel="author">in/dorsa-dolatkhah</a></li>
+        <li><i class="fa-brands fa-github"></i><a href="https://github.com/dorsa-dolatkhah" target="_blank" rel="author">/dorsa-dolatkhah</a></li>
+        <li><i class="fa-solid fa-location-dot"></i>Tehran, Iran</li>
+        <li><i class="fa-solid fa-file-lines"></i><a href="cv(2).html" target="_blank">Curriculum Vitae</a></li>
+      </ul>
+    </header>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ===== Polymer Chain Divider ===== -->
+  <div class="polymer-chain-divider" aria-hidden="true">
+    <svg viewBox="0 0 300 18" xmlns="http://www.w3.org/2000/svg">
+      <!-- Polymer chain: repeating monomer units with connecting bonds -->
+      <g stroke="var(--accent)" fill="none" stroke-width="1.2" opacity="0.5">
+        <!-- Bond lines -->
+        <line x1="0" y1="10" x2="20" y2="10" />
+        <line x1="20" y1="10" x2="35" y2="4" />
+        <line x1="35" y1="4" x2="50" y2="16" />
+        <line x1="50" y1="16" x2="65" y2="4" />
+        <line x1="65" y1="4" x2="80" y2="16" />
+        <line x1="80" y1="16" x2="95" y2="4" />
+        <line x1="95" y1="4" x2="110" y2="16" />
+        <line x1="110" y1="16" x2="125" y2="4" />
+        <line x1="125" y1="4" x2="140" y2="16" />
+        <line x1="140" y1="16" x2="155" y2="4" />
+        <line x1="155" y1="4" x2="170" y2="16" />
+        <line x1="170" y1="16" x2="185" y2="4" />
+        <line x1="185" y1="4" x2="200" y2="16" />
+        <line x1="200" y1="16" x2="215" y2="4" />
+        <line x1="215" y1="4" x2="230" y2="16" />
+        <line x1="230" y1="16" x2="245" y2="4" />
+        <line x1="245" y1="4" x2="260" y2="16" />
+        <line x1="260" y1="16" x2="275" y2="4" />
+        <line x1="275" y1="4" x2="290" y2="16" />
+        <line x1="290" y1="16" x2="300" y2="10" />
+      </g>
+      <!-- Monomer nodes (circles at vertices) -->
+      <g fill="var(--accent)" opacity="0.4">
+        <circle cx="10" cy="10" r="3" />
+        <circle cx="35" cy="4" r="3" />
+        <circle cx="50" cy="16" r="3" />
+        <circle cx="65" cy="4" r="3" />
+        <circle cx="80" cy="16" r="3" />
+        <circle cx="95" cy="4" r="3" />
+        <circle cx="110" cy="16" r="3" />
+        <circle cx="125" cy="4" r="3" />
+        <circle cx="140" cy="16" r="3" />
+        <circle cx="155" cy="4" r="3" />
+        <circle cx="170" cy="16" r="3" />
+        <circle cx="185" cy="4" r="3" />
+        <circle cx="200" cy="16" r="3" />
+        <circle cx="215" cy="4" r="3" />
+        <circle cx="230" cy="16" r="3" />
+        <circle cx="245" cy="4" r="3" />
+        <circle cx="260" cy="16" r="3" />
+        <circle cx="275" cy="4" r="3" />
+        <circle cx="290" cy="16" r="3" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
   <section id="about">
-    <p class="lede">
+    <p class="lede" style="color:var(--ink-soft); max-width:65ch; font-size:1.05rem; line-height:1.7;">
       I am a Polymer Engineering researcher at the University of Tehran, currently completing an M.Sc. in Polymer Processing after
       graduating first in my B.Sc. class. My work centers on sustainable and bio-based polymers, with a Bachelor's thesis on
       bio-based phase change materials for thermal energy storage. I work across polymer characterization (DSC, TGA, FTIR) and
@@ -320,210 +725,217 @@
       <li>Polymer recycling</li>
       <li>Smart, stimuli-responsive polymers</li>
       <li>Biomedical polymers</li>
-      <li>Bio-inspired materials and Polymer Composites</li>
+      <li>Bio-inspired materials &amp; composites</li>
       <li>Bio-based Polymers</li>
     </ul>
   </section>
- 
-  <!-- Education -->
+
+  <!-- ===== EDUCATION ===== -->
   <section id="education">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Education</p>
- 
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#c4953a" stroke-width="1"/></svg>Education</p>
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">M.Sc. in Polymer Engineering — Processing</span></h3><span class="entry-date">2026 – Present</span>
+        <h3>M.Sc. in Polymer Engineering — Processing</h3>
+        <span class="entry-date">2026 – Present</span>
       </div>
       <p class="entry-meta">University of Tehran</p>
     </div>
- 
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">B.Sc. in Polymer Engineering</span></h3><span class="entry-date">2022 – 2026</span>
+        <h3>B.Sc. in Polymer Engineering</h3>
+        <span class="entry-date">2022 – 2026</span>
       </div>
       <p class="entry-meta">University of Tehran · GPA 3.60 / 4.00 (18.01 / 20)</p>
-      <p><em>Bachelor's thesis: Invesitigated bio-based phase change materials — synthesis, characterization, and thermal performance evaluation for energy-storage applications.</em></p>
+      <p><em>Bachelor's thesis: Investigated bio-based phase change materials — synthesis, characterization, and thermal performance evaluation for energy-storage applications.</em></p>
     </div>
   </section>
- 
-  <!-- Research & Projects -->
+
+  <!-- ===== RESEARCH ===== -->
   <section id="research">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Research &amp; Projects</p>
- 
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#c4953a" stroke-width="1"/></svg>Research &amp; Projects</p>
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">Bio-based Phase Change Materials</span></h3><span class="entry-date">2025 – 2026</span>
+        <h3>Bio-based Phase Change Materials</h3>
+        <span class="entry-date">2025 – 2026</span>
       </div>
       <p class="entry-meta">B.Sc. Thesis, University of Tehran</p>
-      <p>Investigated bio-based phase change materials (PCMs) for thermal energy storage. Conducted thermal and structural characterization using DSC, TGA, and FTIR, and evaluated encapsulation and vacuum impregnation methods and thermal-cycling stability. CPCMs(Composite phase change materials)based on biomass and degradable natural resources, such as delignified wood, bagasse and agricultural and industrial residues were also Invesitigated.</p>
+      <p>Investigated bio-based phase change materials (PCMs) for thermal energy storage. Conducted thermal and structural characterization using DSC, TGA, and FTIR, and evaluated encapsulation and vacuum impregnation methods and thermal-cycling stability. CPCMs (Composite phase change materials) based on biomass and degradable natural resources, such as delignified wood, bagasse and agricultural and industrial residues were also investigated.</p>
     </div>
- 
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">Bagasse-based Food Containers with Embedded PCMs</span></h3><span class="entry-date">2026</span>
+        <h3>Bagasse-based Food Containers with Embedded PCMs</h3>
+        <span class="entry-date">2026</span>
       </div>
       <p class="entry-meta">School of Polymer Engineering, University of Tehran</p>
-      <p>Designed and fabricated bagasse-based food containers embedded with phase change materials  to prevent heat/cold dissipation and enhance cold/heat storage. Bio-degradable CPCMs with the ability to sustain heat/cold for long periods of time  and enhanced bio-degradibility were Invesitigated.</p>
+      <p>Designed and fabricated bagasse-based food containers embedded with phase change materials to prevent heat/cold dissipation and enhance cold/heat storage. Bio-degradable CPCMs with the ability to sustain heat/cold for long periods of time and enhanced bio-degradability were investigated.</p>
     </div>
- 
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">4D-Printed Smart, Stimuli-Responsive Biodegradable Polymers with Shape-Memory Properties</span></h3><span class="entry-date">2025</span>
+        <h3>4D-Printed Smart, Stimuli-Responsive Biodegradable Polymers</h3>
+        <span class="entry-date">2025</span>
       </div>
       <p class="entry-meta">University of Tehran</p>
-      <p>Class project on smart, sustainable, biodegradable polymer composites (e.g., PLA) fabricated via 4D filament printing.</p>
+      <p>Class project on smart, sustainable, biodegradable polymer composites (e.g., PLA) fabricated via 4D filament printing with shape-memory properties.</p>
     </div>
   </section>
- 
-  <!-- Publication -->
+
+  <!-- ===== PUBLICATION ===== -->
   <section id="publication">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Publication</p>
- 
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#c4953a" stroke-width="1"/></svg>Publication</p>
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">A Review on Biomass Selection for Phase Change Material-Embedded Composites: Criteria, Material Properties, and Design Considerations</span></h3><span class="entry-date">2026 – Present</span>
+        <h3>A Review on Biomass Selection for Phase Change Material-Embedded Composites: Criteria, Material Properties, and Design Considerations</h3>
+        <span class="entry-date">2026 – Present</span>
       </div>
       <p class="entry-meta">Manuscript in preparation</p>
     </div>
   </section>
- 
-  <!-- Experience -->
+
+  <!-- ===== EXPERIENCE ===== -->
   <section id="experience">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Experience</p>
- 
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#c4953a" stroke-width="1"/></svg>Experience</p>
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">Laboratory Intern — Rubber Processing</span></h3><span class="entry-date">Summer 2025</span>
+        <h3>Laboratory Intern — Rubber Processing</h3>
+        <span class="entry-date">Summer 2025</span>
       </div>
       <p class="entry-meta">Rubber Research and Engineering Company (VardAvard), Tehran, Iran</p>
       <p>Senior laboratory assistant in rubber compounding, curing characterization, and quality-control testing. Hands-on experience with internal mixers, two-roll mills, and rheometers, following ASTM standards.</p>
-      <a class="entry-link" href="Internship RecommendatioLetter.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View Recommendation Letter</a>
+      <a class="entry-link" href="Internship_RecommendationLetter.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View Recommendation Letter</a>
     </div>
- 
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">Teaching Assistant — Differential Equations (ODE)</span></h3><span class="entry-date">Spring 2023</span>
+        <h3>Teaching Assistant — Differential Equations (ODE)</h3>
+        <span class="entry-date">Spring 2023</span>
       </div>
       <p class="entry-meta">Department of Chemical Engineering, University of Tehran · Instructor: Prof. H. Rahami</p>
       <a class="entry-link" href="ta-differential-equations.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
     </div>
- 
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">Teaching Assistant — Calculus I &amp; II</span></h3><span class="entry-date">Fall 2022</span>
+        <h3>Teaching Assistant — Calculus I &amp; II</h3>
+        <span class="entry-date">Fall 2022</span>
       </div>
       <p class="entry-meta">Department of Chemical Engineering, University of Tehran</p>
     </div>
   </section>
- 
-  <!-- Awards -->
+
+  <!-- ===== AWARDS ===== -->
   <section id="awards">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Awards &amp; Honors</p>
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#c4953a" stroke-width="1"/></svg>Awards &amp; Honors</p>
+
     <div class="entry">
       <div class="entry-head">
-        <h3><span class="entry-title">Ranked 1st in Class</span></h3><span class="entry-date">2022 – 2026</span>
+        <h3>Ranked 1st in Class</h3>
+        <span class="entry-date">2022 – 2026</span>
       </div>
       <p class="entry-meta">University of Tehran</p>
-      <p>Graduated first among 23 undergraduates in the B.Sc. Polymer Engineering program, achieving the highest GPA in the graduating class. Admitted to a M.Sc. program at the University of Tehran, Polytechnic University of Tehran, and Sharif University of Technology without entrance examination, on the basis of academic excellency.</p>
+      <p>Graduated first among 23 undergraduates in the B.Sc. Polymer Engineering program, achieving the highest GPA in the graduating class. Admitted to M.Sc. programs at the University of Tehran, Amirkabir University of Technology, and Sharif University of Technology without entrance examination, on the basis of academic excellence.</p>
     </div>
   </section>
 
-  <!-- Recommendations -->
+  <!-- ===== RECOMMENDATIONS ===== -->
   <section id="recommendations">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Recommendations</p>
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#c4953a" stroke-width="1"/></svg>Recommendations</p>
 
-    <div class="entry">
-      <div class="entry-head">
-        <h3><span class="entry-title">Academic Reference – Dr. Seyedmostaffa Hosseini</span></h3><span class="entry-date">2025</span>
+    <!-- Hosseini -->
+    <div class="rec-card">
+      <div class="rec-icon"><i class="fa-solid fa-user-graduate"></i></div>
+      <div class="rec-info">
+        <p class="rec-name">Dr. Seyedmostaffa Hosseini</p>
+        <p class="rec-title">Assistant Professor, School of Polymer Engineering, University of Tehran</p>
       </div>
-      <p class="entry-meta">Assistant Professor, School of Polymer Engineering, University of Tehran</p>
-      <a class="entry-link" href="Recommendation_Hosseini.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View letter</a>
+      <a class="rec-link" href="Recommendation_Hosseini.pdf" target="_blank">Read</a>
     </div>
 
-    <div class="entry">
-      <div class="entry-head">
-        <h3><span class="entry-title">Academic Reference – Dr. Sara Tarashi</span></h3><span class="entry-date">2025</span>
+    <!-- Tarashi -->
+    <div class="rec-card" style="margin-top:.5rem;">
+      <div class="rec-icon"><i class="fa-solid fa-user-graduate"></i></div>
+      <div class="rec-info">
+        <p class="rec-name">Dr. Sara Tarashi</p>
+        <p class="rec-title">Assistant Professor, School of Polymer Engineering, University of Tehran</p>
       </div>
-      <p class="entry-meta">Assistant Professor, School of Polymer Engineering, University of Tehran</p>
-      <a class="entry-link" href="Recommendation_Tarashi.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View letter</a>
+      <a class="rec-link" href="Recommendation_Tarashi.pdf" target="_blank">Read</a>
     </div>
 
-    <!-- NEW: Internship recommendation -->
-    <div class="entry">
-      <div class="entry-head">
-        <h3><span class="entry-title">Industrial Reference – Summer Internship Program</span></h3><span class="entry-date">Summer 2025</span>
+    <!-- Internship -->
+    <div class="rec-card" style="margin-top:.5rem;">
+      <div class="rec-icon"><i class="fa-solid fa-building-columns"></i></div>
+      <div class="rec-info">
+        <p class="rec-name">Summer Internship Program</p>
+        <p class="rec-title">Rubber Research and Engineering Company (VardAvard), Tehran, Iran</p>
       </div>
-      <p class="entry-meta">Rubber Research and Engineering Company (VardAvard), Tehran, Iran</p>
-      <a class="entry-link" href="Internship RecommendatioLetter.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View letter</a>
+      <a class="rec-link" href="Internship_RecommendationLetter.html" target="_blank">Read</a>
     </div>
   </section>
- 
-  <!-- Skills -->
+
+  <!-- ===== SKILLS ===== -->
   <section id="skills">
-    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Skills &amp; Knowledge</p>
- 
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Software &amp; Programming</h3>
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#c4953a" stroke-width="1"/></svg>Skills &amp; Knowledge</p>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Software &amp; Programming</h4>
+        <ul class="tags">
+          <li>Python</li>
+          <li>MATLAB</li>
+          <li>Aspen Plus</li>
+        </ul>
       </div>
-      <ul class="tags">
-        <li>Python</li>
-        <li>MATLAB</li>
-        <li>Aspen Plus</li>
-      </ul>
-    </div>
- 
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Characterization</h3>
+      <div class="skill-group">
+        <h4>Characterization</h4>
+        <ul class="tags">
+          <li>DSC</li>
+          <li>TGA</li>
+          <li>FTIR</li>
+          <li>SEM</li>
+          <li>DMTA</li>
+          <li>Rheometry</li>
+          <li>Tensile testing</li>
+        </ul>
       </div>
-      <ul class="tags">
-        <li>DSC</li>
-        <li>TGA</li>
-        <li>FTIR</li>
-        <li>SEM</li>
-        <li>DMTA</li>
-        <li>Rheometry</li>
-        <li>Tensile testing</li>
-      </ul>
-    </div>
- 
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Polymer Processing</h3>
+      <div class="skill-group">
+        <h4>Polymer Processing</h4>
+        <ul class="tags">
+          <li>Extrusion</li>
+          <li>Rubber processing</li>
+          <li>Compression molding</li>
+        </ul>
       </div>
-      <ul class="tags">
-        <li>Extrusion</li>
-        <li>Rubber processing</li>
-        <li>Compression molding</li>
-      </ul>
-    </div>
- 
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Data Analysis</h3>
+      <div class="skill-group">
+        <h4>Data Analysis</h4>
+        <ul class="tags">
+          <li>OriginPro</li>
+          <li>Excel</li>
+        </ul>
       </div>
-      <ul class="tags">
-        <li>OriginPro</li>
-        <li>Excel</li>
-      </ul>
-    </div>
- 
-    <div class="entry">
-      <div class="entry-head">
-        <h3>Languages</h3>
+      <div class="skill-group" style="grid-column: 1 / -1;">
+        <h4>Languages</h4>
+        <ul class="tags">
+          <li>English — Bloomsbury International</li>
+          <li>Persian — Native</li>
+        </ul>
+        <a class="entry-link" href="English1.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
       </div>
-      <ul class="tags">
-        <li>English — Bloomsbury International</li>
-        <li>Persian — Native</li>
-      </ul>
-      <a class="entry-link" href="English1.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View certificate</a>
     </div>
   </section>
- 
+
+  <!-- ===== FOOTER ===== -->
   <footer>
-    For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>.
+    <span class="chain-icon">⬡</span>
+    For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>
+    <span class="chain-icon">⬡</span>
   </footer>
- 
+
 </div>
 </body>
 </html>
