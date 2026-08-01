@@ -236,6 +236,11 @@
   }
   .entry-link:hover{border-bottom-color:var(--accent);}
  
+  /* FIX: Align spacing of tags inside entries with other content */
+  .entry .tags {
+    margin-top: .4rem;  /* matches .entry-meta bottom margin */
+  }
+ 
   footer{
     text-align:center;
     padding-top:var(--space-m);
@@ -391,7 +396,7 @@
       </div>
       <p class="entry-meta">Rubber Research and Engineering Company (VardAvard), Tehran, Iran</p>
       <p>Senior laboratory assistant in rubber compounding, curing characterization, and quality-control testing. Hands-on experience with internal mixers, two-roll mills, and rheometers, following ASTM standards.</p>
-      <a class="entry-link" href="Internship RecommendatioLetter.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View Recommendation Letter</a>
+      <a class="entry-link" href="RecommendationLetter.html" target="_blank"><i class="fa-solid fa-file-lines"></i> View Recommendation Letter</a>
     </div>
  
     <div class="entry">
@@ -421,8 +426,38 @@
       <p>Graduated first among 23 undergraduates in the B.Sc. Polymer Engineering program, achieving the highest GPA in the graduating class. Admitted to a M.Sc. program at the University of Tehran, Polytechnic University of Tehran, and Sharif University of Technology without entrance examination, on the basis of academic excellency.</p>
     </div>
   </section>
+
+  <!-- Recommendations -->
+  <section id="recommendations">
+    <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Recommendations</p>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3><span class="entry-title">Academic Reference – Prof. Seyedmostaffa Hosseini</span></h3><span class="entry-date">2025</span>
+      </div>
+      <p class="entry-meta">Assistant Professor, School of Polymer Engineering, University of Tehran</p>
+      <a class="entry-link" href="Recommendation_Hosseini.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View letter</a>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <h3><span class="entry-title">Academic Reference – Prof. Sara Tarashi</span></h3><span class="entry-date">2025</span>
+      </div>
+      <p class="entry-meta">Assistant Professor, School of Polymer Engineering, University of Tehran</p>
+      <a class="entry-link" href="Recommendation_Tarashi.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View letter</a>
+    </div>
+
+    <!-- NEW: Internship recommendation -->
+    <div class="entry">
+      <div class="entry-head">
+        <h3><span class="entry-title">Industrial Reference – Summer Internship Program</span></h3><span class="entry-date">Summer 2025</span>
+      </div>
+      <p class="entry-meta">Rubber Research and Engineering Company (VardAvard), Tehran, Iran</p>
+      <a class="entry-link" href="Recommendation_Internship.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i> View letter</a>
+    </div>
+  </section>
  
-  <!-- Skills — now using the exact same .entry structure as all other sections -->
+  <!-- Skills -->
   <section id="skills">
     <p class="eyebrow"><svg class="hex" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><polygon points="5,0.5 9,2.8 9,7.2 5,9.5 1,7.2 1,2.8" fill="none" stroke="#2B5D62" stroke-width="1"/></svg>Skills &amp; Knowledge</p>
  
