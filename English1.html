@@ -4,166 +4,385 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="author" content="Dorsa Dolatkhah Ouchbolagh" />
-<meta name="description" content="English Language Proficiency — Safir Language Academy, Tehran, Iran." />
-<title>Englsih Proficiency Certificate — Safir Language Academy — Dorsa Dolatkhah Ouchbolagh</title>
+<meta name="description" content="English Language Proficiency Certificate — Safir Language Academy, Tehran, Iran." />
+<title>English Proficiency Certificate — Safir Language Academy — Dorsa Dolatkhah Ouchbolagh</title>
 <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/16579247" type="image/png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 <style>
-  :root{
-    --bg:#F7F5F0;
-    --paper:#FCFBF8;
-    --ink:#1E2023;
-    --ink-soft:#5B5E63;
-    --ink-faint:#8B8E93;
-    --rule:#DEDAD0;
-    --accent:#2B5D62;
-    --accent-soft:#2B5D6212;
-    --accent2:#8C6A2F;
-    --serif:'Source Serif 4', Georgia, serif;
-    --sans:'Inter', Helvetica, Arial, sans-serif;
-    --mono:'IBM Plex Mono', 'Fira Mono', monospace;
-  }
-  *{box-sizing:border-box;}
-  html{-webkit-font-smoothing:antialiased;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:var(--sans);
-    line-height:1.55;
-  }
-  a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;}
-  a:hover, a:focus{border-bottom-color:var(--accent);}
-  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px;}
-
-  .wrap{
-    max-width:900px;
-    margin:0 auto;
-    padding:2.5rem 1.25rem 3rem;
+  /* ===== Gold Theme – matches main page ===== */
+  :root {
+    --bg: #f4f5f7;
+    --paper: #ffffff;
+    --ink: #1a1a2e;
+    --ink-soft: #3d4a5a;
+    --ink-faint: #7a8594;
+    --rule: #e4e7ec;
+    --gold: #b8860b;
+    --gold-light: #d4af37;
+    --gold-glow: rgba(184, 134, 11, 0.15);
+    --accent-soft: #b8860b14;
+    --accent-light: #b8860b08;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', Helvetica, Arial, sans-serif;
+    --mono: 'IBM Plex Mono', 'Fira Mono', monospace;
+    --space: 1.25rem;
+    --space-m: 2rem;
+    --space-l: 3.25rem;
   }
 
-  .back{
-    font-family:var(--mono);
-    font-size:.78rem;
-    color:var(--ink-soft);
-    display:inline-flex;
-    align-items:center;
-    gap:.4rem;
-    margin-bottom:1.75rem;
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    font-size: 16px;
   }
-  .back:hover{color:var(--accent);}
+  a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s ease, color .25s ease;
+  }
+  a:hover, a:focus {
+    border-bottom-color: var(--gold);
+    color: var(--gold);
+  }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
 
-  header{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
-    align-items:flex-end;
-    gap:1rem;
-    border-bottom:1px solid var(--rule);
-    padding-bottom:1.25rem;
-    margin-bottom:1.5rem;
-  }
-  header h1{
-    font-family:var(--serif);
-    font-weight:600;
-    font-size:1.7rem;
-    margin:0 0 .2rem;
-    letter-spacing:-0.01em;
-  }
-  header p{
-    margin:0;
-    color:var(--ink-soft);
-    font-size:.92rem;
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-l) var(--space) var(--space-m);
   }
 
-  .actions{
-    display:flex;
-    gap:.6rem;
-    flex-wrap:wrap;
+  /* ===== Polymer-themed Header (same as main) ===== */
+  .chain-header {
+    position: relative;
+    padding: calc(var(--space-l) + 1.5rem) var(--space) var(--space-m);
+    margin: 0 calc(-1 * var(--space)) var(--space-m);
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    background: var(--ink);
+    color: #fff;
+    overflow: hidden;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold)) 1;
   }
-  .btn{
-    font-family:var(--mono);
-    font-size:.76rem;
-    letter-spacing:.03em;
-    text-transform:uppercase;
-    color:var(--ink);
-    background:var(--paper);
-    border:1px solid var(--rule);
-    border-radius:3px;
-    padding:.5rem .85rem;
-    display:inline-flex;
-    align-items:center;
-    gap:.45rem;
-    transition:border-color .15s ease, background .15s ease;
-  }
-  .btn:hover{border-color:var(--accent); background:var(--accent-soft);}
-  .btn.primary{background:var(--accent); color:#fff; border-color:var(--accent);}
-  .btn.primary:hover{background:#234a4e;}
-
-  .viewer{
-    background:var(--paper);
-    border:1px solid var(--rule);
-    border-radius:6px;
-    overflow:hidden;
-    box-shadow:0 1px 2px rgba(0,0,0,.03);
-    padding:1.25rem;
-    text-align:center;
-  }
-  .viewer img{
-    max-width:100%;
-    height:auto;
-    display:block;
-    margin:0 auto;
-    border-radius:2px;
+  .chain-header .wrap {
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
   }
 
-  .meta{
-    margin-top:1.25rem;
-    font-size:.85rem;
-    color:var(--ink-soft);
+  /* Gold glow */
+  .chain-header::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 70%;
+    height: 140%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(184, 134, 11, 0.12), transparent 70%);
+    z-index: 0;
+    pointer-events: none;
   }
-  .meta strong{color:var(--ink); font-weight:600;}
 
-  footer{
-    text-align:center;
-    padding-top:2.5rem;
-    color:var(--ink-faint);
-    font-size:.85rem;
+  /* Subtle pattern */
+  .chain-header .bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 5% 10%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 15% 30%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 25% 50%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 35% 70%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 45% 90%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 55% 15%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 65% 35%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 75% 55%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 85% 75%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 95% 95%, var(--accent-soft) 1.5px, transparent 1.5px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
   }
-  footer a{color:var(--ink-soft);}
+  .chain-header .bg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(255,255,255,.03) 28px, rgba(255,255,255,.03) 30px), repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255,255,255,.03) 28px, rgba(255,255,255,.03) 30px);
+    z-index: 0;
+    pointer-events: none;
+  }
 
-  @media (max-width:600px){
-    header{flex-direction:column; align-items:flex-start;}
+  .chain-header header {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .chain-header header h1 {
+    color: #fff;
+    font-size: 2.4rem;
+    text-shadow: 0 2px 30px rgba(184, 134, 11, 0.25);
+    margin: 0 0 .2rem;
+  }
+  .chain-header header p {
+    color: var(--gold-light);
+    opacity: 0.95;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .chain-header .back {
+    color: rgba(255,255,255,.7);
+    font-family: var(--mono);
+    font-size: .78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: 1rem;
+    border-bottom: none;
+  }
+  .chain-header .back:hover {
+    color: #fff;
+    border-bottom-color: var(--gold-light);
+  }
+  .chain-header .actions .btn {
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+    background: transparent;
+  }
+  .chain-header .actions .btn:hover {
+    background: var(--gold-light);
+    color: var(--ink);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 30px rgba(184, 134, 11, 0.2);
+  }
+  .chain-header .actions .btn.primary {
+    background: var(--gold-light);
+    color: var(--ink);
+    border-color: var(--gold-light);
+  }
+  .chain-header .actions .btn.primary:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(184, 134, 11, 0.3);
+  }
+
+  /* ===== Polymer Chain Divider ===== */
+  .polymer-chain-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    margin: var(--space-m) 0 var(--space-l);
+    opacity: .6;
+    width: 100%;
+  }
+  .polymer-chain-divider svg {
+    width: 100%;
+    max-width: 300px;
+    height: 16px;
+    filter: drop-shadow(0 1px 2px rgba(184, 134, 11, 0.2));
+  }
+
+  /* ===== Viewer ===== */
+  .viewer {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    padding: 1.25rem;
+    text-align: center;
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+  .viewer:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 24px rgba(184, 134, 11, 0.08);
+  }
+  .viewer img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+
+  .meta {
+    margin-top: 1.25rem;
+    font-size: .9rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  .meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    text-align: center;
+    padding-top: var(--space-m);
+    border-top: 2px solid var(--rule);
+    color: var(--ink-faint);
+    font-size: .82rem;
+    margin-top: var(--space-m);
+    position: relative;
+  }
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+  footer a { color: var(--ink-soft); border-bottom: none; }
+  footer a:hover { color: var(--gold); border-bottom: none; }
+  footer .chain-icon {
+    color: var(--gold);
+    opacity: .4;
+    font-size: .7rem;
+    margin: 0 .4rem;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .chain-header {
+      padding: var(--space-l) var(--space) var(--space-m);
+      min-height: 25vh;
+      margin: 0 0 var(--space-m);
+    }
+    .chain-header header h1 { font-size: 1.8rem; }
+    .chain-header header p { font-size: 1rem; }
+    .chain-header .actions .btn { font-size: .7rem; padding: .35rem .6rem; }
+    .wrap { padding: 1rem .8rem; }
+    .polymer-chain-divider svg { max-width: 200px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .chain-header {
+      background: #fff !important;
+      color: var(--ink) !important;
+      padding: 1rem 0 !important;
+      margin: 0 !important;
+      min-height: auto !important;
+      border-bottom: 3px solid var(--gold) !important;
+    }
+    .chain-header .bg-pattern, .chain-header .bg-lines, .chain-header::before { display: none !important; }
+    .chain-header header h1 { color: var(--ink) !important; text-shadow: none !important; }
+    .chain-header header p { color: var(--ink-soft) !important; }
+    .chain-header .back, .chain-header .actions { display: none; }
+    .wrap { padding: .5rem 0; max-width: 100%; }
+    .viewer { border: 1px solid #ccc; box-shadow: none !important; }
+    .polymer-chain-divider { display: none; }
+    footer::before { display: none; }
   }
 </style>
 </head>
 <body>
+
+<!-- ===== Gold-themed Header ===== -->
+<div class="chain-header">
+  <div class="bg-pattern"></div>
+  <div class="bg-lines"></div>
+  <div class="wrap">
+    <a class="back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to profile</a>
+    <header>
+      <div>
+        <h1>International Language Proficiency Certificate</h1>
+        <p>Achievement of Advanced Level English Certification</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="English1.jpg" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Open</a>
+        <a class="btn primary" href="English1.jpg" download><i class="fa-solid fa-download"></i> Download</a>
+      </div>
+    </header>
+  </div>
+</div>
+
 <div class="wrap">
 
-  <a class="back" href="../index.html"><i class="fa-solid fa-arrow-left"></i> Back to profile</a>
-
-  <header>
-    <div>
-      <h1>International Language Proficiency Certificate</h1>
-      <p>Achievement of Advanced Level English Certification</p>
-    </div>
-    <div class="actions">
-      <a class="btn" href="English1.jpg" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Open in new tab</a>
-      <a class="btn primary" href="English1.jpg" download><i class="fa-solid fa-download"></i> Download image</a>
-    </div>
-  </header>
-
-  <div class="viewer">
-    <img src="English1.jpg" alt="English1.jpg" />
+  <!-- ===== Polymer Chain Divider ===== -->
+  <div class="polymer-chain-divider" aria-hidden="true">
+    <svg viewBox="0 0 300 16" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="url(#goldGradCert)" fill="none" stroke-width="1.2" opacity="0.6">
+        <line x1="0" y1="9" x2="18" y2="9" />
+        <line x1="18" y1="9" x2="32" y2="3" />
+        <line x1="32" y1="3" x2="46" y2="15" />
+        <line x1="46" y1="15" x2="60" y2="3" />
+        <line x1="60" y1="3" x2="74" y2="15" />
+        <line x1="74" y1="15" x2="88" y2="3" />
+        <line x1="88" y1="3" x2="102" y2="15" />
+        <line x1="102" y1="15" x2="116" y2="3" />
+        <line x1="116" y1="3" x2="130" y2="15" />
+        <line x1="130" y1="15" x2="144" y2="3" />
+        <line x1="144" y1="3" x2="158" y2="15" />
+        <line x1="158" y1="15" x2="172" y2="3" />
+        <line x1="172" y1="3" x2="186" y2="15" />
+        <line x1="186" y1="15" x2="200" y2="3" />
+        <line x1="200" y1="3" x2="214" y2="15" />
+        <line x1="214" y1="15" x2="228" y2="3" />
+        <line x1="228" y1="3" x2="242" y2="15" />
+        <line x1="242" y1="15" x2="256" y2="3" />
+        <line x1="256" y1="3" x2="270" y2="15" />
+        <line x1="270" y1="15" x2="284" y2="3" />
+        <line x1="284" y1="3" x2="300" y2="9" />
+      </g>
+      <g fill="url(#goldGradCert)" opacity="0.5">
+        <circle cx="9" cy="9" r="2.6" />
+        <circle cx="32" cy="3" r="2.6" />
+        <circle cx="46" cy="15" r="2.6" />
+        <circle cx="60" cy="3" r="2.6" />
+        <circle cx="74" cy="15" r="2.6" />
+        <circle cx="88" cy="3" r="2.6" />
+        <circle cx="102" cy="15" r="2.6" />
+        <circle cx="116" cy="3" r="2.6" />
+        <circle cx="130" cy="15" r="2.6" />
+        <circle cx="144" cy="3" r="2.6" />
+        <circle cx="158" cy="15" r="2.6" />
+        <circle cx="172" cy="3" r="2.6" />
+        <circle cx="186" cy="15" r="2.6" />
+        <circle cx="200" cy="3" r="2.6" />
+        <circle cx="214" cy="15" r="2.6" />
+        <circle cx="228" cy="3" r="2.6" />
+        <circle cx="242" cy="15" r="2.6" />
+        <circle cx="256" cy="3" r="2.6" />
+        <circle cx="270" cy="15" r="2.6" />
+        <circle cx="284" cy="3" r="2.6" />
+      </g>
+      <defs>
+        <linearGradient id="goldGradCert" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#b8860b" />
+          <stop offset="50%" stop-color="#d4af37" />
+          <stop offset="100%" stop-color="#b8860b" />
+        </linearGradient>
+      </defs>
+    </svg>
   </div>
 
-  <p class="meta">Issued by the <strong>Safir Language Academy</strong> <strong></strong>.</p>
+  <!-- ===== Certificate Viewer ===== -->
+  <div class="viewer">
+    <img src="English1.jpg" alt="English Language Proficiency Certificate from Safir Language Academy" />
+  </div>
 
+  <p class="meta">Issued by the <strong>Safir Language Academy</strong>, Tehran, Iran.</p>
+
+  <!-- ===== Footer ===== -->
   <footer>
-    For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>.
+    <span class="chain-icon">⬡</span>
+    For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>
+    <span class="chain-icon">⬡</span>
   </footer>
 
 </div>
