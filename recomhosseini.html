@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="Dorsa Dolatkhah Ouchbolagh" />
+<meta name="description" content="Recommendation Letter " />
+<title>Recommendation Letter — Dr. SeyedMostaffa Hosseini</title>
+<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/16579247" type="image/jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+<style>
+  /* ===== Green Theme – matches main page ===== */
+  :root {
+    --bg: #f4f5f7;
+    --paper: #ffffff;
+    --ink: #1a1a2e;
+    --ink-soft: #3d4a5a;
+    --ink-faint: #7a8594;
+    --rule: #e4e7ec;
+    --green: #1B5E20;            /* dark forest green – main accent */
+    --green-light: #2E7D32;      /* medium green – for gradients */
+    --green-pale: #4CAF50;       /* lighter green – for subtle highlights */
+    --green-glow: rgba(27, 94, 32, 0.15);
+    --accent-soft: #1B5E2014;
+    --accent-light: #1B5E2008;
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', Helvetica, Arial, sans-serif;
+    --mono: 'IBM Plex Mono', 'Fira Mono', monospace;
+    --space: 1.25rem;
+    --space-m: 2rem;
+    --space-l: 3.25rem;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  a {
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .25s ease, color .25s ease;
+  }
+  a:hover, a:focus {
+    border-bottom-color: var(--green);
+    color: var(--green);
+  }
+  a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 2px; }
+
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--space-l) var(--space) var(--space-m);
+  }
+
+  /* ===== Polymer-themed Header (green) ===== */
+  .chain-header {
+    position: relative;
+    padding: calc(var(--space-l) + 1.5rem) var(--space) var(--space-m);
+    margin: 0 calc(-1 * var(--space)) var(--space-m);
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    background: var(--ink);
+    color: #fff;
+    overflow: hidden;
+    border-bottom: 4px solid transparent;
+    border-image: linear-gradient(90deg, var(--green), var(--green-light), var(--green)) 1;
+  }
+  .chain-header .wrap {
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  /* Green glow */
+  .chain-header::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 70%;
+    height: 140%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(27, 94, 32, 0.12), transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Subtle pattern */
+  .chain-header .bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 5% 10%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 15% 30%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 25% 50%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 35% 70%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 45% 90%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 55% 15%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 65% 35%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 75% 55%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 85% 75%, var(--accent-soft) 1.5px, transparent 1.5px), radial-gradient(circle at 95% 95%, var(--accent-soft) 1.5px, transparent 1.5px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .chain-header .bg-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(255,255,255,.03) 28px, rgba(255,255,255,.03) 30px), repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(255,255,255,.03) 28px, rgba(255,255,255,.03) 30px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .chain-header header {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  .chain-header header h1 {
+    color: #fff;
+    font-size: 2.4rem;
+    text-shadow: 0 2px 30px rgba(27, 94, 32, 0.25);
+    margin: 0 0 .2rem;
+  }
+  .chain-header header p {
+    color: var(--green-pale);
+    opacity: 0.95;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .chain-header .back {
+    color: rgba(255,255,255,.7);
+    font-family: var(--mono);
+    font-size: .78rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: 1rem;
+    border-bottom: none;
+  }
+  .chain-header .back:hover {
+    color: #fff;
+    border-bottom-color: var(--green-pale);
+  }
+  .chain-header .actions .btn {
+    border-color: var(--green-pale);
+    color: var(--green-pale);
+    background: transparent;
+  }
+  .chain-header .actions .btn:hover {
+    background: var(--green-pale);
+    color: var(--ink);
+    border-color: var(--green-pale);
+    box-shadow: 0 0 30px rgba(27, 94, 32, 0.2);
+  }
+  .chain-header .actions .btn.primary {
+    background: var(--green-pale);
+    color: var(--ink);
+    border-color: var(--green-pale);
+  }
+  .chain-header .actions .btn.primary:hover {
+    background: var(--green);
+    border-color: var(--green);
+    color: #fff;
+    box-shadow: 0 0 30px rgba(27, 94, 32, 0.3);
+  }
+
+  /* ===== Polymer Chain Divider (Green) ===== */
+  .polymer-chain-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    margin: var(--space-m) 0 var(--space-l);
+    opacity: .6;
+    width: 100%;
+  }
+  .polymer-chain-divider svg {
+    width: 100%;
+    max-width: 300px;
+    height: 16px;
+    filter: drop-shadow(0 1px 2px rgba(27, 94, 32, 0.2));
+  }
+
+  /* ===== Viewer ===== */
+  .viewer {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    padding: 1.25rem;
+    text-align: center;
+    transition: border-color .3s ease, box-shadow .3s ease;
+  }
+  .viewer:hover {
+    border-color: var(--green);
+    box-shadow: 0 4px 24px rgba(27, 94, 32, 0.08);
+  }
+  .viewer img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+
+  .meta {
+    margin-top: 1.25rem;
+    font-size: .9rem;
+    color: var(--ink-soft);
+    text-align: center;
+  }
+  .meta strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    text-align: center;
+    padding-top: var(--space-m);
+    border-top: 2px solid var(--rule);
+    color: var(--ink-faint);
+    font-size: .82rem;
+    margin-top: var(--space-m);
+    position: relative;
+  }
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green), var(--green-light));
+  }
+  footer a { color: var(--ink-soft); border-bottom: none; }
+  footer a:hover { color: var(--green); border-bottom: none; }
+  footer .chain-icon {
+    color: var(--green);
+    opacity: .4;
+    font-size: .7rem;
+    margin: 0 .4rem;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 600px) {
+    .chain-header {
+      padding: var(--space-l) var(--space) var(--space-m);
+      min-height: 25vh;
+      margin: 0 0 var(--space-m);
+    }
+    .chain-header header h1 { font-size: 1.8rem; }
+    .chain-header header p { font-size: 1rem; }
+    .chain-header .actions .btn { font-size: .7rem; padding: .35rem .6rem; }
+    .wrap { padding: 1rem .8rem; }
+    .polymer-chain-divider svg { max-width: 200px; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .chain-header {
+      background: #fff !important;
+      color: var(--ink) !important;
+      padding: 1rem 0 !important;
+      margin: 0 !important;
+      min-height: auto !important;
+      border-bottom: 3px solid var(--green) !important;
+    }
+    .chain-header .bg-pattern, .chain-header .bg-lines, .chain-header::before { display: none !important; }
+    .chain-header header h1 { color: var(--ink) !important; text-shadow: none !important; }
+    .chain-header header p { color: var(--ink-soft) !important; }
+    .chain-header .back, .chain-header .actions { display: none; }
+    .wrap { padding: .5rem 0; max-width: 100%; }
+    .viewer { border: 1px solid #ccc; box-shadow: none !important; }
+    .polymer-chain-divider { display: none; }
+    footer::before { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Green-themed Header ===== -->
+<div class="chain-header">
+  <div class="bg-pattern"></div>
+  <div class="bg-lines"></div>
+  <div class="wrap">
+    <a class="back" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to profile</a>
+    <header>
+      <div>
+        <h1>Recommendation Letter</h1>
+        <p>Summer Internship, Rubber Industries Engineering and Research Company, Tehran, Iran</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="RecommendationLetter1.jpg" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Open</a>
+        <a class="btn primary" href="RecommendationLetter1.jpg" download="RecommendationLetter1.jpg"><i class="fa-solid fa-download"></i> Download</a>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ===== Polymer Chain Divider (Green) ===== -->
+  <div class="polymer-chain-divider" aria-hidden="true">
+    <svg viewBox="0 0 300 16" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="url(#greenGradRec)" fill="none" stroke-width="1.2" opacity="0.6">
+        <line x1="0" y1="9" x2="18" y2="9" />
+        <line x1="18" y1="9" x2="32" y2="3" />
+        <line x1="32" y1="3" x2="46" y2="15" />
+        <line x1="46" y1="15" x2="60" y2="3" />
+        <line x1="60" y1="3" x2="74" y2="15" />
+        <line x1="74" y1="15" x2="88" y2="3" />
+        <line x1="88" y1="3" x2="102" y2="15" />
+        <line x1="102" y1="15" x2="116" y2="3" />
+        <line x1="116" y1="3" x2="130" y2="15" />
+        <line x1="130" y1="15" x2="144" y2="3" />
+        <line x1="144" y1="3" x2="158" y2="15" />
+        <line x1="158" y1="15" x2="172" y2="3" />
+        <line x1="172" y1="3" x2="186" y2="15" />
+        <line x1="186" y1="15" x2="200" y2="3" />
+        <line x1="200" y1="3" x2="214" y2="15" />
+        <line x1="214" y1="15" x2="228" y2="3" />
+        <line x1="228" y1="3" x2="242" y2="15" />
+        <line x1="242" y1="15" x2="256" y2="3" />
+        <line x1="256" y1="3" x2="270" y2="15" />
+        <line x1="270" y1="15" x2="284" y2="3" />
+        <line x1="284" y1="3" x2="300" y2="9" />
+      </g>
+      <g fill="url(#greenGradRec)" opacity="0.5">
+        <circle cx="9" cy="9" r="2.6" />
+        <circle cx="32" cy="3" r="2.6" />
+        <circle cx="46" cy="15" r="2.6" />
+        <circle cx="60" cy="3" r="2.6" />
+        <circle cx="74" cy="15" r="2.6" />
+        <circle cx="88" cy="3" r="2.6" />
+        <circle cx="102" cy="15" r="2.6" />
+        <circle cx="116" cy="3" r="2.6" />
+        <circle cx="130" cy="15" r="2.6" />
+        <circle cx="144" cy="3" r="2.6" />
+        <circle cx="158" cy="15" r="2.6" />
+        <circle cx="172" cy="3" r="2.6" />
+        <circle cx="186" cy="15" r="2.6" />
+        <circle cx="200" cy="3" r="2.6" />
+        <circle cx="214" cy="15" r="2.6" />
+        <circle cx="228" cy="3" r="2.6" />
+        <circle cx="242" cy="15" r="2.6" />
+        <circle cx="256" cy="3" r="2.6" />
+        <circle cx="270" cy="15" r="2.6" />
+        <circle cx="284" cy="3" r="2.6" />
+      </g>
+      <defs>
+        <linearGradient id="greenGradRec" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#1B5E20" />
+          <stop offset="50%" stop-color="#2E7D32" />
+          <stop offset="100%" stop-color="#1B5E20" />
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- ===== Certificate Viewer ===== -->
+  <div class="viewer">
+    <img src="recom_hosseini.jpg" alt="Recommendation Letter from Rubber Industries Engineering and Research Company, Tehran, Iran" />
+  </div>
+
+  <p class="meta">Issued by the <strong>Dr. SeyedMostaffa Hosseini, Department of Polymer Engineering, School of Chemical Engineering, College of Engineering, University of Tehran</strong>, recognizing service as a Laboratory Intern during Summer 2025.</p>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <span class="chain-icon">⬡</span>
+    For more information, please <a href="mailto:dolatkhahdorsa250@gmail.com">get in touch</a>
+    <span class="chain-icon">⬡</span>
+  </footer>
+
+</div>
+</body>
+</html>
